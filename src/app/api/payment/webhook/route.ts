@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ success: false, message: 'No content' }, { status: 400 });
         }
 
-        // Extract order code from content (format: "VINAMATH XXXXXXXX")
-        const match = content.match(/VINAMATH\s+([A-Z0-9]+)/i);
+        // Extract order code from content (format: "HMATH XXXXXXXX")
+        const match = content.match(/HMATH\s+([A-Z0-9]+)/i);
         if (!match) {
             return NextResponse.json({ success: false, message: 'No matching order code' });
         }
@@ -88,5 +88,5 @@ export async function POST(request: NextRequest) {
 
 // Allow GET for webhook verification
 export async function GET() {
-    return NextResponse.json({ status: 'ok', service: 'vinamath-webhook' });
+    return NextResponse.json({ status: 'ok', service: 'hmath-webhook' });
 }

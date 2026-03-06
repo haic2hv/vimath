@@ -14,7 +14,7 @@ export default function Header() {
                     <span className="logo-icon">
                         <BookOpen size={18} />
                     </span>
-                    VinaMath
+                    HMath
                 </Link>
 
                 <nav>

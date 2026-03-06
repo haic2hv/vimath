@@ -5,7 +5,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "VinaMath - Nền tảng chia sẻ Đề thi & Lời giải Toán học",
+  title: "HMath - Nền tảng chia sẻ Đề thi & Lời giải Toán học",
   description: "Kho tàng đề thi toán các cấp THPT, chuyên Đại học với định dạng đẹp mắt bằng LaTeX.",
 };
 

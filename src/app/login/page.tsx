@@ -33,7 +33,7 @@ export default function LoginPage() {
         <div className="auth-page">
             <div className="auth-card">
                 <h1>Đăng nhập</h1>
-                <p className="auth-subtitle">Chào mừng bạn quay lại VinaMath</p>
+                <p className="auth-subtitle">Chào mừng bạn quay lại HMath</p>
 
                 {error && <div className="form-error">{error}</div>}
 

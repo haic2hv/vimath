@@ -18,7 +18,7 @@ export default function HomePage() {
           </div>
           <h1>
             Chinh phục Toán học cùng{" "}
-            <span className="gradient-text">VinaMath</span>
+            <span className="gradient-text">HMath</span>
           </h1>
           <p>
             Hệ thống đề thi trắc nghiệm Toán học với lời giải chi tiết,
