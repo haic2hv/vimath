@@ -16,7 +16,7 @@ const tiers = [
         features: [
             { text: "Truy cập đề thi được đánh dấu miễn phí", included: true },
             { text: "Xem đáp án của đề thi miễn phí", included: true },
-            { text: "Giao diện duyệt đề thi LaTeX tiêu chuẩn", included: true },
+            { text: "Giao diện đề thi chuyên nghiệp", included: true },
             { text: "Lời giải đề thi phân loại cao", included: false },
         ],
         popular: false,
@@ -31,7 +31,7 @@ const tiers = [
             { text: "Mở khóa toàn bộ đề thi trong hệ thống", included: true },
             { text: "Xem lời giải chi tiết tất cả các câu", included: true },
             { text: "Tải file PDF (Sắp ra mắt)", included: true },
-            { text: "Ưu tiên hỗ trợ giải đáp qua Email", included: true },
+            { text: "Được ưu tiên hỗ trợ", included: true },
         ],
         popular: true,
     },
@@ -43,9 +43,8 @@ const tiers = [
         description: "Tiết kiệm nhất, đồng hành suốt cả một năm học.",
         features: [
             { text: "Tất cả quyền lợi của gói Học kỳ", included: true },
-            { text: "Công cụ tạo đề thi ngẫu nhiên (Sắp ra mắt)", included: true },
             { text: "Cam kết cập nhật đề thi mới mỗi tuần", included: true },
-            { text: "Tham gia nhóm Zalo nội bộ", included: true },
+            { text: "Tham gia nhóm Zalo đặc quyền riêng", included: true },
         ],
         popular: false,
     },

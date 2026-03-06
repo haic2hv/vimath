@@ -14,15 +14,15 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="hero-badge">
             <GraduationCap size={14} />
-            Nền tảng #1 cho Toán học THPT
+            Nền tảng Học và Luyện thi trực tuyến
           </div>
           <h1>
             Chinh phục Toán học cùng{" "}
             <span className="gradient-text">HMath</span>
           </h1>
           <p>
-            Hệ thống đề thi trắc nghiệm Toán học với lời giải chi tiết,
-            trực quan bằng LaTeX. Ôn tập thông minh, đạt điểm cao.
+            Hệ thống Bài giảng và Đề thi với lời giải chi tiết,
+            trực quan và chuyên nghiệp. Luyện thi tinh gọn, tối ưu, đạt điểm cao.
           </p>
           <div className="hero-actions">
             <Link href="#exams" className="btn-primary">
