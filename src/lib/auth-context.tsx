@@ -9,8 +9,7 @@ type AuthContextType = {
     session: Session | null;
     loading: boolean;
     isPremium: boolean;
-    signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
-    signUp: (email: string, password: string) => Promise<{ error: Error | null; needsConfirmation: boolean }>;
+    signInWithGoogle: () => Promise<void>;
     signOut: () => Promise<void>;
 };
 
@@ -27,6 +26,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setSession(session);
             setUser(session?.user ?? null);
             if (session?.user) {
+                ensureProfile(session.user);
                 checkPremiumStatus(session.user.id);
             }
             setLoading(false);
@@ -36,6 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setSession(session);
             setUser(session?.user ?? null);
             if (session?.user) {
+                ensureProfile(session.user);
                 checkPremiumStatus(session.user.id);
             } else {
                 setIsPremium(false);
@@ -44,6 +45,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         return () => subscription.unsubscribe();
     }, []);
+
+    async function ensureProfile(authUser: User) {
+        try {
+            const { data } = await supabase
+                .from('Profile')
+                .select('id')
+                .eq('userId', authUser.id)
+                .single();
+
+            if (!data) {
+                await supabase.from('Profile').insert({
+                    userId: authUser.id,
+                    email: authUser.email || '',
+                    isPremium: false,
+                    role: 'user',
+                });
+            }
+        } catch {
+            // Profile might already exist
+        }
+    }
 
     async function checkPremiumStatus(userId: string) {
         try {
@@ -63,25 +85,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     }
 
-    async function signIn(email: string, password: string) {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        return { error: error as Error | null };
-    }
-
-    async function signUp(email: string, password: string) {
-        const { data, error } = await supabase.auth.signUp({ email, password });
-
-        if (!error && data.user) {
-            // Create profile in database
-            await supabase.from('Profile').insert({
-                userId: data.user.id,
-                email: email,
-                isPremium: false,
-            });
-        }
-
-        const needsConfirmation = !error && data.user && !data.session;
-        return { error: error as Error | null, needsConfirmation: !!needsConfirmation };
+    async function signInWithGoogle() {
+        await supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: typeof window !== 'undefined'
+                    ? `${window.location.origin}/auth/callback`
+                    : undefined,
+            },
+        });
     }
 
     async function signOut() {
@@ -90,7 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     return (
-        <AuthContext.Provider value={{ user, session, loading, isPremium, signIn, signUp, signOut }}>
+        <AuthContext.Provider value={{ user, session, loading, isPremium, signInWithGoogle, signOut }}>
             {children}
         </AuthContext.Provider>
     );

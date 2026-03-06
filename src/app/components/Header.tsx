@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
 import { BookOpen } from 'lucide-react';
 
+const ADMIN_EMAIL = 'pdanghai@gmail.com';
+
 export default function Header() {
-    const { user, loading, signOut } = useAuth();
+    const { user, loading, signInWithGoogle } = useAuth();
 
     return (
         <header className="site-header">
@@ -20,7 +22,7 @@ export default function Header() {
                 <nav>
                     <Link href="/" className="nav-link">Trang chủ</Link>
                     <Link href="/pricing" className="nav-link">Bảng giá</Link>
-                    {user?.email === 'pdanghai@gmail.com' && (
+                    {user?.email === ADMIN_EMAIL && (
                         <Link href="/admin" className="nav-link">Admin</Link>
                     )}
                 </nav>
@@ -28,18 +30,22 @@ export default function Header() {
                 <div className="user-menu">
                     {loading ? null : user ? (
                         <>
-                            <div className="user-avatar">
-                                {user.email?.charAt(0).toUpperCase()}
-                            </div>
-                            <button onClick={() => signOut()} className="btn-logout">
-                                Đăng xuất
-                            </button>
+                            <Link href="/profile" className="user-avatar">
+                                {user.user_metadata?.avatar_url ? (
+                                    <img
+                                        src={user.user_metadata.avatar_url}
+                                        alt=""
+                                        style={{ width: 32, height: 32, borderRadius: '50%' }}
+                                    />
+                                ) : (
+                                    user.email?.charAt(0).toUpperCase()
+                                )}
+                            </Link>
                         </>
                     ) : (
-                        <>
-                            <Link href="/login" className="btn-login">Đăng nhập</Link>
-                            <Link href="/signup" className="btn-signup">Đăng ký</Link>
-                        </>
+                        <button onClick={() => signInWithGoogle()} className="btn-signup">
+                            Đăng nhập
+                        </button>
                     )}
                 </div>
             </div>
