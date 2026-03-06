@@ -2,12 +2,15 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/lib/theme-context';
 
 const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function Header() {
     const { user, loading, signInWithGoogle } = useAuth();
+    const { theme, toggleTheme } = useTheme();
+    const isAdmin = user?.email && ADMIN_EMAILS.includes(user.email);
 
     return (
         <header className="site-header">
@@ -21,27 +24,35 @@ export default function Header() {
 
                 <nav>
                     <Link href="/" className="nav-link">Trang chủ</Link>
-                    <Link href="/pricing" className="nav-link">Bảng giá</Link>
-                    {user?.email && ADMIN_EMAILS.includes(user.email) && (
+                    {!isAdmin && (
+                        <Link href="/pricing" className="nav-link">Bảng giá</Link>
+                    )}
+                    {isAdmin && (
                         <Link href="/admin" className="nav-link">Admin</Link>
                     )}
                 </nav>
 
                 <div className="user-menu">
+                    <button
+                        onClick={toggleTheme}
+                        className="theme-toggle"
+                        aria-label="Toggle dark mode"
+                    >
+                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
+
                     {loading ? null : user ? (
-                        <>
-                            <Link href="/profile" className="user-avatar">
-                                {user.user_metadata?.avatar_url ? (
-                                    <img
-                                        src={user.user_metadata.avatar_url}
-                                        alt=""
-                                        style={{ width: 32, height: 32, borderRadius: '50%' }}
-                                    />
-                                ) : (
-                                    user.email?.charAt(0).toUpperCase()
-                                )}
-                            </Link>
-                        </>
+                        <Link href="/profile" className="user-avatar">
+                            {user.user_metadata?.avatar_url ? (
+                                <img
+                                    src={user.user_metadata.avatar_url}
+                                    alt=""
+                                    style={{ width: 32, height: 32, borderRadius: '50%' }}
+                                />
+                            ) : (
+                                user.email?.charAt(0).toUpperCase()
+                            )}
+                        </Link>
                     ) : (
                         <button onClick={() => signInWithGoogle()} className="btn-signup">
                             Đăng nhập

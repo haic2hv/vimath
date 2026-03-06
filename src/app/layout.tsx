@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/lib/auth-context";
+import { ThemeProvider } from "@/lib/theme-context";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import BackToTop from "@/app/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "HMath - Nền tảng chia sẻ Đề thi & Lời giải Toán học",
@@ -15,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
       <head>
         <link
           rel="preconnect"
@@ -34,13 +36,25 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
         />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          (function() {
+            var t = localStorage.getItem('hmath-theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+            else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+              document.documentElement.setAttribute('data-theme', 'dark');
+          })();
+        `}} />
       </head>
       <body>
-        <AuthProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <BackToTop />
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
