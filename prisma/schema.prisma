@@ -7,11 +7,25 @@ datasource db {
 }
 
 model Profile {
-  id          String   @id @default(uuid())
-  userId      String   @unique
-  email       String
-  isPremium   Boolean  @default(false)
+  id           String    @id @default(uuid())
+  userId       String    @unique
+  email        String
+  role         String    @default("user")
+  isPremium    Boolean   @default(false)
   premiumUntil DateTime?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  orders       Order[]
+}
+
+model Order {
+  id        String   @id @default(uuid())
+  profileId String
+  profile   Profile  @relation(fields: [profileId], references: [id])
+  plan      String
+  amount    Int
+  status    String   @default("pending")
+  sepayRef  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

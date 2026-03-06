@@ -20,6 +20,9 @@ export default function Header() {
                 <nav>
                     <Link href="/" className="nav-link">Trang chủ</Link>
                     <Link href="/pricing" className="nav-link">Bảng giá</Link>
+                    {user?.email === 'pdanghai@gmail.com' && (
+                        <Link href="/admin" className="nav-link">Admin</Link>
+                    )}
                 </nav>
 
                 <div className="user-menu">

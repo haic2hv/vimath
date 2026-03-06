@@ -1,11 +1,16 @@
+'use client';
+
 import { Check, X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import { useRouter } from "next/navigation";
 
 const tiers = [
     {
         name: "Cơ bản",
         id: "tier-free",
-        href: "/",
+        plan: "free",
         price: "Miễn phí",
         description: "Phù hợp để trải nghiệm hệ thống và đọc các đề thi cơ bản.",
         features: [
@@ -19,8 +24,8 @@ const tiers = [
     {
         name: "Học kỳ (6 Tháng)",
         id: "tier-6months",
-        href: "#",
-        price: "199.000đ",
+        plan: "6months",
+        price: "59.000đ",
         description: "Dành cho học sinh cần bứt tốc trong một học kỳ.",
         features: [
             { text: "Mở khóa toàn bộ đề thi trong hệ thống", included: true },
@@ -33,8 +38,8 @@ const tiers = [
     {
         name: "Năm học (12 Tháng)",
         id: "tier-12months",
-        href: "#",
-        price: "299.000đ",
+        plan: "12months",
+        price: "99.000đ",
         description: "Tiết kiệm nhất, đồng hành suốt cả một năm học.",
         features: [
             { text: "Tất cả quyền lợi của gói Học kỳ", included: true },
@@ -47,6 +52,46 @@ const tiers = [
 ];
 
 export default function PricingPage() {
+    const { user } = useAuth();
+    const router = useRouter();
+    const [paymentModal, setPaymentModal] = useState<any>(null);
+    const [loading, setLoading] = useState(false);
+
+    async function handleBuy(plan: string) {
+        if (!user) {
+            router.push('/login');
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const res = await fetch('/api/payment/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    plan,
+                    userId: user.id,
+                    email: user.email,
+                }),
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                setPaymentModal(data);
+            } else {
+                alert('Có lỗi xảy ra. Vui lòng thử lại.');
+            }
+        } catch (error) {
+            alert('Có lỗi xảy ra. Vui lòng thử lại.');
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    const formatCurrency = (amount: number) => {
+        return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
+    };
+
     return (
         <div className="pricing-page">
             <div className="pricing-header">
@@ -73,15 +118,22 @@ export default function PricingPage() {
 
                         <div className="price">
                             {tier.price}
-                            {tier.id !== "tier-free" && <span> /gói</span>}
+                            {tier.plan !== "free" && <span> /gói</span>}
                         </div>
 
-                        <Link
-                            href={tier.href}
-                            className={`pricing-btn ${tier.popular ? "pricing-btn-primary" : "pricing-btn-outline"}`}
-                        >
-                            {tier.id === "tier-free" ? "Khám phá ngay" : "Nâng cấp Premium"}
-                        </Link>
+                        {tier.plan === "free" ? (
+                            <Link href="/" className="pricing-btn pricing-btn-outline">
+                                Khám phá ngay
+                            </Link>
+                        ) : (
+                            <button
+                                className={`pricing-btn ${tier.popular ? "pricing-btn-primary" : "pricing-btn-outline"}`}
+                                onClick={() => handleBuy(tier.plan)}
+                                disabled={loading}
+                            >
+                                {loading ? 'Đang xử lý...' : 'Nâng cấp Premium'}
+                            </button>
+                        )}
 
                         <ul className="features">
                             {tier.features.map((feature) => (
@@ -98,6 +150,47 @@ export default function PricingPage() {
                     </div>
                 ))}
             </div>
+
+            {/* Payment Modal */}
+            {paymentModal && (
+                <div className="payment-modal-overlay" onClick={() => setPaymentModal(null)}>
+                    <div className="payment-modal" onClick={(e) => e.stopPropagation()}>
+                        <h2>Thanh toán đơn hàng</h2>
+                        <p className="subtitle">Chuyển khoản ngân hàng với nội dung bên dưới</p>
+
+                        <div className="payment-info-row">
+                            <span className="label">Gói cước</span>
+                            <span className="value">{paymentModal.planLabel}</span>
+                        </div>
+                        <div className="payment-info-row">
+                            <span className="label">Số tiền</span>
+                            <span className="value">{formatCurrency(paymentModal.amount)}</span>
+                        </div>
+                        <div className="payment-info-row">
+                            <span className="label">Mã đơn hàng</span>
+                            <span className="value" style={{ fontFamily: 'monospace' }}>{paymentModal.orderCode}</span>
+                        </div>
+
+                        <div className="payment-content-box">
+                            <div className="label">⚠️ NỘI DUNG CHUYỂN KHOẢN (bắt buộc)</div>
+                            <div className="code">{paymentModal.paymentContent}</div>
+                        </div>
+
+                        <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '1rem', lineHeight: 1.5 }}>
+                            Sau khi chuyển khoản với đúng nội dung, hệ thống sẽ tự động kích hoạt Premium cho bạn trong vài phút.
+                        </p>
+
+                        <div className="payment-modal-actions">
+                            <button className="btn-modal-cancel" onClick={() => setPaymentModal(null)}>
+                                Đóng
+                            </button>
+                            <Link href="/" className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
+                                Về trang chủ
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
