@@ -171,6 +171,25 @@ export default function PricingPage() {
                             <span className="value" style={{ fontFamily: 'monospace' }}>{paymentModal.orderCode}</span>
                         </div>
 
+                        {paymentModal.qrUrl && (
+                            <div style={{ textAlign: 'center', margin: '1.25rem 0' }}>
+                                <p style={{ fontSize: '0.8rem', fontWeight: 600, color: '#374151', marginBottom: '0.75rem' }}>
+                                    📱 Quét mã QR để thanh toán
+                                </p>
+                                <img
+                                    src={paymentModal.qrUrl}
+                                    alt="QR thanh toán"
+                                    style={{
+                                        width: 220,
+                                        height: 220,
+                                        margin: '0 auto',
+                                        borderRadius: '0.75rem',
+                                        border: '1px solid #e2e8f0',
+                                    }}
+                                />
+                            </div>
+                        )}
+
                         <div className="payment-content-box">
                             <div className="label">⚠️ NỘI DUNG CHUYỂN KHOẢN (bắt buộc)</div>
                             <div className="code">{paymentModal.paymentContent}</div>

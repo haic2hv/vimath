@@ -65,18 +65,20 @@ export async function POST(request: NextRequest) {
             .update({ sepayRef: orderCode })
             .eq('id', order.id);
 
+        // Generate SePay VietQR code URL
+        const bankCode = process.env.SEPAY_BANK_CODE || '';
+        const bankAccount = process.env.SEPAY_BANK_ACCOUNT || '';
+        const qrUrl = bankCode && bankAccount
+            ? `https://qr.sepay.vn/img?bank=${bankCode}&acc=${bankAccount}&template=compact&amount=${amount}&des=${encodeURIComponent(paymentContent)}`
+            : '';
+
         return NextResponse.json({
             orderId: order.id,
             orderCode,
             amount,
             planLabel,
             paymentContent,
-            // If SePay Payment Gateway is configured, provide redirect URL
-            // Otherwise, show bank transfer QR with content matching
-            bankInfo: {
-                content: paymentContent,
-                amount,
-            }
+            qrUrl,
         });
     } catch (error) {
         console.error('Payment create error:', error);
