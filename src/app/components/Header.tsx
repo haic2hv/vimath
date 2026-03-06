@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
 import { BookOpen } from 'lucide-react';
 
-const ADMIN_EMAIL = 'pdanghai@gmail.com';
+const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function Header() {
     const { user, loading, signInWithGoogle } = useAuth();
@@ -22,7 +22,7 @@ export default function Header() {
                 <nav>
                     <Link href="/" className="nav-link">Trang chủ</Link>
                     <Link href="/pricing" className="nav-link">Bảng giá</Link>
-                    {user?.email === ADMIN_EMAIL && (
+                    {user?.email && ADMIN_EMAILS.includes(user.email) && (
                         <Link href="/admin" className="nav-link">Admin</Link>
                     )}
                 </nav>

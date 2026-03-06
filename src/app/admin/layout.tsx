@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import { LayoutDashboard, Users, Receipt, ShieldAlert } from 'lucide-react';
 
-const ADMIN_EMAIL = 'pdanghai@gmail.com';
+const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     const { user, loading } = useAuth();
@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         return <div className="admin-no-auth"><p>Đang tải...</p></div>;
     }
 
-    if (!user || user.email !== ADMIN_EMAIL) {
+    if (!user || !user.email || !ADMIN_EMAILS.includes(user.email)) {
         return (
             <div className="admin-no-auth">
                 <div className="admin-no-auth-card">
