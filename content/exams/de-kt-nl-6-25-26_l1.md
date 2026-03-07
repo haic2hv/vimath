@@ -5,7 +5,7 @@ isFree: false
 tags: ["Thi vào 6"]
 ---
 
-# BÀI KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
+# ĐỀ KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
 **TUYỂN SINH LỚP 6, NĂM HỌC 2025-2026**  
 **MÔN: TOÁN**  
 *(Thời gian làm bài: 35 phút. Không kể thời gian giao đề)*
