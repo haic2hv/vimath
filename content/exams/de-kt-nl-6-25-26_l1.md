@@ -190,6 +190,7 @@ Số cam ban đầu là $540 - 300 = 240$ (quả)
 ---
 
 **Câu 3** 
+![](https://i.postimg.cc/6QVJrvT3/Screenshot-2026-03-07-221628.jpg)
 
 Diện tích tam giác $ABC$ là $AB \times AC : 2 = 6 \times 8 : 2 = 24 \, (cm^2)$
 
