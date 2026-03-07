@@ -10,10 +10,6 @@ const SUGGESTIONS = [
     { label: 'Lớp 9', query: 'lớp 9' },
     { label: 'Thi vào 6', query: 'thi vào 6' },
     { label: 'Thi vào 10', query: 'thi vào 10' },
-    { label: 'Giữa học kì 1', query: 'giữa hk1' },
-    { label: 'Giữa học kì 2', query: 'giữa hk2' },
-    { label: 'Học kỳ 1', query: 'hk1' },
-    { label: 'Học kỳ 2', query: 'hk2' },
     { label: 'Chuyên', query: 'chuyên' },
 ];
 
