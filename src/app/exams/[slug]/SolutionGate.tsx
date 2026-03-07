@@ -40,7 +40,7 @@ export default function SolutionGate({ isFree, children }: Props) {
                 </p>
                 <div className="premium-lock-price">
                     <Crown size={16} color="#f59e0b" />
-                    Chỉ 5.000đ / năm
+                    Chỉ 199.000đ / năm
                 </div>
                 <div className="premium-lock-actions">
                     <Link href="/pricing" className="lock-btn-primary">
