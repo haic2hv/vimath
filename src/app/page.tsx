@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { getAllExams } from "@/lib/exams";
-import { Lock, Unlock, ArrowRight, BookOpen, Award, GraduationCap } from "lucide-react";
+import { ArrowRight, BookOpen, Award, GraduationCap } from "lucide-react";
+import ExamListClient from "@/app/components/ExamListClient";
 
 export default function HomePage() {
   const exams = getAllExams();
   const freeCount = exams.filter(e => e.frontmatter.isFree).length;
   const premiumCount = exams.filter(e => !e.frontmatter.isFree).length;
+
+  const examData = exams.map(e => ({
+    slug: e.slug,
+    title: e.frontmatter.title,
+    date: e.frontmatter.date,
+    isFree: e.frontmatter.isFree,
+    tags: e.frontmatter.tags,
+  }));
 
   return (
     <>
@@ -59,58 +68,16 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Exam List */}
+      {/* Exam List with Search */}
       <section className="exams-section" id="exams">
         <div className="section-header">
           <div>
             <h2 className="section-title">Danh sách đề thi</h2>
-            <p className="section-subtitle">Duyệt và chọn đề thi phù hợp với bạn</p>
+            <p className="section-subtitle">Tìm kiếm và chọn đề thi phù hợp với bạn</p>
           </div>
         </div>
 
-        <div className="exams-grid">
-          {exams.map((exam) => (
-            <Link
-              key={exam.slug}
-              href={`/exams/${exam.slug}`}
-              className="exam-card"
-            >
-              <div className="exam-card-header">
-                <div className="exam-card-badges">
-                  {exam.frontmatter.isFree ? (
-                    <span className="badge badge-free">
-                      <Unlock size={11} />
-                      Miễn phí
-                    </span>
-                  ) : (
-                    <span className="badge badge-premium">
-                      <Lock size={11} />
-                      Premium
-                    </span>
-                  )}
-                  <span className="badge badge-date">
-                    {exam.frontmatter.date}
-                  </span>
-                </div>
-              </div>
-
-              <h3 className="exam-card-title">
-                {exam.frontmatter.title}
-              </h3>
-
-              <div className="exam-card-tags">
-                {exam.frontmatter.tags.map((tag) => (
-                  <span key={tag} className="tag">#{tag}</span>
-                ))}
-              </div>
-            </Link>
-          ))}
-          {exams.length === 0 && (
-            <div className="empty-state">
-              <p>Chưa có đề thi nào trong hệ thống.</p>
-            </div>
-          )}
-        </div>
+        <ExamListClient exams={examData} />
       </section>
 
       {/* CTA Section */}

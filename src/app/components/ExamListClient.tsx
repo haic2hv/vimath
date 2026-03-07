@@ -1,0 +1,83 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { Lock, Unlock, ArrowRight } from 'lucide-react';
+import ExamSearch from '@/app/components/ExamSearch';
+
+type ExamData = {
+    slug: string;
+    title: string;
+    date: string;
+    isFree: boolean;
+    tags: string[];
+};
+
+export default function ExamListClient({ exams }: { exams: ExamData[] }) {
+    const [search, setSearch] = useState('');
+
+    const filtered = search
+        ? exams.filter((exam) => {
+            const q = search.toLowerCase();
+            return (
+                exam.title.toLowerCase().includes(q) ||
+                exam.tags.some((t) => t.toLowerCase().includes(q)) ||
+                exam.slug.toLowerCase().includes(q)
+            );
+        })
+        : exams;
+
+    return (
+        <>
+            <ExamSearch onSearch={setSearch} value={search} />
+
+            <div className="exams-grid">
+                {filtered.map((exam) => (
+                    <Link
+                        key={exam.slug}
+                        href={`/exams/${exam.slug}`}
+                        className="exam-card"
+                    >
+                        <div className="exam-card-header">
+                            <div className="exam-card-badges">
+                                {exam.isFree ? (
+                                    <span className="badge badge-free">
+                                        <Unlock size={11} />
+                                        Miễn phí
+                                    </span>
+                                ) : (
+                                    <span className="badge badge-premium">
+                                        <Lock size={11} />
+                                        Premium
+                                    </span>
+                                )}
+                                <span className="badge badge-date">
+                                    {exam.date}
+                                </span>
+                            </div>
+                        </div>
+
+                        <h3 className="exam-card-title">{exam.title}</h3>
+
+                        <div className="exam-card-tags">
+                            {exam.tags.map((tag) => (
+                                <span key={tag} className="tag">#{tag}</span>
+                            ))}
+                        </div>
+                    </Link>
+                ))}
+                {filtered.length === 0 && (
+                    <div className="empty-state">
+                        <p>{search ? 'Không tìm thấy đề thi phù hợp.' : 'Chưa có đề thi nào trong hệ thống.'}</p>
+                    </div>
+                )}
+            </div>
+
+            {filtered.length > 0 && !search && (
+                <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.85rem', color: '#94a3b8' }}>
+                    Hiển thị {filtered.length} đề thi
+                </div>
+            )}
+        </>
+    );
+}

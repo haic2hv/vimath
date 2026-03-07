@@ -7,8 +7,8 @@ export default function Footer() {
                 <div className="footer-brand">
                     <div className="footer-logo">HMath</div>
                     <p>
-                        Nền tảng chia sẻ đề thi và lời giải Toán học với định dạng LaTeX đẹp mắt,
-                        dành cho học sinh THPT trên toàn quốc.
+                        Nền tảng Học và Luyện thi trực tuyến
+                        dành cho học sinh THCS.
                     </p>
                 </div>
                 <div className="footer-column">
@@ -17,9 +17,9 @@ export default function Footer() {
                     <Link href="/pricing">Bảng giá</Link>
                 </div>
                 <div className="footer-column">
-                    <h4>Hỗ trợ</h4>
-                    <a href="mailto:support@hmath.vn">Email liên hệ</a>
-                    <a href="#">Zalo hỗ trợ</a>
+                    <h4>Pháp lý</h4>
+                    <Link href="/terms">Điều khoản sử dụng</Link>
+                    <Link href="/privacy">Chính sách bảo mật</Link>
                 </div>
             </div>
             <div className="footer-bottom">

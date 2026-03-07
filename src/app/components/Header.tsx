@@ -2,14 +2,12 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
-import { BookOpen, Sun, Moon } from 'lucide-react';
-import { useTheme } from '@/lib/theme-context';
+import { BookOpen } from 'lucide-react';
 
 const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function Header() {
     const { user, loading, signInWithGoogle } = useAuth();
-    const { theme, toggleTheme } = useTheme();
     const isAdmin = user?.email && ADMIN_EMAILS.includes(user.email);
 
     return (
@@ -33,14 +31,6 @@ export default function Header() {
                 </nav>
 
                 <div className="user-menu">
-                    <button
-                        onClick={toggleTheme}
-                        className="theme-toggle"
-                        aria-label="Toggle dark mode"
-                    >
-                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-                    </button>
-
                     {loading ? null : user ? (
                         <Link href="/profile" className="user-avatar">
                             {user.user_metadata?.avatar_url ? (
