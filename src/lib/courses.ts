@@ -10,6 +10,7 @@ export type Lesson = {
     videoUrl: string;
     videoType: 'youtube' | 'vimeo';
     description: string;
+    materials?: { label: string; url: string }[];
 };
 
 export type Course = {

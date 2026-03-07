@@ -3,33 +3,62 @@
     "title": "Học sinh giỏi Toán 7",
     "description": "Khóa học luyện thi HSG Toán lớp 7 với video bài giảng chi tiết từ cơ bản đến nâng cao.",
     "tags": [
-        "lớp 7",
-        "chuyên"
+        "lớp 7"
     ],
     "lessons": [
         {
             "id": "bai-1",
-            "title": "Bài 1: Số hữu tỉ và các phép tính",
+            "title": "Buổi 01. Số hữu tỉ và các phép tính (1)",
             "duration": "25:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Ôn tập và nâng cao kiến thức về số hữu tỉ."
+            "description": "Ôn tập và nâng cao kiến thức về số hữu tỉ.",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 1",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 1",
+                    "url": ""
+                }
+            ]
         },
         {
             "id": "bai-2",
-            "title": "Bài 2: Lũy thừa của số hữu tỉ",
+            "title": "Buổi 02. Lũy thừa của số hữu tỉ",
             "duration": "30:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Các tính chất và bài tập nâng cao về lũy thừa."
+            "description": "Các tính chất và bài tập nâng cao về lũy thừa.",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 2",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 2",
+                    "url": ""
+                }
+            ]
         },
         {
             "id": "bai-3",
-            "title": "Bài 3: Tỉ lệ thức và dãy tỉ số bằng nhau",
+            "title": "Buổi 03. Tỉ lệ thức và dãy tỉ số bằng nhau",
             "duration": "35:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phương pháp giải bài toán tỉ lệ thức."
+            "description": "Phương pháp giải bài toán tỉ lệ thức.",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 3",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 3",
+                    "url": ""
+                }
+            ]
         }
     ]
 }

@@ -34,6 +34,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             lessonDescription={lesson.description}
             videoUrl={lesson.videoUrl}
             videoType={lesson.videoType}
+            materials={lesson.materials || []}
             prevLesson={prevLesson ? { id: prevLesson.id, title: prevLesson.title } : null}
             nextLesson={nextLesson ? { id: nextLesson.id, title: nextLesson.title } : null}
         />

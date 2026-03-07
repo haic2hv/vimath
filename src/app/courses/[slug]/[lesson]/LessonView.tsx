@@ -2,7 +2,12 @@
 
 import { useAuth } from '@/lib/auth-context';
 import Link from 'next/link';
-import { ArrowLeft, Lock, Crown } from 'lucide-react';
+import { ArrowLeft, Lock, Crown, Download } from 'lucide-react';
+
+type Material = {
+    label: string;
+    url: string;
+};
 
 type LessonViewProps = {
     courseTitle: string;
@@ -11,13 +16,14 @@ type LessonViewProps = {
     lessonDescription: string;
     videoUrl: string;
     videoType: 'youtube' | 'vimeo';
+    materials: Material[];
     prevLesson: { id: string; title: string } | null;
     nextLesson: { id: string; title: string } | null;
 };
 
 export default function LessonView({
     courseTitle, courseSlug, lessonTitle, lessonDescription,
-    videoUrl, videoType, prevLesson, nextLesson
+    videoUrl, videoType, materials, prevLesson, nextLesson
 }: LessonViewProps) {
     const { user, isPremium, loading, signInWithGoogle } = useAuth();
 
@@ -64,7 +70,7 @@ export default function LessonView({
         );
     }
 
-    // Members see the video
+    // Members see the full lesson
     return (
         <div className="lesson-page">
             <Link href={`/courses/${courseSlug}`} className="exam-back-link">
@@ -75,6 +81,29 @@ export default function LessonView({
             <h1 className="lesson-title">{lessonTitle}</h1>
             <p className="lesson-desc">{lessonDescription}</p>
 
+            {/* Download Materials */}
+            {materials.length > 0 && (
+                <div className="lesson-materials">
+                    {materials.map((m, i) => (
+                        <a
+                            key={i}
+                            href={m.url || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`lesson-material-link ${!m.url ? 'disabled' : ''}`}
+                        >
+                            {m.label}.{' '}
+                            <span className="download-badge">
+                                <Download size={13} />
+                                DOWNLOAD
+                            </span>
+                        </a>
+                    ))}
+                </div>
+            )}
+
+            {/* Video */}
+            <h3 className="lesson-video-label">Video bài giảng</h3>
             <div className="lesson-video-wrap">
                 {videoUrl ? (
                     <iframe
