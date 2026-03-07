@@ -40,6 +40,10 @@ export default function HomePage() {
               <BookOpen size={18} />
               Xem đề thi
             </Link>
+            <Link href="#courses" className="btn-primary">
+              <PlayCircle size={18} />
+              Xem khóa học
+            </Link>
             <Link href="/pricing" className="btn-secondary">
               Nâng cấp Premium
               <ArrowRight size={16} />
