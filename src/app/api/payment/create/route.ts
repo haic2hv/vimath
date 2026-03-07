@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
 
         // SePay QR Payment URL (simple bank transfer with content matching)
         // The content format allows SePay webhook to identify the transaction
-        const paymentContent = `HMATH ${orderCode}`;
+        const paymentContent = `SEVQR HMATH ${orderCode}`;
 
         // Update order with reference code
         await supabase

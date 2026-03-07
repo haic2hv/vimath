@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
 
         console.log(`📝 Content: "${content}", Amount: ${transferAmount}, Ref: ${referenceCode}`);
 
-        // Extract order code from content (format: "HMATH XXXXXXXX")
+        // Extract order code from content (format: "SEVQR HMATH XXXXXXXX" or "HMATH XXXXXXXX")
         const match = content.match(/HMATH\s+([A-Z0-9]+)/i);
         if (!match) {
             console.log('❌ No HMATH order code found in content');
