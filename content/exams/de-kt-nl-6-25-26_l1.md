@@ -128,3 +128,113 @@ b) Đoạn thẳng $CD$ cắt đoạn thẳng $EF$ tại điểm $I$. So sánh d
 
 2. Hình chữ nhật $ABCD$ được chia thành 15 hình vuông và độ dài cạnh của mỗi hình vuông là một số tự nhiên $(cm)$ (tham khảo hình vẽ bên). Khi độ dài cạnh của hình vuông nhỏ nhất trong số các hình vuông là số tự nhiên nhỏ nhất có thể thì diện tích của hình chữ nhật $ABCD$ là bao nhiêu $cm^2$?
 ![](https://i.postimg.cc/rsDzW16b/Screenshot-2026-03-07-163052.jpg)
+
+## Lời giải
+
+### Lời giải phần trắc nghiệm
+
+![](https://drive.google.com/uc?export=view&id=1v3eyFYm-adaRsAYdR7332I3A7v6l-UL0)
+
+### Lời giải Phần tự luận
+
+## Câu 1. Thực hiện phép tính
+
+**a)**  
+$$1009 + 598 + 3991 - 298 = (1009 + 3991) + (598 - 298)$$  
+$$= 5000 + 300 = 5300$$
+
+**b)**  
+$$2,1 \times 1,5 + 2,1 \times 1,2 + 7,9 \times 2,7 = 2,1 \times (1,5 + 1,2) + 7,9 \times 2,7$$  
+$$= 2,1 \times 2,7 + 7,9 \times 2,7 = 2,7 \times (2,1 + 7,9) = 2,7 \times 10 = 27$$
+
+**c)**  
+$$\left(1 + \frac{1}{2}\right) \times \left(1 + \frac{1}{3}\right) \times \left(1 + \frac{1}{4}\right) \times \cdots \times \left(1 + \frac{1}{49}\right) = \frac{3}{2} \times \frac{4}{3} \times \frac{5}{4} \times \cdots \times \frac{50}{49}$$  
+$$= \frac{50}{2} = 25$$
+
+---
+
+**Câu 2** 
+
+**1.**
+
+**a)**  
+$$360 - 500 : x = 110$$  
+$$500 : x = 360 - 110$$  
+$$500 : x = 250$$  
+$$x = 500 : 250 = 2$$
+
+**b)**  
+$$x : 0,5 + x : 0,25 + x : 0,125 = 280$$  
+$$x \times 2 + x \times 4 + x \times 8 = 280$$  
+$$x \times (2 + 4 + 8) = 280$$  
+$$x \times 14 = 280$$  
+$$x = 280 : 14 = 20$$
+
+**c)**  
+$$\left(\frac{1}{1 \times 2} + \frac{1}{2 \times 3} + \frac{1}{3 \times 4} + \cdots + \frac{1}{9 \times 10}\right) \times x = \frac{1}{2} + \frac{1}{3} + \frac{1}{6}$$  
+$$\left(1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} - \frac{1}{4} + \cdots + \frac{1}{9} - \frac{1}{10}\right) \times x = 1$$  
+$$\left(1 - \frac{1}{10}\right) \times x = 1$$  
+$$\frac{9}{10} \times x = 1 \implies x = 1 : \frac{9}{10} = \frac{10}{9}$$
+
+---
+
+**2.** 
+
+Số phần táo còn lại là $1 - \frac{4}{5} = \frac{1}{5}$; số phần cam còn lại là $1 - \frac{3}{4} = \frac{1}{4}$.
+
+Nếu coi số táo là 5 phần thì số cam có 4 phần. Khi đó tổng số phần là $5 + 4 = 9$ phần.
+
+Số táo ban đầu là $540 : 9 \times 5 = 300$ (quả)  
+Số cam ban đầu là $540 - 300 = 240$ (quả)
+
+---
+
+**Câu 3** 
+
+Diện tích tam giác $ABC$ là $AB \times AC : 2 = 6 \times 8 : 2 = 24 \, (cm^2)$
+
+Diện tích tam giác $AEC$ là $AC \times EF : 2 = 8 \times 4 : 2 = 16 \, (cm^2)$
+
+Diện tích tam giác $ABE$ bằng $S_{ABC} - S_{AEC} = 24 - 16 = 8 \, (cm^2)$
+
+Nối $DF$.  
+Thấy $S_{AIF} = S_{DIF}$ (hai tam giác có cùng đáy và chiều cao bằng nhau) (1)
+
+Mặt khác $S_{DFC} = S_{EFC}$ (hai tam giác có cùng đáy và chiều cao bằng nhau)  
+$$\Rightarrow S_{DFI} + S_{IFC} = S_{EIC} + S_{IFC}$$  
+$$\Rightarrow S_{DIF} = S_{EIC} \, (2)$$
+
+Từ (1) và (2) suy ra $S_{AIF} = S_{EIC}$
+
+---
+
+**Câu 4** 
+
+**1.** 
+
+Ta có 6 số được tạo ra khi ghép ba số có hai chữ số là:
+
+$$2024ab;\ 20ab24;\ 2420ab;\ 24ab20;\ ab2420;\ ab2024.$$
+
+Theo đề bài ta có
+
+$$2024ab + 20ab24 + 2420ab + 24ab20 + ab2420 + ab2024 = 1818180$$
+
+$$888888 + 20202 \times \overline{ab} = 1818180$$
+
+$$20202 \times \overline{ab} = 929292$$
+
+$$\overline{ab} = 46$$
+
+Vậy $\overline{ab} = 46$.
+
+---
+
+**2.**
+
+Số nhỏ nhất tìm được để chia hết cho các số $6,5$ và $3$ là $30$ nên cạnh của các hình vuông theo thứ tự từ nhỏ đến lớn là: $5,6,10,30 \, (cm)$
+
+Từ đó tính được chiều dài của hình chữ nhật là $5 + 6 + 10 + 30 = 51 \, (cm)$
+
+Diện tích hình chữ nhật $ABCD$ là $51 \times 30 = 1530 \, (cm^2)$.
+

@@ -76,3 +76,52 @@ D. $15cm^3$.
 ![Hình tham khảo](https://i.postimg.cc/zG6VnKbY/Screenshot-2026-03-07-130409.jpg)
 a) Tính diện tích và chu vi của hình $ABEFGD$.  
 b) Lấy $H$ là trung điểm của $EF$ và $K$ là trung điểm của $GF$. Tính diện tích của hình $BDKH$.
+
+## Lời giải
+
+### Lời giải phần trắc nghiệm
+![](https://drive.usercontent.google.com/download?id=1VZ5a_M7Bv8EJo5SujD-pQ8mkzihcgvDV&export=view&authuser=0)
+
+
+### Lời giải Phần tự luận
+
+**Câu 15** 
+
+Số quả trứng gà là  
+
+$$80 : (3 + 2) \times 3 = 48 \, (\text{quả})$$
+
+Số quả trứng vịt là  
+
+$$80 - 48 = 32 \, (\text{quả})$$
+
+Số tiền cô Lan thu được sau khi bán hết rổ trứng là  
+
+$$48 \times 4000 + 32 \times 3000 = 288000 \, (\text{đồng})$$
+
+---
+
+**Câu 16**
+
+![](https://drive.google.com/uc?export=view&id=1uMcxFKPvsGLHafVgiv5qsMpzzl1KnxW-)
+
+
+**a)** Diện tích của hình $ABEFGD$ là  
+
+$$3 \times 4 + 4 \times 4 = 28 \, (cm^2)$$
+
+Chu vi của hình $ABEFGD$ là  
+
+$$(3 + 4) \times 2 + 4 \times 4 - 3 \times 2 = 24 \, (cm)$$
+
+**b)** Tính được:  
+
+Diện tích $\triangle ABD$ bằng $3 \times 4 : 2 = 6 \, cm^2$;  
+diện tích $\triangle BEH$ bằng $8 \times 2 : 2 = 8 \, cm^2$.  
+
+Diện tích $\triangle GDK$ bằng $2 \times 1 : 2 = 1 \, cm^2$;  
+diện tích $\triangle FHK$ bằng $2 \times 2 : 2 = 2 \, cm^2$.  
+
+Suy ra diện tích hình $BDKH$ bằng  
+
+$$28 - 6 - 8 - 1 - 2 = 11 \, (cm^2)$$
