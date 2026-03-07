@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { getAllExams } from "@/lib/exams";
-import { ArrowRight, BookOpen, Award, GraduationCap } from "lucide-react";
+import { getAllCourses } from "@/lib/courses";
+import { ArrowRight, BookOpen, Award, GraduationCap, PlayCircle } from "lucide-react";
 import ExamListClient from "@/app/components/ExamListClient";
 import CoursesList from "@/app/components/CoursesList";
 
 export default function HomePage() {
   const exams = getAllExams();
-  const freeCount = exams.filter(e => e.frontmatter.isFree).length;
-  const premiumCount = exams.filter(e => !e.frontmatter.isFree).length;
+  const courses = getAllCourses();
+  const totalLessons = courses.reduce((sum, c) => sum + c.lessons.length, 0);
 
   const examData = exams.map(e => ({
     slug: e.slug,
@@ -54,12 +55,12 @@ export default function HomePage() {
           <div className="stat-label">Đề thi</div>
         </div>
         <div className="stat-item">
-          <div className="stat-number">{freeCount}</div>
-          <div className="stat-label">Miễn phí</div>
+          <div className="stat-number">{courses.length}</div>
+          <div className="stat-label">Khóa học</div>
         </div>
         <div className="stat-item">
-          <div className="stat-number">{premiumCount}</div>
-          <div className="stat-label">Premium</div>
+          <div className="stat-number">{totalLessons}</div>
+          <div className="stat-label">Bài giảng</div>
         </div>
         <div className="stat-item">
           <div className="stat-number">
