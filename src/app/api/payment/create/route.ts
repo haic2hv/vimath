@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        const amount = plan === '6months' ? 4900 : 9900;
-        const planLabel = plan === '6months' ? 'Gói Học kỳ (6 Tháng)' : 'Gói Năm học (12 Tháng)';
+        const amount = 5000;
+        const planLabel = 'Gói Thành viên (12 Tháng)';
 
         // Get or create profile
         let { data: profile } = await supabase

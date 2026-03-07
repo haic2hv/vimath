@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import Link from "next/link";
-import { ArrowLeft, Lock, Calendar, CheckCircle } from "lucide-react";
+import { ArrowLeft, Lock, Calendar, CheckCircle, Crown } from "lucide-react";
 import SolutionGate from "./SolutionGate";
 
 export async function generateStaticParams() {
@@ -49,32 +49,54 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                             </span>
                         ) : (
                             <span className="meta-item meta-premium">
-                                <Lock size={14} />
-                                Premium
+                                <Crown size={14} />
+                                Thành viên
                             </span>
                         )}
                     </div>
                 </header>
 
-                <section className="markdown-body prose prose-indigo prose-lg max-w-none">
-                    {/* @ts-ignore: Next.js RSC type incompatibility with next-mdx-remote */}
-                    <MDXRemote source={exam.questionContent} options={{ mdxOptions }} />
-                </section>
-
-                <SolutionGate isFree={exam.frontmatter.isFree}>
-                    {exam.solutionContent ? (
-                        <section className="solution-section">
-                            <div className="solution-header">
-                                <CheckCircle size={20} color="#059669" />
-                                <h3>Chi tiết lời giải</h3>
-                            </div>
-                            <div className="markdown-body prose prose-indigo prose-lg max-w-none">
-                                {/* @ts-ignore */}
-                                <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} />
-                            </div>
+                {exam.frontmatter.isFree ? (
+                    <>
+                        <section className="markdown-body prose prose-indigo prose-lg max-w-none">
+                            {/* @ts-ignore: Next.js RSC type incompatibility with next-mdx-remote */}
+                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} />
                         </section>
-                    ) : null}
-                </SolutionGate>
+
+                        {exam.solutionContent && (
+                            <section className="solution-section">
+                                <div className="solution-header">
+                                    <CheckCircle size={20} color="#059669" />
+                                    <h3>Chi tiết lời giải</h3>
+                                </div>
+                                <div className="markdown-body prose prose-indigo prose-lg max-w-none">
+                                    {/* @ts-ignore */}
+                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} />
+                                </div>
+                            </section>
+                        )}
+                    </>
+                ) : (
+                    <SolutionGate isFree={false}>
+                        <section className="markdown-body prose prose-indigo prose-lg max-w-none">
+                            {/* @ts-ignore */}
+                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} />
+                        </section>
+
+                        {exam.solutionContent && (
+                            <section className="solution-section">
+                                <div className="solution-header">
+                                    <CheckCircle size={20} color="#059669" />
+                                    <h3>Chi tiết lời giải</h3>
+                                </div>
+                                <div className="markdown-body prose prose-indigo prose-lg max-w-none">
+                                    {/* @ts-ignore */}
+                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} />
+                                </div>
+                            </section>
+                        )}
+                    </SolutionGate>
+                )}
             </article>
         </div>
     );

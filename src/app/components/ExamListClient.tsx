@@ -48,7 +48,7 @@ export default function ExamListClient({ exams }: { exams: ExamData[] }) {
                                 ) : (
                                     <span className="badge badge-premium">
                                         <Lock size={11} />
-                                        Premium
+                                        Thành viên
                                     </span>
                                 )}
                                 <span className="badge badge-date">

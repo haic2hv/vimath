@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { Lock } from 'lucide-react';
+import { Lock, Crown } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 
 type Props = {
@@ -11,15 +11,19 @@ type Props = {
 };
 
 export default function SolutionGate({ isFree, children }: Props) {
-    const { user, isPremium, loading } = useAuth();
+    const { user, isPremium, loading, signInWithGoogle } = useAuth();
 
     if (loading) {
         return null;
     }
 
-    const showSolution = isFree || isPremium;
+    // Free articles: everyone can see
+    if (isFree) {
+        return <>{children}</>;
+    }
 
-    if (showSolution) {
+    // Member articles: only members can see ANYTHING
+    if (isPremium) {
         return <>{children}</>;
     }
 
@@ -29,19 +33,23 @@ export default function SolutionGate({ isFree, children }: Props) {
                 <div className="premium-lock-icon">
                     <Lock size={28} color="white" />
                 </div>
-                <h2>Đã khóa lời giải</h2>
+                <h2>Nội dung dành cho Thành viên</h2>
                 <p>
-                    Đây là đề thi dành riêng cho thành viên Premium.
-                    Vui lòng nâng cấp tài khoản để xem toàn bộ lời giải chi tiết.
+                    Bài viết này dành riêng cho Thành viên HMath.
+                    Đăng ký gói Thành viên để xem toàn bộ nội dung và lời giải chi tiết.
                 </p>
+                <div className="premium-lock-price">
+                    <Crown size={16} color="#f59e0b" />
+                    Chỉ 5.000đ / năm
+                </div>
                 <div className="premium-lock-actions">
                     <Link href="/pricing" className="lock-btn-primary">
-                        Nâng cấp Premium
+                        Đăng ký Thành viên
                     </Link>
                     {!user && (
-                        <Link href="/login" className="lock-btn-secondary">
+                        <button onClick={() => signInWithGoogle()} className="lock-btn-secondary">
                             Đăng nhập →
-                        </Link>
+                        </button>
                     )}
                 </div>
             </div>
