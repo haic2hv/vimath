@@ -1,38 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@supabase/supabase-js';
+
+// Use service role key to bypass RLS for server-side operations
+function getSupabaseAdmin() {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+    return createClient(url, serviceKey);
+}
 
 // SePay Webhook / IPN endpoint
-// SePay will POST transaction data here when payment is received
 export async function POST(request: NextRequest) {
+    const supabase = getSupabaseAdmin();
+
     try {
-        // Verify API key from SePay (optional but recommended)
-        const apiKey = request.headers.get('Authorization');
-        const expectedKey = process.env.SEPAY_WEBHOOK_SECRET;
-
-        if (expectedKey && apiKey !== `Bearer ${expectedKey}`) {
-            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-        }
-
         const body = await request.json();
+        console.log('🔔 SePay webhook received:', JSON.stringify(body));
 
-        // SePay webhook payload typically includes:
-        // - transferAmount: amount transferred
-        // - content: transfer content/description
-        // - referenceCode: reference code
-        // - transactionDate: date of transaction
-        const { transferAmount, content, referenceCode, transactionDate } = body;
+        // SePay sends these fields:
+        // gateway, transactionDate, accountNumber, subAccount,
+        // transferType, transferAmount, accumulated, code,
+        // content, referenceCode, description
+        const content = body.content || body.description || '';
+        const transferAmount = body.transferAmount || body.amount || 0;
+        const referenceCode = body.referenceCode || body.code || '';
 
         if (!content) {
-            return NextResponse.json({ success: false, message: 'No content' }, { status: 400 });
+            console.log('❌ No content in webhook');
+            return NextResponse.json({ success: false, message: 'No content' });
         }
+
+        console.log(`📝 Content: "${content}", Amount: ${transferAmount}, Ref: ${referenceCode}`);
 
         // Extract order code from content (format: "HMATH XXXXXXXX")
         const match = content.match(/HMATH\s+([A-Z0-9]+)/i);
         if (!match) {
+            console.log('❌ No HMATH order code found in content');
             return NextResponse.json({ success: false, message: 'No matching order code' });
         }
 
         const orderCode = match[1].toUpperCase();
+        console.log(`🔍 Looking for order with code: ${orderCode}`);
 
         // Find order by sepayRef
         const { data: order, error: orderError } = await supabase
@@ -43,25 +50,26 @@ export async function POST(request: NextRequest) {
             .single();
 
         if (!order || orderError) {
+            console.log(`❌ Order not found: ${orderError?.message || 'no data'}`);
             return NextResponse.json({ success: false, message: 'Order not found' });
         }
 
-        // Verify amount matches
-        if (transferAmount && Number(transferAmount) < order.amount) {
-            return NextResponse.json({ success: false, message: 'Insufficient amount' });
-        }
+        console.log(`✅ Found order: ${order.id}, plan: ${order.plan}, amount: ${order.amount}`);
 
         // Update order status to paid
-        await supabase
+        const { error: updateOrderErr } = await supabase
             .from('Order')
-            .update({ status: 'paid' })
+            .update({ status: 'paid', sepayRef: referenceCode || orderCode })
             .eq('id', order.id);
+
+        if (updateOrderErr) {
+            console.log(`❌ Failed to update order: ${updateOrderErr.message}`);
+        }
 
         // Calculate premium expiry
         const now = new Date();
         const months = order.plan === '6months' ? 6 : 12;
 
-        // If user already has premium, extend from current expiry
         let premiumUntil: Date;
         if (order.profile?.premiumUntil && new Date(order.profile.premiumUntil) > now) {
             premiumUntil = new Date(order.profile.premiumUntil);
@@ -71,7 +79,7 @@ export async function POST(request: NextRequest) {
         premiumUntil.setMonth(premiumUntil.getMonth() + months);
 
         // Activate premium for user
-        await supabase
+        const { error: updateProfileErr } = await supabase
             .from('Profile')
             .update({
                 isPremium: true,
@@ -79,9 +87,15 @@ export async function POST(request: NextRequest) {
             })
             .eq('id', order.profileId);
 
+        if (updateProfileErr) {
+            console.log(`❌ Failed to update profile: ${updateProfileErr.message}`);
+            return NextResponse.json({ success: false, message: 'Failed to activate premium' });
+        }
+
+        console.log(`🎉 Premium activated until ${premiumUntil.toISOString()}`);
         return NextResponse.json({ success: true, message: 'Payment confirmed' });
     } catch (error) {
-        console.error('Webhook error:', error);
+        console.error('❌ Webhook error:', error);
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
     }
 }

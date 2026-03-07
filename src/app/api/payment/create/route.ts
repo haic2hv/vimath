@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { createClient } from '@supabase/supabase-js';
+
+function getSupabaseAdmin() {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+    return createClient(url, serviceKey);
+}
 
 export async function POST(request: NextRequest) {
+    const supabase = getSupabaseAdmin();
     try {
         const { plan, userId, email } = await request.json();
 
