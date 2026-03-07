@@ -44,18 +44,27 @@ D. $15cm^3$.
 
 **Từ câu 5 đến câu 14, học sinh điền đáp số vào ô tương ứng.**
 
-| CÂU HỎI | ĐÁP SỐ |
-| :--- | :--- |
-| **Câu 5.** Tìm số lớn nhất trong các số sau: $\frac{2025}{2026}$; $1$; $0$; $\frac{2026}{2025}$. | |
-| **Câu 6.** Tính: $\frac{1}{4} + \frac{3}{4} \times \frac{2}{3}$. | |
-| **Câu 7.** Tìm $x$ biết $x \times (11,72 + 8,28) = 60$. | |
-| **Câu 8.** Một hình tròn có bán kính $2dm$. Diện tích hình tròn đó là bao nhiêu $dm^2$? | |
-| **Câu 9.** Lớp 5A có 30 học sinh, trong đó có 12 học sinh nữ. Hỏi số học sinh nam chiếm bao nhiêu phần trăm so với số học sinh cả lớp. | |
-| **Câu 10.** Một mảnh vườn hình vuông có cạnh đáy $15m$. Người ta đánh $40\%$ diện tích để trồng rau. Tính diện tích đất trồng rau. | |
-| **Câu 11.** Một xe máy đi từ A đến B với vận tốc $30km/giờ$. Cùng lúc đó, một ô tô đi từ B đến A với vận tốc $50km/giờ$. Sau 1 giờ 30 phút, hai xe gặp nhau. Tính quãng đường AB. | |
-| **Câu 12.** Một hộp có 9 viên bi đỏ, 7 viên bi vàng và 6 viên bi xanh. Không nhìn vào hộp, cần lấy ra ít nhất bao nhiêu viên bi để chắc chắn có ít nhất 2 viên bi xanh? | |
-| **Câu 13.** Bạn Hùng đang chuẩn bị bước vào kì kiểm tra quan trọng nên tự động viên tinh thần của mình bằng cách viết nhiều lần cụm từ “QUYẾT TÂM THI ĐỒ”. Hỏi chữ cái thứ 400 là chữ cái nào? | |
-| **Câu 14.** Để chào đón năm học mới, một cửa hàng văn phòng phải giới thiệu một bộ dụng cụ học tập gồm có: bút máy, thước kẻ và tay (mỗi loại 1 cái). Trong đó bút máy có 2 lựa chọn: loại giá 30 000 đồng/cái và 25 000 đồng/cái; thước kẻ có 2 lựa chọn: loại giá 5 500 đồng/cái và 4 000 đồng/cái; tay có 2 lựa chọn: loại giá 4 500 đồng/cái và 3 500 đồng/cái. Bạn Vương dự định chọn mua một bộ dụng cụ học tập từ cửa hàng đó, hỏi số tiền nhiều nhất và số tiền ít nhất mà bạn có thể phải trả là bao nhiêu? | |
+
+
+**Câu 5.** Tìm số lớn nhất trong các số sau: $\frac{2025}{2026}$; $1$; $0$; $\frac{2026}{2025}$. 
+
+**Câu 6.** Tính: $\frac{1}{4} + \frac{3}{4} \times \frac{2}{3}$. 
+
+ **Câu 7.** Tìm $x$ biết $x \times (11,72 + 8,28) = 60$. 
+
+**Câu 8.** Một hình tròn có bán kính $2dm$. Diện tích hình tròn đó là bao nhiêu $dm^2$? 
+
+ **Câu 9.** Lớp 5A có 30 học sinh, trong đó có 12 học sinh nữ. Hỏi số học sinh nam chiếm bao nhiêu phần trăm so với số học sinh cả lớp. 
+
+**Câu 10.** Một mảnh vườn hình vuông có cạnh đáy $15m$. Người ta đánh $40\%$ diện tích để trồng rau. Tính diện tích đất trồng rau. 
+
+**Câu 11.** Một xe máy đi từ A đến B với vận tốc $30km/giờ$. Cùng lúc đó, một ô tô đi từ B đến A với vận tốc $50km/giờ$. Sau 1 giờ 30 phút, hai xe gặp nhau. Tính quãng đường AB. 
+
+ **Câu 12.** Một hộp có 9 viên bi đỏ, 7 viên bi vàng và 6 viên bi xanh. Không nhìn vào hộp, cần lấy ra ít nhất bao nhiêu viên bi để chắc chắn có ít nhất 2 viên bi xanh? 
+
+**Câu 13.** Bạn Hùng đang chuẩn bị bước vào kì kiểm tra quan trọng nên tự động viên tinh thần của mình bằng cách viết nhiều lần cụm từ “QUYẾT TÂM THI ĐỒ”. Hỏi chữ cái thứ 400 là chữ cái nào? 
+
+**Câu 14.** Để chào đón năm học mới, một cửa hàng văn phòng phải giới thiệu một bộ dụng cụ học tập gồm có: bút máy, thước kẻ và tay (mỗi loại 1 cái). Trong đó bút máy có 2 lựa chọn: loại giá 30 000 đồng/cái và 25 000 đồng/cái; thước kẻ có 2 lựa chọn: loại giá 5 500 đồng/cái và 4 000 đồng/cái; tay có 2 lựa chọn: loại giá 4 500 đồng/cái và 3 500 đồng/cái. Bạn Vương dự định chọn mua một bộ dụng cụ học tập từ cửa hàng đó, hỏi số tiền nhiều nhất và số tiền ít nhất mà bạn có thể phải trả là bao nhiêu? 
 
 ---
 
