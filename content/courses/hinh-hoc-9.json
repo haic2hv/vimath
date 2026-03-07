@@ -1,0 +1,25 @@
+{
+    "slug": "hinh-hoc-9-co-ban",
+    "title": "Hình học 9",
+    "description": "Khóa học Hình học lớp 9 miễn phí, giúp học sinh nắm vững kiến thức nền tảng.",
+    "tags": [
+        "Lớp 9"
+    ],
+    "isFree": true,
+    "lessons": [
+        {
+            "id": "bai-1",
+            "title": "Video 1. Luyện tập bài hình học 9",
+            "duration": "24:00",
+            "videoUrl": "https://www.youtube.com/embed/1nf9pAqefAU",
+            "videoType": "youtube",
+            "description": "Luyện tập bài tập hình học 9",
+            "materials": [
+                {
+                    "label": "Đề bài tập",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}
