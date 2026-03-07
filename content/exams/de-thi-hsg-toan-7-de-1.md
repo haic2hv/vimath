@@ -6,19 +6,19 @@ tags: ["Lớp 7", "HSG"]
 ---
 
 ### Câu 1 (4,0 điểm). 
-a. Thực hiện phép tính sau $A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}+\frac{7}{13}}+\frac{2,5-\frac{5}{3}+1,25}{3,5-2\frac{1}{3}+1,75}\right)$.
-b. Cho $B=\frac{3^{2023}-4}{3^{2022}-1}$ và $C=\frac{3^{2022}-4}{3^{2021}-1}$. Hãy so sánh $B$ và $C$.
+1. Thực hiện phép tính sau $A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}+\frac{7}{13}}+\frac{2,5-\frac{5}{3}+1,25}{3,5-2\frac{1}{3}+1,75}\right)$.
+2. Cho $B=\frac{3^{2023}-4}{3^{2022}-1}$ và $C=\frac{3^{2022}-4}{3^{2021}-1}$. Hãy so sánh $B$ và $C$.
 
 
 ### Câu 2 (4,0 điểm). 
-a. Tìm $x$, biết $3\frac{1}{2}:\left(4-\frac{1}{3}\cdot|2x-1|\right)=\frac{21}{22}$.
-b. Tìm giá trị nhỏ nhất của biểu thức $F=|x-2022|+|x-2023|$.
+1. Tìm $x$, biết $3\frac{1}{2}:\left(4-\frac{1}{3}\cdot|2x-1|\right)=\frac{21}{22}$.
+2. Tìm giá trị nhỏ nhất của biểu thức $F=|x-2022|+|x-2023|$.
 
 
 
 ### Câu 3 (4,5 điểm). 
-a) Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ (a,b,c ≠ 0). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
-b) Lúc ban đầu ba kho có tất cả 710 tấn thóc. Sau khi bán đi $\frac{1}{5}$ số thóc ở kho I, $\frac{1}{6}$ số thóc ở kho II và $\frac{1}{11}$ số thóc ở kho III thì số thóc còn lại ở ba kho bằng nhau. Hỏi lúc đầu mỗi kho có bao nhiêu tấn thóc?
+1. Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ (a,b,c ≠ 0). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
+2. Lúc ban đầu ba kho có tất cả 710 tấn thóc. Sau khi bán đi $\frac{1}{5}$ số thóc ở kho I, $\frac{1}{6}$ số thóc ở kho II và $\frac{1}{11}$ số thóc ở kho III thì số thóc còn lại ở ba kho bằng nhau. Hỏi lúc đầu mỗi kho có bao nhiêu tấn thóc?
 
 ### Câu 4 (6,5 điểm).
 1. Cho tam giác ABC, M là trung điểm của BC. Trên tia đối của tia MA lấy điểm E sao cho ME = MA.
