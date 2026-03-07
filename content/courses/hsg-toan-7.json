@@ -9,17 +9,17 @@
         {
             "id": "bai-1",
             "title": "Buổi 01. Số hữu tỉ và các phép tính (1)",
-            "duration": "25:00",
-            "videoUrl": "",
+            "duration": "1:53:00",
+            "videoUrl": "https://www.youtube.com/embed/I9v8kjCGQtQ",
             "videoType": "youtube",
             "description": "Ôn tập và nâng cao kiến thức về số hữu tỉ.",
             "materials": [
                 {
                     "label": "Tài liệu Lớp buổi 1",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1n2HYFnYaPP95yWCsHukFRWmV103C0d2j/"
                 },
                 {
-                    "label": "Bài tập về nhà Buổi 1",
+                    "label": "https://drive.google.com/file/d/1nuGFlfIS1SfxWCIZOsxrXvYatUX2uWGS/",
                     "url": ""
                 }
             ]
