@@ -67,6 +67,380 @@
                     "url": "https://drive.google.com/file/d/1Vbz3BTz1bcM28A5tLK-i1KVgGTMfxVJi/"
                 }
             ]
+        },
+        {
+            "id": "bai-4",
+            "title": "Buổi 04. Lũy thừa của số hữu tỉ (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Lũy thừa của số hữu tỉ (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 4",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 4",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 3",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-5",
+            "title": "Buổi 05. Lũy thừa của số hữu tỉ (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Lũy thừa của số hữu tỉ (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 5",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 5",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 4",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-6",
+            "title": "Buổi 06. Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 6",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 6",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 5",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-7",
+            "title": "Buổi 07. Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 7",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 7",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 6",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-8",
+            "title": "Buổi 08. Số thực và căn bậc hai (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Số thực và căn bậc hai (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 8",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 8",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 7",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-9",
+            "title": "Buổi 09. Số thực và căn bậc hai (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Số thực và căn bậc hai (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 9",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 9",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 8",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-10",
+            "title": "Buổi 10. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 10",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 10",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 9",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-11",
+            "title": "Buổi 11. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 11",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 11",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 10",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-12",
+            "title": "Buổi 12. Góc và đường thẳng song song (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Góc và đường thẳng song song (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 12",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 12",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 11",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-13",
+            "title": "Buổi 13. Góc và đường thẳng song song (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Góc và đường thẳng song song (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 13",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 13",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 12",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-14",
+            "title": "Buổi 14. Tam giác bằng nhau (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tam giác bằng nhau (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 14",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 14",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 13",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-15",
+            "title": "Buổi 15. Tam giác bằng nhau (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tam giác bằng nhau (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 15",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 15",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 14",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-16",
+            "title": "Buổi 16. Tam giác cân và tam giác đều",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tam giác cân và tam giác đều",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 16",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 16",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 15",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-17",
+            "title": "Buổi 17. Định lý Pythagore",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Định lý Pythagore",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 17",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 17",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 16",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-18",
+            "title": "Buổi 18. Các đường đồng quy trong tam giác (1)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Các đường đồng quy trong tam giác (1)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 18",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 18",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 17",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-19",
+            "title": "Buổi 19. Các đường đồng quy trong tam giác (2)",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Các đường đồng quy trong tam giác (2)",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 19",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 19",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 18",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": "bai-20",
+            "title": "Buổi 20. Ôn tập tổng hợp và đề thi HSG",
+            "duration": "",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Ôn tập tổng hợp và đề thi HSG",
+            "materials": [
+                {
+                    "label": "Tài liệu Lớp buổi 20",
+                    "url": ""
+                },
+                {
+                    "label": "Bài tập về nhà Buổi 20",
+                    "url": ""
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 19",
+                    "url": ""
+                }
+            ]
         }
     ]
 }
