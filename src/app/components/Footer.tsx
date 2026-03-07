@@ -12,12 +12,8 @@ export default function Footer() {
                     </p>
                 </div>
                 <div className="footer-column">
-                    <h4>Khám phá</h4>
-                    <Link href="/">Trang chủ</Link>
+                    <h4>Chính sách và Điều khoản</h4>
                     <Link href="/pricing">Bảng giá</Link>
-                </div>
-                <div className="footer-column">
-                    <h4>Điều khoản</h4>
                     <Link href="/terms">Điều khoản sử dụng</Link>
                     <Link href="/privacy">Chính sách bảo mật</Link>
                 </div>
