@@ -21,7 +21,7 @@ $A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}
 
 
 ### Câu 3 (4,5 điểm). 
-**1.** Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ (a,b,c ≠ 0). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
+**1.** Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ ($a,b,c ≠ 0$). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
 
 **2.** Lúc ban đầu ba kho có tất cả 710 tấn thóc. Sau khi bán đi $\frac{1}{5}$ số thóc ở kho I, $\frac{1}{6}$ số thóc ở kho II và $\frac{1}{11}$ số thóc ở kho III thì số thóc còn lại ở ba kho bằng nhau. Hỏi lúc đầu mỗi kho có bao nhiêu tấn thóc?
 
