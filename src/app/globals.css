@@ -2538,3 +2538,29 @@ body {
   font-weight: 700;
   margin: 0.75rem 0;
 }
+
+/* ===== RELATED EXAMS ===== */
+.related-exams {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-exams-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--foreground);
+}
+
+.related-exams-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .related-exams-grid {
+    grid-template-columns: 1fr;
+  }
+}
