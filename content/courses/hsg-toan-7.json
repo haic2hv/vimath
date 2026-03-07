@@ -3,7 +3,7 @@
     "title": "Học sinh giỏi Toán 7",
     "description": "Khóa học luyện thi HSG Toán lớp 7 với video bài giảng chi tiết từ cơ bản đến nâng cao.",
     "tags": [
-        "lớp 7"
+        "Lớp 7"
     ],
     "lessons": [
         {
@@ -12,51 +12,59 @@
             "duration": "1:53:00",
             "videoUrl": "https://www.youtube.com/embed/I9v8kjCGQtQ",
             "videoType": "youtube",
-            "description": "Ôn tập và nâng cao kiến thức về số hữu tỉ.",
+            "description": "Số hữu tỉ và các phép tính (1)",
             "materials": [
                 {
                     "label": "Tài liệu Lớp buổi 1",
                     "url": "https://drive.google.com/file/d/1n2HYFnYaPP95yWCsHukFRWmV103C0d2j/"
                 },
                 {
-                    "label": "https://drive.google.com/file/d/1nuGFlfIS1SfxWCIZOsxrXvYatUX2uWGS/",
-                    "url": ""
+                    "label": "Bài tập về nhà buổi 1",
+                    "url": "https://drive.google.com/file/d/1nuGFlfIS1SfxWCIZOsxrXvYatUX2uWGS/"
                 }
             ]
         },
         {
             "id": "bai-2",
-            "title": "Buổi 02. Lũy thừa của số hữu tỉ",
-            "duration": "30:00",
-            "videoUrl": "",
+            "title": "Buổi 02. Số hữu tỉ và các phép tính (2)",
+            "duration": "1:46:00",
+            "videoUrl": "https://www.youtube.com/embed/z_3rm6Ldh78",
             "videoType": "youtube",
-            "description": "Các tính chất và bài tập nâng cao về lũy thừa.",
+            "description": "Số hữu tỉ và các phép tính (2)",
             "materials": [
                 {
                     "label": "Tài liệu Lớp buổi 2",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/15iEAj6HW85USuSZVy319JNrjV7Nssx6X/"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 2",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1xFlMHUYFyaGv3gI_dG6aprVyogMVr2vE/"
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 1",
+                    "url": "https://drive.google.com/file/d/1lH_MVwZlIW32ehjsvoIUUx4HZyTdXgSu/"
                 }
             ]
         },
         {
             "id": "bai-3",
-            "title": "Buổi 03. Tỉ lệ thức và dãy tỉ số bằng nhau",
-            "duration": "35:00",
+            "title": "Buổi 03. Số hữu tỉ và các phép tính (3)",
+            "duration": "1:50:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phương pháp giải bài toán tỉ lệ thức.",
+            "description": "Số hữu tỉ và các phép tính (3)",
             "materials": [
                 {
                     "label": "Tài liệu Lớp buổi 3",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1VogcqF5F5hQDpGgKi77972nZZb8DqlUl/"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 3",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1fXgqABceRCtGaKRrvMSbY5OQChA5ezVa/"
+                },
+                {
+                    "label": "Hướng dẫn và đáp số BTVN Buổi 2",
+                    "url": "https://drive.google.com/file/d/1Vbz3BTz1bcM28A5tLK-i1KVgGTMfxVJi/"
                 }
             ]
         }
