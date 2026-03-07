@@ -2590,18 +2590,27 @@ body {
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .course-card {
   background: white;
   border: 1px solid var(--border);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .course-card:hover {
