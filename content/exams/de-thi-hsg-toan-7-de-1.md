@@ -6,12 +6,17 @@ tags: ["Lớp 7", "HSG"]
 ---
 
 ### Câu 1 (4,0 điểm). 
-a) Thực hiện phép tính sau $A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}+\frac{7}{13}}+\frac{2,5-\frac{5}{3}+1,25}{3,5-2\frac{1}{3}+1,75}\right)$
-b) Cho $B=\frac{3^{2023}-4}{3^{2022}-1}$ và $C=\frac{3^{2022}-4}{3^{2021}-1}$. Hãy so sánh B và C.
+\begin{enumerate}[a)]
+	\item Thực hiện phép tính sau $A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}+\frac{7}{13}}+\frac{2,5-\frac{5}{3}+1,25}{3,5-2\frac{1}{3}+1,75}\right)$.
+	\item Cho $B=\frac{3^{2023}-4}{3^{2022}-1}$ và $C=\frac{3^{2022}-4}{3^{2021}-1}$. Hãy so sánh $B$ và $C$.
+\end{enumerate}
 
 ### Câu 2 (4,0 điểm). 
-a) Tìm x, biết $3\frac{1}{2}:\left(4-\frac{1}{3}\cdot|2x-1|\right)=\frac{21}{22}$.
-b) Tìm giá trị nhỏ nhất của biểu thức $F=|x-2022|+|x-2023|$.
+\begin{enumerate}[a)]
+	\item Tìm $x$, biết $3\frac{1}{2}:\left(4-\frac{1}{3}\cdot|2x-1|\right)=\frac{21}{22}$.
+	\item Tìm giá trị nhỏ nhất của biểu thức $F=|x-2022|+|x-2023|$.
+\end{enumerate}
+
 
 ### Câu 3 (4,5 điểm). 
 a) Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ (a,b,c ≠ 0). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
