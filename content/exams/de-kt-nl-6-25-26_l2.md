@@ -1,54 +1,69 @@
 ---
-title: Đề thi HSG Toán 7 KNTT - Đề số 1
+title: Bài kiểm tra đánh giá năng lực tuyển sinh lớp 6 - Môn Toán
 date: "2026-03-07"
-isFree: true
-tags: ["Lớp 7", "HSG"]
+isFree: false
+tags: ["Thi vào 6"]
 ---
 
-### Câu 1 (4,0 điểm). 
-**1.** Thực hiện phép tính sau 
+# BÀI KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
+**TUYỂN SINH LỚP 6, NĂM HỌC 2025-2026**  
+**MÔN: TOÁN**  
+*(Thời gian làm bài: 35 phút. Không kể thời gian giao đề)*
 
-$A=\frac{2022}{2023}:\left(\frac{0,4-\frac{2}{11}+\frac{2}{13}}{1,4-\frac{7}{11}+\frac{7}{13}}+\frac{2,5-\frac{5}{3}+1,25}{3,5-2\frac{1}{3}+1,75}\right)$.
+---
 
-**2.** Cho $B=\frac{3^{2023}-4}{3^{2022}-1}$ và $C=\frac{3^{2022}-4}{3^{2021}-1}$. Hãy so sánh $B$ và $C$.
+## PHẦN I. TRẮC NGHIỆM (7,0 điểm)
 
+**Từ câu 1 đến câu 4, học sinh khoanh tròn vào chữ cái đứng trước phương án trả lời đúng.**
 
-### Câu 2 (4,0 điểm). 
-**1.** Tìm $x$, biết $3\frac{1}{2}:\left(4-\frac{1}{3}\cdot|2x-1|\right)=\frac{21}{22}$.
+**Câu 1.** Chữ số 6 trong số 160 825 có giá trị là?  
+A. 6.  
+B. 6000.  
+C. 60 000.  
+D. 600 000.
 
-**2.** Tìm giá trị nhỏ nhất của biểu thức $F=|x-2022|+|x-2023|$.
+**Câu 2.** Phân số $\frac{6}{5}$ viết dưới dạng số thập phân là  
+A. 6.5.  
+B. 0,12.  
+C. 0,6.  
+D. 1,2.
 
+**Câu 3.** Đổi: 3 giờ 15 phút = … giờ?  
+A. 3,15 giờ.  
+B. 3,25 giờ.  
+C. 3,5 giờ.  
+D. 3,45 giờ.
 
+**Câu 4.** Một hình hộp chữ nhật có chiều dài $6cm$, chiều rộng $4cm$, chiều cao $5cm$. Thể tích của hình hộp đó là:  
+A. $120cm^2$.  
+B. $100cm^3$.  
+C. $120cm^3$.  
+D. $15cm^3$.
 
-### Câu 3 (4,5 điểm). 
-**1.** Biết $\frac{bz-cy}{a}=\frac{cx-az}{b}=\frac{ay-bx}{c}$ ($a,b,c ≠ 0$). Chứng minh rằng $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$.
+---
 
-**2.** Lúc ban đầu ba kho có tất cả 710 tấn thóc. Sau khi bán đi $\frac{1}{5}$ số thóc ở kho I, $\frac{1}{6}$ số thóc ở kho II và $\frac{1}{11}$ số thóc ở kho III thì số thóc còn lại ở ba kho bằng nhau. Hỏi lúc đầu mỗi kho có bao nhiêu tấn thóc?
+**Từ câu 5 đến câu 14, học sinh điền đáp số vào ô tương ứng.**
 
-### Câu 4 (6,5 điểm).
-**1.** Cho tam giác $ABC$, $M$ là trung điểm của $BC$. Trên tia đối của tia $MA$ lấy điểm $E$ sao cho $ME = MA$.
+| CÂU HỎI | ĐÁP SỐ |
+| :--- | :--- |
+| **Câu 5.** Tìm số lớn nhất trong các số sau: $\frac{2025}{2026}$; $1$; $0$; $\frac{2026}{2025}$. | |
+| **Câu 6.** Tính: $\frac{1}{4} + \frac{3}{4} \times \frac{2}{3}$. | |
+| **Câu 7.** Tìm $x$ biết $x \times (11,72 + 8,28) = 60$. | |
+| **Câu 8.** Một hình tròn có bán kính $2dm$. Diện tích hình tròn đó là bao nhiêu $dm^2$? | |
+| **Câu 9.** Lớp 5A có 30 học sinh, trong đó có 12 học sinh nữ. Hỏi số học sinh nam chiếm bao nhiêu phần trăm so với số học sinh cả lớp. | |
+| **Câu 10.** Một mảnh vườn hình vuông có cạnh đáy $15m$. Người ta đánh $40\%$ diện tích để trồng rau. Tính diện tích đất trồng rau. | |
+| **Câu 11.** Một xe máy đi từ A đến B với vận tốc $30km/giờ$. Cùng lúc đó, một ô tô đi từ B đến A với vận tốc $50km/giờ$. Sau 1 giờ 30 phút, hai xe gặp nhau. Tính quãng đường AB. | |
+| **Câu 12.** Một hộp có 9 viên bi đỏ, 7 viên bi vàng và 6 viên bi xanh. Không nhìn vào hộp, cần lấy ra ít nhất bao nhiêu viên bi để chắc chắn có ít nhất 2 viên bi xanh? | |
+| **Câu 13.** Bạn Hùng đang chuẩn bị bước vào kì kiểm tra quan trọng nên tự động viên tinh thần của mình bằng cách viết nhiều lần cụm từ “QUYẾT TÂM THI ĐỒ”. Hỏi chữ cái thứ 400 là chữ cái nào? | |
+| **Câu 14.** Để chào đón năm học mới, một cửa hàng văn phòng phải giới thiệu một bộ dụng cụ học tập gồm có: bút máy, thước kẻ và tay (mỗi loại 1 cái). Trong đó bút máy có 2 lựa chọn: loại giá 30 000 đồng/cái và 25 000 đồng/cái; thước kẻ có 2 lựa chọn: loại giá 5 500 đồng/cái và 4 000 đồng/cái; tay có 2 lựa chọn: loại giá 4 500 đồng/cái và 3 500 đồng/cái. Bạn Vương dự định chọn mua một bộ dụng cụ học tập từ cửa hàng đó, hỏi số tiền nhiều nhất và số tiền ít nhất mà bạn có thể phải trả là bao nhiêu? | |
 
-**a)** Chứng minh rằng: $AC = EB$ và $AC // BE$.
+---
 
-**b)** Gọi $I$ là một điểm trên cạnh $AC$; $K$ là một điểm trên cạnh $EB$ sao cho $AI = EK$. Chứng minh ba điểm $I, M, K$ thẳng hàng.
+## PHẦN II. TỰ LUẬN (3,0 điểm)
 
-**c)** Từ $B$ kẻ $BP \perp AM$, từ $C$ kẻ $CQ \perp AM$ ($P, Q \in AE$). Chứng minh $AP + AQ = 2 AM$.
+**Câu 15 (1,5 điểm).** Cô Lan mang ra chợ bán một rổ trứng gà và trứng vịt. Biết rằng số trứng gà bằng $\frac{3}{2}$ số trứng vịt và tổng số trứng trong rổ là 80 quả. Giá bán trứng gà là 4 000 đồng/quả và trứng vịt là 3 000 đồng/quả. Hỏi cô Lan thu được bao nhiêu tiền sau khi bán hết rổ trứng đó?
 
-**2.** Cho tam giác $ABC$ có $\widehat{BAC}=15^{\circ}, \widehat{ABC}=45^{\circ}$, trên tia đối của tia $CB$ lấy điểm $D$ sao cho $CD = 2 CB$. Tính số đo $\widehat{ADC}$.
+**Câu 16 (1,5 điểm).** Cho hình chữ nhật $ABCD$ có $AB = 3cm$, $AD = 4cm$ và hình vuông $CEFG$ có $CE = 4cm$ như hình vẽ bên.
 
-### Câu 5 (1,0 điểm). 
-Cho $a, b, c$ là độ dài ba cạnh của một tam giác. Chứng minh rằng 
-
-$ab+bc+ca \le a^2+b^2+c^2 \le 2(ab+bc+ca)$.
-
-## Lời giải
-
-### Lời giải Câu 1
-Tiệm cận đứng là nghiệm của mẫu số $x - 1 = 0 \Rightarrow x = 1$.  
-**Đáp án: B**
-
-### Lời giải Câu 2
-Vì tích phân của đạo hàm bậc hai $\int_{0}^{2} f''(x) dx = f'(x) \Big|_{0}^{2} = f'(2) - f'(0)$.  
-Do đồ thị tiếp xúc với trục hoành tại gốc tọa độ nên $f(0) = 0$ và tiếp tuyến tại $O$ nằm ngang $\Rightarrow f'(0) = 0$.  
-Vậy $f'(2) - 0 = 4 \Rightarrow f'(2) = 4$.  
-**Đáp án: B**
+a) Tính diện tích và chu vi của hình $ABEFGD$.  
+b) Lấy $H$ là trung điểm của $EF$ và $K$ là trung điểm của $GF$. Tính diện tích của hình $BDKH$.
