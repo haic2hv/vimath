@@ -80,7 +80,7 @@ b) Lấy $H$ là trung điểm của $EF$ và $K$ là trung điểm của $GF$. 
 ## Lời giải
 
 ### Lời giải phần trắc nghiệm
-![](https://drive.usercontent.google.com/download?id=1VZ5a_M7Bv8EJo5SujD-pQ8mkzihcgvDV&export=view&authuser=0)
+![](https://i.postimg.cc/4xX1KR69/Screenshot-2026-03-07-214448.jpg)
 
 
 ### Lời giải Phần tự luận
@@ -103,7 +103,7 @@ $$48 \times 4000 + 32 \times 3000 = 288000 \, (\text{đồng})$$
 
 **Câu 16**
 
-![](https://drive.google.com/uc?export=view&id=1uMcxFKPvsGLHafVgiv5qsMpzzl1KnxW-)
+![](https://i.postimg.cc/xT9kMvdF/Screenshot-2026-03-07-215816.jpg)
 
 
 **a)** Diện tích của hình $ABEFGD$ là  

@@ -133,7 +133,7 @@ b) Đoạn thẳng $CD$ cắt đoạn thẳng $EF$ tại điểm $I$. So sánh d
 
 ### Lời giải phần trắc nghiệm
 
-![](https://drive.google.com/uc?export=view&id=1v3eyFYm-adaRsAYdR7332I3A7v6l-UL0)
+![](https://i.postimg.cc/QtptWCZC/Screenshot-2026-03-07-220154.jpg)
 
 ### Lời giải Phần tự luận
 
