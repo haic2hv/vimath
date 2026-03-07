@@ -30,6 +30,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         <LessonView
             courseTitle={course.title}
             courseSlug={course.slug}
+            isFree={course.isFree ?? false}
             lessonTitle={lesson.title}
             lessonDescription={lesson.description}
             videoUrl={lesson.videoUrl}

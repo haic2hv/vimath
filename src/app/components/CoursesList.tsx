@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAllCourses } from '@/lib/courses';
-import { BookOpen, PlayCircle, Lock } from 'lucide-react';
+import { BookOpen, PlayCircle, Lock, Unlock } from 'lucide-react';
 
 export default function CoursesList() {
     const courses = getAllCourses();
@@ -11,7 +11,7 @@ export default function CoursesList() {
         <section className="courses-section">
             <div className="courses-section-header">
                 <h2><BookOpen size={22} /> Khóa học</h2>
-                <p>Video bài giảng chi tiết dành cho thành viên</p>
+                <p>Video bài giảng chi tiết dành cho học sinh</p>
             </div>
             <div className="courses-grid">
                 {courses.map((course) => (
@@ -29,10 +29,17 @@ export default function CoursesList() {
                             <span className="course-lessons-count">
                                 {course.lessons.length} bài học
                             </span>
-                            <span className="badge badge-premium">
-                                <Lock size={11} />
-                                Thành viên
-                            </span>
+                            {course.isFree ? (
+                                <span className="badge badge-free">
+                                    <Unlock size={11} />
+                                    Miễn phí
+                                </span>
+                            ) : (
+                                <span className="badge badge-premium">
+                                    <Lock size={11} />
+                                    Thành viên
+                                </span>
+                            )}
                         </div>
                         <div className="course-card-tags">
                             {course.tags.map(tag => (

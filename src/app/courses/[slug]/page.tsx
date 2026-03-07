@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getCourseBySlug, getAllCourses } from '@/lib/courses';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle, Clock, Lock, Crown } from 'lucide-react';
+import { ArrowLeft, PlayCircle, Clock, Lock, Unlock, Crown, CheckCircle } from 'lucide-react';
 
 export async function generateStaticParams() {
     const courses = getAllCourses();
@@ -26,9 +26,15 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 <p>{course.description}</p>
                 <div className="course-detail-meta">
                     <span>{course.lessons.length} bài học</span>
-                    <span className="badge badge-premium">
-                        <Lock size={11} /> Thành viên
-                    </span>
+                    {course.isFree ? (
+                        <span className="badge badge-free">
+                            <Unlock size={11} /> Miễn phí
+                        </span>
+                    ) : (
+                        <span className="badge badge-premium">
+                            <Lock size={11} /> Thành viên
+                        </span>
+                    )}
                 </div>
             </header>
 
@@ -46,10 +52,12 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                             <p>{lesson.description}</p>
                         </div>
                         <div className="lesson-meta">
-                            <span className="lesson-duration">
-                                <Clock size={13} />
-                                {lesson.duration}
-                            </span>
+                            {lesson.duration && (
+                                <span className="lesson-duration">
+                                    <Clock size={13} />
+                                    {lesson.duration}
+                                </span>
+                            )}
                             {lesson.videoUrl ? (
                                 <PlayCircle size={20} className="lesson-play-icon" />
                             ) : (
@@ -60,13 +68,15 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 ))}
             </div>
 
-            <div className="course-cta">
-                <Crown size={20} color="#f59e0b" />
-                <p>Đăng ký Thành viên để xem toàn bộ video bài giảng</p>
-                <Link href="/pricing" className="btn-primary">
-                    Xem bảng giá
-                </Link>
-            </div>
+            {!course.isFree && (
+                <div className="course-cta">
+                    <Crown size={20} color="#f59e0b" />
+                    <p>Đăng ký Thành viên để xem toàn bộ video bài giảng</p>
+                    <Link href="/pricing" className="btn-primary">
+                        Xem bảng giá
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }

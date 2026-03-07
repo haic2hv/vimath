@@ -18,6 +18,7 @@ export type Course = {
     title: string;
     description: string;
     tags: string[];
+    isFree: boolean;
     lessons: Lesson[];
 };
 

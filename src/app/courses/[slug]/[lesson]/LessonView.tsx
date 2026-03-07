@@ -12,6 +12,7 @@ type Material = {
 type LessonViewProps = {
     courseTitle: string;
     courseSlug: string;
+    isFree: boolean;
     lessonTitle: string;
     lessonDescription: string;
     videoUrl: string;
@@ -22,7 +23,7 @@ type LessonViewProps = {
 };
 
 export default function LessonView({
-    courseTitle, courseSlug, lessonTitle, lessonDescription,
+    courseTitle, courseSlug, isFree, lessonTitle, lessonDescription,
     videoUrl, videoType, materials, prevLesson, nextLesson
 }: LessonViewProps) {
     const { user, isPremium, loading, signInWithGoogle } = useAuth();
@@ -31,8 +32,10 @@ export default function LessonView({
         return <div className="lesson-page"><p style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>Đang tải...</p></div>;
     }
 
-    // Non-members see lock screen
-    if (!isPremium) {
+    // Free courses: everyone can view. Paid courses: members only.
+    const canView = isFree || isPremium;
+
+    if (!canView) {
         return (
             <div className="lesson-page">
                 <Link href={`/courses/${courseSlug}`} className="exam-back-link">
@@ -70,7 +73,7 @@ export default function LessonView({
         );
     }
 
-    // Members see the full lesson
+    // Can view: show full lesson
     return (
         <div className="lesson-page">
             <Link href={`/courses/${courseSlug}`} className="exam-back-link">
