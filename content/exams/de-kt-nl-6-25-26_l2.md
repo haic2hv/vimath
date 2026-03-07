@@ -62,7 +62,7 @@ D. $15cm^3$.
 
  **Câu 12.** Một hộp có 9 viên bi đỏ, 7 viên bi vàng và 6 viên bi xanh. Không nhìn vào hộp, cần lấy ra ít nhất bao nhiêu viên bi để chắc chắn có ít nhất 2 viên bi xanh? 
 
-**Câu 13.** Bạn Hùng đang chuẩn bị bước vào kì kiểm tra quan trọng nên tự động viên tinh thần của mình bằng cách viết nhiều lần cụm từ “QUYẾT TÂM THI ĐỒ”. Hỏi chữ cái thứ 400 là chữ cái nào? 
+**Câu 13.** Bạn Hùng đang chuẩn bị bước vào kì kiểm tra quan trọng nên tự động viên tinh thần của mình bằng cách viết nhiều lần cụm từ “QUYẾT TÂM THI ĐỖ”. Hỏi chữ cái thứ 400 là chữ cái nào? 
 
 **Câu 14.** Để chào đón năm học mới, một cửa hàng văn phòng phải giới thiệu một bộ dụng cụ học tập gồm có: bút máy, thước kẻ và tay (mỗi loại 1 cái). Trong đó bút máy có 2 lựa chọn: loại giá 30 000 đồng/cái và 25 000 đồng/cái; thước kẻ có 2 lựa chọn: loại giá 5 500 đồng/cái và 4 000 đồng/cái; tay có 2 lựa chọn: loại giá 4 500 đồng/cái và 3 500 đồng/cái. Bạn Vương dự định chọn mua một bộ dụng cụ học tập từ cửa hàng đó, hỏi số tiền nhiều nhất và số tiền ít nhất mà bạn có thể phải trả là bao nhiêu? 
 
@@ -73,6 +73,6 @@ D. $15cm^3$.
 **Câu 15 (1,5 điểm).** Cô Lan mang ra chợ bán một rổ trứng gà và trứng vịt. Biết rằng số trứng gà bằng $\frac{3}{2}$ số trứng vịt và tổng số trứng trong rổ là 80 quả. Giá bán trứng gà là 4 000 đồng/quả và trứng vịt là 3 000 đồng/quả. Hỏi cô Lan thu được bao nhiêu tiền sau khi bán hết rổ trứng đó?
 
 **Câu 16 (1,5 điểm).** Cho hình chữ nhật $ABCD$ có $AB = 3cm$, $AD = 4cm$ và hình vuông $CEFG$ có $CE = 4cm$ như hình vẽ bên.
-
+![Hình tham khảo](https://i.postimg.cc/zG6VnKbY/Screenshot-2026-03-07-130409.jpg)
 a) Tính diện tích và chu vi của hình $ABEFGD$.  
 b) Lấy $H$ là trung điểm của $EF$ và $K$ là trung điểm của $GF$. Tính diện tích của hình $BDKH$.
