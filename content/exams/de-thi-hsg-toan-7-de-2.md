@@ -2,8 +2,10 @@
 title: Đề thi HSG Toán 7 KNTT - Đề số 2
 date: "2026-03-07"
 isFree: true
-tags: ["Lớp 7", "HSG"]
+tags: ["Lớp 7"]
 ---
+
+# ĐỀ THI HỌC SINH GIỎI TOÁN 7 - ĐỀ SỐ 2
 
 ### Câu 1 (4,0 điểm). 
 **1.** Tính:

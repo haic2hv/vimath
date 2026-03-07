@@ -1,5 +1,5 @@
 ---
-title: Bài kiểm tra đánh giá năng lực tuyển sinh lớp 6 năm 2025-2026 (Đề số 5)
+title: Đề kiểm tra đánh giá năng lực tuyển sinh lớp 6 năm 2025-2026 (Đề số 5)
 date: "2026-03-07"
 isFree: false
 tags: ["Thi vào 6"]
