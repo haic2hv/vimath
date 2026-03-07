@@ -17,7 +17,7 @@ export default function Footer() {
                     <Link href="/pricing">Bảng giá</Link>
                 </div>
                 <div className="footer-column">
-                    <h4>Pháp lý</h4>
+                    <h4>Điều khoản</h4>
                     <Link href="/terms">Điều khoản sử dụng</Link>
                     <Link href="/privacy">Chính sách bảo mật</Link>
                 </div>

@@ -10,12 +10,11 @@ const SUGGESTIONS = [
     { label: 'Lớp 9', query: 'lớp 9' },
     { label: 'Đại số', query: 'đại số' },
     { label: 'Hình học', query: 'hình học' },
-    { label: 'Giải tích', query: 'giải tích' },
-    { label: 'THPT Quốc Gia', query: 'thpt quốc gia' },
+    { label: 'Thi vào 6', query: 'thi vào 6' },
+    { label: 'Thi vào 10', query: 'thi vào 10' },
     { label: 'Học kỳ 1', query: 'hk1' },
     { label: 'Học kỳ 2', query: 'hk2' },
     { label: 'Chuyên', query: 'chuyên' },
-    { label: 'Thi vào 10', query: 'thi vào 10' },
 ];
 
 type Props = {

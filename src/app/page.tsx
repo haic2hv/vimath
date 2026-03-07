@@ -85,8 +85,7 @@ export default function HomePage() {
         <div className="cta-content">
           <h2>Sẵn sàng chinh phục điểm cao?</h2>
           <p>
-            Nâng cấp tài khoản Premium để truy cập toàn bộ đề thi và lời giải chi tiết
-            từ các trường chuyên hàng đầu.
+            Nâng cấp tài khoản Premium để truy cập toàn bộ đề thi và lời giải chi tiết.
           </p>
           <Link href="/pricing" className="btn-primary">
             Xem bảng giá Premium

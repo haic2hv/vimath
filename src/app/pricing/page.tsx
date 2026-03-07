@@ -25,7 +25,7 @@ const tiers = [
         name: "Học kỳ (6 Tháng)",
         id: "tier-6months",
         plan: "6months",
-        price: "59.000đ",
+        price: "4.900đ",
         description: "Dành cho học sinh cần bứt tốc trong một học kỳ.",
         features: [
             { text: "Mở khóa toàn bộ đề thi trong hệ thống", included: true },
@@ -39,7 +39,7 @@ const tiers = [
         name: "Năm học (12 Tháng)",
         id: "tier-12months",
         plan: "12months",
-        price: "99.000đ",
+        price: "9.900đ",
         description: "Tiết kiệm nhất, đồng hành suốt cả một năm học.",
         features: [
             { text: "Tất cả quyền lợi của gói Học kỳ", included: true },
