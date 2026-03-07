@@ -59,7 +59,6 @@ export default function PricingPage() {
                         <li><Check size={16} className="icon-check" /> Mở khóa toàn bộ bài viết</li>
                         <li><Check size={16} className="icon-check" /> Xem lời giải chi tiết tất cả các bài</li>
                         <li><Check size={16} className="icon-check" /> Được ưu tiên hỗ trợ</li>
-                        <li><Check size={16} className="icon-check" /> Tham gia nhóm Zalo đặc quyền riêng</li>
                     </ul>
                     {isPremium ? (
                         <button className="pricing-btn-primary" disabled style={{ opacity: 0.6 }}>
