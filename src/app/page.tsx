@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllExams } from "@/lib/exams";
 import { ArrowRight, BookOpen, Award, GraduationCap } from "lucide-react";
 import ExamListClient from "@/app/components/ExamListClient";
+import CoursesList from "@/app/components/CoursesList";
 
 export default function HomePage() {
   const exams = getAllExams();
@@ -79,6 +80,9 @@ export default function HomePage() {
 
         <ExamListClient exams={examData} />
       </section>
+
+      {/* Courses Section */}
+      <CoursesList />
 
       {/* CTA Section */}
       <section className="cta-section">
