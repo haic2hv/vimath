@@ -1,5 +1,5 @@
 ---
-title: Bài kiểm tra đánh giá năng lực tuyển sinh lớp 6 - Môn Toán
+title: Bài kiểm tra đánh giá năng lực tuyển sinh lớp 6 năm 2025-2026 (Đề số 1)
 date: "2026-03-07"
 isFree: false
 tags: ["Thi vào 6"]
