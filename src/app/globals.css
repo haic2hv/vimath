@@ -2570,29 +2570,57 @@ body {
   margin-top: 2.5rem;
 }
 
-.courses-section-header {
-  margin-bottom: 1.25rem;
+.course-search-box {
+  position: relative;
+  margin-bottom: 0.75rem;
 }
 
-.courses-section-header h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
+.course-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
 }
 
-.courses-section-header p {
+.course-search-input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  border: 1.5px solid var(--border);
+  border-radius: 0.5rem;
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  background: white;
+  color: var(--foreground);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.course-search-input:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.course-card-desc-sm {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {

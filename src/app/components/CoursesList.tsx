@@ -1,54 +1,30 @@
-import Link from 'next/link';
 import { getAllCourses } from '@/lib/courses';
-import { BookOpen, PlayCircle, Lock, Unlock } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
+import CoursesListClient from './CoursesListClient';
 
 export default function CoursesList() {
     const courses = getAllCourses();
 
     if (courses.length === 0) return null;
 
+    const courseData = courses.map(c => ({
+        slug: c.slug,
+        title: c.title,
+        description: c.description,
+        tags: c.tags,
+        isFree: c.isFree,
+        lessonsCount: c.lessons.length,
+    }));
+
     return (
-        <section className="courses-section">
-            <div className="courses-section-header">
-                <h2><BookOpen size={22} /> Khóa học</h2>
-                <p>Video bài giảng chi tiết dành cho học sinh</p>
+        <section className="courses-section" id="courses">
+            <div className="section-header">
+                <div>
+                    <h2 className="section-title">Khóa học</h2>
+                    <p className="section-subtitle">Video bài giảng chi tiết dành cho học sinh</p>
+                </div>
             </div>
-            <div className="courses-grid">
-                {courses.map((course) => (
-                    <Link
-                        key={course.slug}
-                        href={`/courses/${course.slug}`}
-                        className="course-card"
-                    >
-                        <div className="course-card-icon">
-                            <PlayCircle size={32} />
-                        </div>
-                        <h3>{course.title}</h3>
-                        <p className="course-card-desc">{course.description}</p>
-                        <div className="course-card-meta">
-                            <span className="course-lessons-count">
-                                {course.lessons.length} bài học
-                            </span>
-                            {course.isFree ? (
-                                <span className="badge badge-free">
-                                    <Unlock size={11} />
-                                    Miễn phí
-                                </span>
-                            ) : (
-                                <span className="badge badge-premium">
-                                    <Lock size={11} />
-                                    Thành viên
-                                </span>
-                            )}
-                        </div>
-                        <div className="course-card-tags">
-                            {course.tags.map(tag => (
-                                <span key={tag} className="tag">#{tag}</span>
-                            ))}
-                        </div>
-                    </Link>
-                ))}
-            </div>
+            <CoursesListClient courses={courseData} />
         </section>
     );
 }

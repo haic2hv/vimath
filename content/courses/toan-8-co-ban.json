@@ -1,0 +1,25 @@
+{
+    "slug": "toan-8-co-ban",
+    "title": "Toán 8 Cơ bản",
+    "description": "Khóa học Toán lớp 8 miễn phí, giúp học sinh nắm vững kiến thức nền tảng.",
+    "tags": [
+        "Lớp 8"
+    ],
+    "isFree": true,
+    "lessons": [
+        {
+            "id": "bai-1",
+            "title": "Video 1. Giới thiệu khóa học Toán 8",
+            "duration": "15:00",
+            "videoUrl": "",
+            "videoType": "youtube",
+            "description": "Tổng quan chương trình Toán 8 và phương pháp học hiệu quả.",
+            "materials": [
+                {
+                    "label": "Tài liệu giới thiệu khóa học",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}
