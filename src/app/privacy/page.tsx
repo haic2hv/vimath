@@ -15,9 +15,9 @@ export default function PrivacyPage() {
                     <h2>1. Thông tin chúng tôi thu thập</h2>
                     <p>Khi bạn sử dụng HMath, chúng tôi có thể thu thập các thông tin sau:</p>
                     <ul>
-                        <li><strong>Thông tin tài khoản:</strong> Tên, email, ảnh đại diện từ tài khoản Google khi bạn đăng nhập.</li>
-                        <li><strong>Thông tin giao dịch:</strong> Chi tiết thanh toán khi mua gói Premium (số tiền, ngày, gói đã chọn).</li>
-                        <li><strong>Dữ liệu sử dụng:</strong> Các đề thi bạn đã xem, thời gian truy cập để cải thiện trải nghiệm.</li>
+                        <li><strong>Thông tin tài khoản:</strong> Tên, email, ảnh đại diện từ tài khoản Google khi bạn đăng nhập qua Google OAuth 2.0.</li>
+                        <li><strong>Thông tin giao dịch:</strong> Chi tiết thanh toán khi đăng ký gói Thành viên (số tiền, ngày giao dịch), được xử lý qua hệ thống SePay.</li>
+                        <li><strong>Dữ liệu sử dụng:</strong> Các đề thi, khóa học, video bài giảng bạn đã truy cập để cải thiện trải nghiệm.</li>
                     </ul>
                 </section>
 
@@ -25,8 +25,9 @@ export default function PrivacyPage() {
                     <h2>2. Mục đích sử dụng thông tin</h2>
                     <p>Chúng tôi sử dụng thông tin của bạn để:</p>
                     <ul>
-                        <li>Cung cấp và duy trì dịch vụ học tập trực tuyến.</li>
-                        <li>Xử lý thanh toán và kích hoạt gói Premium.</li>
+                        <li>Cung cấp và duy trì dịch vụ học tập trực tuyến (đề thi, khóa học video, tài liệu).</li>
+                        <li>Xử lý thanh toán và kích hoạt gói Thành viên qua SePay.</li>
+                        <li>Quản lý trạng thái tài khoản và quyền truy cập nội dung Premium.</li>
                         <li>Gửi thông báo quan trọng liên quan đến tài khoản.</li>
                         <li>Cải thiện chất lượng nội dung và trải nghiệm người dùng.</li>
                         <li>Hỗ trợ khách hàng khi có yêu cầu.</li>
@@ -39,9 +40,11 @@ export default function PrivacyPage() {
                         Chúng tôi áp dụng các biện pháp bảo mật hợp lý để bảo vệ dữ liệu cá nhân:
                     </p>
                     <ul>
-                        <li>Xác thực qua Google OAuth 2.0 — chúng tôi không lưu trữ mật khẩu.</li>
-                        <li>Dữ liệu được mã hóa trong quá trình truyền tải (HTTPS).</li>
-                        <li>Thông tin thanh toán được xử lý qua SePay, HMath không lưu trữ thông tin thẻ/ngân hàng.</li>
+                        <li>Xác thực qua Google OAuth 2.0 — chúng tôi <strong>không lưu trữ mật khẩu</strong> của bạn.</li>
+                        <li>Dữ liệu được mã hóa trong quá trình truyền tải (HTTPS/TLS).</li>
+                        <li>Cơ sở dữ liệu được lưu trữ trên <strong>Supabase</strong> với các biện pháp bảo mật chuẩn công nghiệp.</li>
+                        <li>Thông tin thanh toán được xử lý qua <strong>SePay</strong> — HMath không lưu trữ thông tin tài khoản ngân hàng của bạn.</li>
+                        <li>Video bài giảng được lưu trữ và phân phối an toàn qua <strong>Vimeo</strong>.</li>
                     </ul>
                 </section>
 
@@ -52,7 +55,7 @@ export default function PrivacyPage() {
                         của bạn cho bên thứ ba, ngoại trừ:
                     </p>
                     <ul>
-                        <li><strong>Nhà cung cấp dịch vụ:</strong> Supabase (lưu trữ dữ liệu), SePay (xử lý thanh toán), Google (xác thực).</li>
+                        <li><strong>Nhà cung cấp dịch vụ:</strong> Supabase (xác thực và lưu trữ dữ liệu), SePay (xử lý thanh toán), Google (đăng nhập OAuth), Vimeo (lưu trữ và phát video bài giảng), Vercel (hosting website).</li>
                         <li><strong>Yêu cầu pháp lý:</strong> Khi được yêu cầu bởi cơ quan chức năng có thẩm quyền.</li>
                     </ul>
                 </section>
