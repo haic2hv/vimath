@@ -102,7 +102,7 @@ export default function TermsPage() {
                     <h2>9. Liên hệ</h2>
                     <p>
                         Nếu có thắc mắc về điều khoản sử dụng, vui lòng liên hệ qua email:
-                        <strong> support@hmath.vn</strong>
+                        <strong> pdanghai@gmail.com</strong>
                     </p>
                 </section>
 
