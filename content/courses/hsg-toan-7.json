@@ -11,8 +11,8 @@
             "id": "bai-1",
             "title": "Buổi 01. Số hữu tỉ và các phép tính (1)",
             "duration": "1:53:00",
-            "videoUrl": "https://www.youtube.com/embed/I9v8kjCGQtQ",
-            "videoType": "youtube",
+            "videoUrl": "https://player.vimeo.com/video/1093431534?h=77ccc82672",
+            "videoType": "vimeo",
             "description": "Số hữu tỉ và các phép tính (1)",
             "materials": [
                 {
@@ -29,8 +29,8 @@
             "id": "bai-2",
             "title": "Buổi 02. Số hữu tỉ và các phép tính (2)",
             "duration": "1:46:00",
-            "videoUrl": "https://www.youtube.com/embed/z_3rm6Ldh78",
-            "videoType": "youtube",
+            "videoUrl": "https://player.vimeo.com/video/1094256972?h=accdb85072",
+            "videoType": "vimeo",
             "description": "Số hữu tỉ và các phép tính (2)",
             "materials": [
                 {
@@ -51,8 +51,8 @@
             "id": "bai-3",
             "title": "Buổi 03. Số hữu tỉ và các phép tính (3)",
             "duration": "1:50:00",
-            "videoUrl": "https://www.youtube.com/embed/jZj8MmiyNC0",
-            "videoType": "youtube",
+            "videoUrl": "https://player.vimeo.com/video/1095260513?h=f4c216691a",
+            "videoType": "vimeo",
             "description": "Số hữu tỉ và các phép tính (3)",
             "materials": [
                 {
@@ -71,11 +71,11 @@
         },
         {
             "id": "bai-4",
-            "title": "Buổi 04. Lũy thừa của số hữu tỉ (1)",
+            "title": "Buổi 04. Chữa bài tập tổng hợp Số hữu tỉ và các phép tính",
             "duration": "",
-            "videoUrl": "",
-            "videoType": "youtube",
-            "description": "Lũy thừa của số hữu tỉ (1)",
+            "videoUrl": "https://player.vimeo.com/video/1095955671?h=b0ed0c11a6",
+            "videoType": "vimeo",
+            "description": "Chữa bài tập tổng hợp Số hữu tỉ và các phép tính",
             "materials": [
                 {
                     "label": "Tài liệu Lớp buổi 4",
@@ -96,7 +96,7 @@
             "title": "Buổi 05. Lũy thừa của số hữu tỉ (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Lũy thừa của số hữu tỉ (2)",
             "materials": [
                 {
@@ -118,7 +118,7 @@
             "title": "Buổi 06. Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
             "materials": [
                 {
@@ -140,7 +140,7 @@
             "title": "Buổi 07. Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
             "materials": [
                 {
@@ -162,7 +162,7 @@
             "title": "Buổi 08. Số thực và căn bậc hai (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Số thực và căn bậc hai (1)",
             "materials": [
                 {
@@ -184,7 +184,7 @@
             "title": "Buổi 09. Số thực và căn bậc hai (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Số thực và căn bậc hai (2)",
             "materials": [
                 {
@@ -206,7 +206,7 @@
             "title": "Buổi 10. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
             "materials": [
                 {
@@ -228,7 +228,7 @@
             "title": "Buổi 11. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
             "materials": [
                 {
@@ -250,7 +250,7 @@
             "title": "Buổi 12. Góc và đường thẳng song song (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Góc và đường thẳng song song (1)",
             "materials": [
                 {
@@ -272,7 +272,7 @@
             "title": "Buổi 13. Góc và đường thẳng song song (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Góc và đường thẳng song song (2)",
             "materials": [
                 {
@@ -294,7 +294,7 @@
             "title": "Buổi 14. Tam giác bằng nhau (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Tam giác bằng nhau (1)",
             "materials": [
                 {
@@ -316,7 +316,7 @@
             "title": "Buổi 15. Tam giác bằng nhau (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Tam giác bằng nhau (2)",
             "materials": [
                 {
@@ -338,7 +338,7 @@
             "title": "Buổi 16. Tam giác cân và tam giác đều",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Tam giác cân và tam giác đều",
             "materials": [
                 {
@@ -360,7 +360,7 @@
             "title": "Buổi 17. Định lý Pythagore",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Định lý Pythagore",
             "materials": [
                 {
@@ -382,7 +382,7 @@
             "title": "Buổi 18. Các đường đồng quy trong tam giác (1)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Các đường đồng quy trong tam giác (1)",
             "materials": [
                 {
@@ -404,7 +404,7 @@
             "title": "Buổi 19. Các đường đồng quy trong tam giác (2)",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Các đường đồng quy trong tam giác (2)",
             "materials": [
                 {
@@ -426,7 +426,7 @@
             "title": "Buổi 20. Ôn tập tổng hợp và đề thi HSG",
             "duration": "",
             "videoUrl": "",
-            "videoType": "youtube",
+            "videoType": "vimeo",
             "description": "Ôn tập tổng hợp và đề thi HSG",
             "materials": [
                 {
