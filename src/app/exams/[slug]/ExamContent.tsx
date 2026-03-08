@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import Link from "next/link";
-import { ArrowLeft, Lock, Calendar, CheckCircle } from "lucide-react";
+import { ArrowLeft, Lock, CheckCircle } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import type { ExamFrontmatter } from "@/lib/exams";
 
@@ -35,10 +35,7 @@ export default function ExamContent({ frontmatter, questionContent, solutionCont
                 <header className="exam-detail-header">
                     <h1>{frontmatter.title}</h1>
                     <div className="exam-detail-meta">
-                        <span className="meta-item meta-date">
-                            <Calendar size={14} />
-                            {frontmatter.date}
-                        </span>
+
                         {frontmatter.isFree ? (
                             <span className="meta-item meta-free">
                                 <CheckCircle size={14} />

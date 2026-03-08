@@ -51,9 +51,7 @@ export default function ExamListClient({ exams }: { exams: ExamData[] }) {
                                         Thành viên
                                     </span>
                                 )}
-                                <span className="badge badge-date">
-                                    {exam.date}
-                                </span>
+
                             </div>
                         </div>
 
