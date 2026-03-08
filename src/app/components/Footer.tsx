@@ -17,6 +17,11 @@ export default function Footer() {
                     <Link href="/terms">Điều khoản sử dụng</Link>
                     <Link href="/privacy">Chính sách bảo mật</Link>
                 </div>
+                <div className="footer-column">
+                    <h4>Hướng dẫn</h4>
+                    <Link href="/huong-dan/tao-tai-khoan">Hướng dẫn tạo tài khoản</Link>
+                    <Link href="/huong-dan/dang-ky-thanh-vien">Hướng dẫn đăng ký thành viên và thanh toán</Link>
+                </div>
             </div>
             <div className="footer-bottom">
                 © {new Date().getFullYear()} HMath. All rights reserved.
