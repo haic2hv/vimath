@@ -72,374 +72,274 @@
         {
             "id": "bai-4",
             "title": "Buổi 04. Chữa bài tập tổng hợp Số hữu tỉ và các phép tính",
-            "duration": "",
+            "duration": "1:40:00",
             "videoUrl": "https://player.vimeo.com/video/1095955671?h=b0ed0c11a6",
             "videoType": "vimeo",
             "description": "Chữa bài tập tổng hợp Số hữu tỉ và các phép tính",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 4",
+                    "label": "Đáp số BTVN Buổi 3 và bài tập bổ sung.",
+                    "url": "https://drive.google.com/file/d/1XsWBBRaqY9SoH2G6Qa1vOZ6R0H-1yuK7/"
+                },
+                {
+                    "label": "",
                     "url": ""
                 },
                 {
-                    "label": "Bài tập về nhà Buổi 4",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 3",
+                    "label": "",
                     "url": ""
                 }
             ]
         },
         {
             "id": "bai-5",
-            "title": "Buổi 05. Lũy thừa của số hữu tỉ (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 05. Góc và đường thẳng song song (1)",
+            "duration": "1:44:00",
+            "videoUrl": "https://player.vimeo.com/video/1096951203?h=c6ab2365ea",
             "videoType": "vimeo",
-            "description": "Lũy thừa của số hữu tỉ (2)",
+            "description": "Góc và đường thẳng song song (1)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 5",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 5",
+                    "url": "https://drive.google.com/file/d/1paKtZ4luIfQEmXIWfncR_MPXxULxE8UD/"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 5",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 4",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/12ZoKt6S4U7AiqzR0Btx66KoN2E7ISSum/"
                 }
             ]
         },
         {
             "id": "bai-6",
-            "title": "Buổi 06. Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 06. Góc và đường thẳng song song (2)",
+            "duration": "1:41:00",
+            "videoUrl": "https://player.vimeo.com/video/1097553908?h=7678f0ddc6",
             "videoType": "vimeo",
-            "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (1)",
+            "description": "Góc và đường thẳng song song (2)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 6",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 6",
+                    "url": "https://drive.google.com/file/d/1KMwvxoW-7a3qLhju7Di8T4NgT_2mn-a2/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 6",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 5",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1_iypn3KRPBmdCr2P2_d1AgYTe8tKFeOy/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-7",
-            "title": "Buổi 07. Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 07. Luyện tập về đường thẳng song song (3)",
+            "duration": "1:42:00",
+            "videoUrl": "https://player.vimeo.com/video/1098837131",
             "videoType": "vimeo",
-            "description": "Tỉ lệ thức và dãy tỉ số bằng nhau (2)",
+            "description": "Luyện tập về đường thẳng song song (3)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 7",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 7",
+                    "url": "https://drive.google.com/file/d/1qDDmmQKVzmqwqb2fLT3H7hF6fyl3yahb/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 7",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 6",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1lwSJfesaIare5XWjspSywBVVl020DXUY/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-8",
-            "title": "Buổi 08. Số thực và căn bậc hai (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 08. Góc và đường thẳng song song (4)",
+            "duration": "1:41:00",
+            "videoUrl": "https://player.vimeo.com/video/1099378996",
             "videoType": "vimeo",
-            "description": "Số thực và căn bậc hai (1)",
+            "description": "Góc và đường thẳng song song (4)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 8",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 8",
+                    "url": "https://drive.google.com/file/d/1hPkK5A2DRS7G_uamdQkeB4qzK_4gei6W/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 8",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 7",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/18BNv-TDyRvpIUOI3-wtFteG-ag-2Ueif/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-9",
-            "title": "Buổi 09. Số thực và căn bậc hai (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 09. Số thực (1)",
+            "duration": "1:41:00",
+            "videoUrl": "https://player.vimeo.com/video/1100650204",
             "videoType": "vimeo",
-            "description": "Số thực và căn bậc hai (2)",
+            "description": "Số thực (1)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 9",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 9",
+                    "url": "https://drive.google.com/file/d/1u2DgkiOwyB-pCOoHygYA627m6DFyDHPb/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 9",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 8",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/19hul3UEHwcGC8o9ZieByyq7RNUtZLYl2/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-10",
-            "title": "Buổi 10. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 10. Số thực (2)",
+            "duration": "1:52:00",
+            "videoUrl": "https://player.vimeo.com/video/1101247228",
             "videoType": "vimeo",
-            "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (1)",
+            "description": "Số thực (2)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 10",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 10",
+                    "url": "https://drive.google.com/file/d/1n2XlNI4ZaWXlTCC4_Hy0E_RWPUg64n9-/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 10",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 9",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/12_skSdOWqkNuk50jpHuvRBtEgO01ej7G/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-11",
-            "title": "Buổi 11. Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 11. Số thực (3)",
+            "duration": "1:47:00",
+            "videoUrl": "https://player.vimeo.com/video/1103163923",
             "videoType": "vimeo",
-            "description": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch (2)",
+            "description": "Số thực (3)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 11",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 11",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 10",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 11",
+                    "url": "https://drive.google.com/file/d/1YeM-OkDZEqplY93f899xJ3e35a-1taH3/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-12",
-            "title": "Buổi 12. Góc và đường thẳng song song (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 12. Số thực (4)",
+            "duration": "1:44:00",
+            "videoUrl": "https://player.vimeo.com/video/1103163923",
             "videoType": "vimeo",
-            "description": "Góc và đường thẳng song song (1)",
+            "description": "Số thực (4)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 12",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 12",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 11",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 12 và bài tập về nhà",
+                    "url": "https://drive.google.com/file/d/1OJ8sd_cPlZznat7SuxfcH9VmSEiQbC0-/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-13",
-            "title": "Buổi 13. Góc và đường thẳng song song (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 13. Tam giác bằng nhau (1)",
+            "duration": "1:46:00",
+            "videoUrl": "https://player.vimeo.com/video/1104504045",
             "videoType": "vimeo",
-            "description": "Góc và đường thẳng song song (2)",
+            "description": "Tam giác bằng nhau (1)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 13",
-                    "url": ""
+                    "label": "Tài liệu lớp Buổi 13",
+                    "url": "https://drive.google.com/file/d/1Ejto2BN_HAv8YIfyeJ175YkMEf0d-bXY/view?usp=drive_link"
                 },
                 {
                     "label": "Bài tập về nhà Buổi 13",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 12",
-                    "url": ""
+                    "url": "https://drive.google.com/file/d/1r2_yIaqEeri0USA63UOP276FU-3zi0by/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-14",
-            "title": "Buổi 14. Tam giác bằng nhau (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 14. Tam giác bằng nhau (2)",
+            "duration": "1:53:00",
+            "videoUrl": "https://player.vimeo.com/video/1105164138",
             "videoType": "vimeo",
-            "description": "Tam giác bằng nhau (1)",
+            "description": "Tam giác bằng nhau (2)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 14",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 14",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 13",
-                    "url": ""
+                    "label": "Tài liệu lớp và bài tập về nhà Buổi 14",
+                    "url": "https://drive.google.com/file/d/1oiB0a-tql6WGiQD3P90xPJIxaFTVddHx/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-15",
-            "title": "Buổi 15. Tam giác bằng nhau (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 15. Tam giác bằng nhau (3)",
+            "duration": "1:50:00",
+            "videoUrl": "https://player.vimeo.com/video/1106506014",
             "videoType": "vimeo",
-            "description": "Tam giác bằng nhau (2)",
+            "description": "Tam giác bằng nhau (3)",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 15",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 15",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 14",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 15",
+                    "url": "https://drive.google.com/file/d/1JtKwa8MANJuv7Dto6TGQBYW3RyBtDkzx/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-16",
-            "title": "Buổi 16. Tam giác cân và tam giác đều",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 16. Các trường hợp bằng nhau của tam giác vuông",
+            "duration": "1:39:00",
+            "videoUrl": "https://player.vimeo.com/video/1107117236",
             "videoType": "vimeo",
-            "description": "Tam giác cân và tam giác đều",
+            "description": "Các trường hợp bằng nhau của tam giác vuông",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 16",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 16",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 15",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 16",
+                    "url": "https://drive.google.com/file/d/177P1249e28gJitx5bLMPUmpwgqvFVLYH/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-17",
-            "title": "Buổi 17. Định lý Pythagore",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 17. Luyện tập về tam giác bằng nhau",
+            "duration": "1:43:00",
+            "videoUrl": "https://player.vimeo.com/video/1108453250",
             "videoType": "vimeo",
-            "description": "Định lý Pythagore",
+            "description": "Luyện tập về tam giác bằng nhau",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 17",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 17",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 16",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 17",
+                    "url": "https://drive.google.com/file/d/1-d0H7Nnjby9exF7Iek5alkhLnXTLKmsQ/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-18",
-            "title": "Buổi 18. Các đường đồng quy trong tam giác (1)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 18. Tam giác cân",
+            "duration": "1:31:00",
+            "videoUrl": "https://player.vimeo.com/video/1110309194",
             "videoType": "vimeo",
-            "description": "Các đường đồng quy trong tam giác (1)",
+            "description": "Tam giác cân",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 18",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 18",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 17",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 18",
+                    "url": "https://drive.google.com/file/d/1zn0_eXrXZLfz0Wk3dGmDHER7DcAd1D10/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-19",
-            "title": "Buổi 19. Các đường đồng quy trong tam giác (2)",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 19. Luyện tập hình học",
+            "duration": "1:42:00",
+            "videoUrl": "https://player.vimeo.com/video/1110989167",
             "videoType": "vimeo",
-            "description": "Các đường đồng quy trong tam giác (2)",
+            "description": "Luyện tập hình học",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 19",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 19",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 18",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 19",
+                    "url": "https://drive.google.com/file/d/1CX05V_1JyR50_1Q_5D7FsO2MWWMyFCaf/view?usp=drive_link"
                 }
             ]
         },
         {
             "id": "bai-20",
-            "title": "Buổi 20. Ôn tập tổng hợp và đề thi HSG",
-            "duration": "",
-            "videoUrl": "",
+            "title": "Buổi 20. Luyện tập tổng hợp",
+            "duration": "1:43:00",
+            "videoUrl": "https://player.vimeo.com/video/1111705206",
             "videoType": "vimeo",
-            "description": "Ôn tập tổng hợp và đề thi HSG",
+            "description": "Luyện tập tổng hợp",
             "materials": [
                 {
-                    "label": "Tài liệu Lớp buổi 20",
-                    "url": ""
-                },
-                {
-                    "label": "Bài tập về nhà Buổi 20",
-                    "url": ""
-                },
-                {
-                    "label": "Hướng dẫn và đáp số BTVN Buổi 19",
-                    "url": ""
+                    "label": "Tài liệu lớp và BTVN Buổi 20",
+                    "url": "https://drive.google.com/file/d/12MIE3f_j0xR4jnJGTsXRjoZmQBKA_E8Y/view?usp=drive_link"
                 }
             ]
         }
