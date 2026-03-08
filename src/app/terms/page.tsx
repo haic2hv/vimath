@@ -28,7 +28,7 @@ export default function TermsPage() {
                     </p>
                     <ul>
                         <li>Đề thi và lời giải chi tiết các kỳ thi Toán.</li>
-                        <li>Khóa học video bài giảng từ cơ bản đến nâng cao (nhúng từ Vimeo).</li>
+                        <li>Khóa học video bài giảng từ cơ bản đến nâng cao.</li>
                         <li>Tài liệu học tập và bài tập bổ trợ.</li>
                     </ul>
                     <p>
