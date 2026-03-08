@@ -15,7 +15,7 @@ export default function GuideCreateAccountPage() {
                     <h2>Bước 1: Truy cập trang HMath</h2>
                     <p>
                         Mở trình duyệt (Chrome, Safari, Firefox...) và truy cập website{' '}
-                        <strong>hmath.vn</strong>.
+                        <strong>hmath.vercel.app</strong>.
                     </p>
                 </section>
 

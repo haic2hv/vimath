@@ -22,12 +22,11 @@ export default function GuideMembershipPage() {
                 <section>
                     <h2>Bước 2: Chọn gói Thành viên</h2>
                     <p>
-                        Truy cập trang <Link href="/pricing" style={{ color: '#6366f1', textDecoration: 'underline' }}>Bảng giá</Link> để xem các gói Thành viên hiện có.
-                        HMath cung cấp các gói:
+                        Truy cập trang <Link href="/pricing" style={{ color: '#6366f1', textDecoration: 'underline' }}>Bảng giá</Link> để xem gói Thành viên.
+                        HMath cung cấp gói:
                     </p>
                     <ul>
-                        <li><strong>Gói 6 tháng</strong> — 99.000đ</li>
-                        <li><strong>Gói 12 tháng</strong> — 199.000đ (tiết kiệm hơn)</li>
+                        <li><strong>Gói Thành viên 1 năm</strong> — 199.000đ</li>
                     </ul>
                     <p>Nhấn vào nút <strong>&quot;Đăng ký ngay&quot;</strong> tại gói bạn muốn chọn.</p>
                 </section>

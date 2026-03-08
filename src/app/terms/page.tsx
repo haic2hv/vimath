@@ -14,7 +14,7 @@ export default function TermsPage() {
                 <section>
                     <h2>1. Giới thiệu</h2>
                     <p>
-                        Chào mừng bạn đến với HMath (<strong>hmath.vn</strong>). Khi truy cập và sử dụng website của chúng tôi,
+                        Chào mừng bạn đến với HMath (<strong>hmath.vercel.app</strong>). Khi truy cập và sử dụng website của chúng tôi,
                         bạn đồng ý tuân thủ các điều khoản và điều kiện được nêu dưới đây.
                         Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng không sử dụng dịch vụ.
                     </p>
