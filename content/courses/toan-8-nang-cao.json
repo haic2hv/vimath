@@ -9,15 +9,15 @@
     "lessons": [
         {
             "id": "bai-1",
-            "title": "Bài 1. Phân tích đa thức thành nhân tử nâng cao",
+            "title": "Bài 1. Hằng đẳng thức đáng nhớ (1)",
             "duration": "55:00",
-            "videoUrl": "",
+            "videoUrl": "https://www.youtube.com/embed/0n2DpfXwDMg",
             "videoType": "youtube",
-            "description": "Các phương pháp phân tích đa thức thành nhân tử nâng cao: thêm bớt, đặt ẩn phụ.",
+            "description": "Ba hằng đẳng thức đáng nhớ đầu tiên, chú ý và các hằng đẳng thức mở rộng.",
             "materials": [
                 {
-                    "label": "",
-                    "url": ""
+                    "label": "Tài liệu buổi 1",
+                    "url": "https://drive.google.com/file/d/1eMUeLS6141FB2kopmRdHeltmRgMFLT3C/"
                 }
             ]
         },
