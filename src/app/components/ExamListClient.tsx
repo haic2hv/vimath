@@ -13,7 +13,13 @@ type ExamData = {
     tags: string[];
 };
 
-export default function ExamListClient({ exams }: { exams: ExamData[] }) {
+type Props = {
+    exams: ExamData[];
+    limit?: number;
+    showViewAll?: boolean;
+};
+
+export default function ExamListClient({ exams, limit, showViewAll }: Props) {
     const [search, setSearch] = useState('');
 
     const filtered = search
@@ -27,12 +33,15 @@ export default function ExamListClient({ exams }: { exams: ExamData[] }) {
         })
         : exams;
 
+    const displayed = limit && !search ? filtered.slice(0, limit) : filtered;
+    const hasMore = limit && !search && filtered.length > limit;
+
     return (
         <>
             <ExamSearch onSearch={setSearch} value={search} />
 
             <div className="exams-grid">
-                {filtered.map((exam) => (
+                {displayed.map((exam) => (
                     <Link
                         key={exam.slug}
                         href={`/exams/${exam.slug}`}
@@ -64,14 +73,23 @@ export default function ExamListClient({ exams }: { exams: ExamData[] }) {
                         </div>
                     </Link>
                 ))}
-                {filtered.length === 0 && (
+                {displayed.length === 0 && (
                     <div className="empty-state">
                         <p>{search ? 'Không tìm thấy đề thi phù hợp.' : 'Chưa có đề thi nào trong hệ thống.'}</p>
                     </div>
                 )}
             </div>
 
-            {filtered.length > 0 && !search && (
+            {showViewAll && hasMore && (
+                <div className="view-all-link">
+                    <Link href="/exams" className="btn-view-all">
+                        Xem tất cả đề thi ({filtered.length} đề)
+                        <ArrowRight size={16} />
+                    </Link>
+                </div>
+            )}
+
+            {!showViewAll && filtered.length > 0 && !search && (
                 <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.85rem', color: '#94a3b8' }}>
                     Hiển thị {filtered.length} đề thi
                 </div>

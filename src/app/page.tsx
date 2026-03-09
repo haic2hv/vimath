@@ -83,7 +83,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <ExamListClient exams={examData} />
+        <ExamListClient exams={examData} limit={9} showViewAll />
       </section>
 
       {/* Courses Section */}

@@ -603,6 +603,33 @@ body {
   font-weight: 500;
 }
 
+.view-all-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-view-all:hover {
+  background: rgba(79, 70, 229, 0.06);
+  border-color: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+}
+
 /* ===== EXAM DETAIL PAGE ===== */
 .exam-detail {
   max-width: 800px;
