@@ -39,3 +39,13 @@ Cho tam giác $ABC$ và $M$ là trung điểm cạnh $BC$. Gọi $D$ là điểm
 
 ### Câu 6 (1,0 điểm). 
 Tìm các số nguyên $a, b$ thỏa mãn $a + b = -2$ và $ab - 1$ là một số chính phương.
+
+## Lời giải
+
+![](https://i.postimg.cc/85bF3Cym/De-2-2.jpg)
+
+
+![](https://i.postimg.cc/Gt74L5n5/De-2-3.jpg)
+
+
+![](https://i.postimg.cc/7hWL8JSd/De-2-4.jpg)
