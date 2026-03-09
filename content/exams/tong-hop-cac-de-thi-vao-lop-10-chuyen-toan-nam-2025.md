@@ -3,7 +3,7 @@ title: Tổng hợp các đề thi vào lớp 10 chuyên Toán năm 2025
 isFree: true
 tags: ["Thi vào 10, Chuyên"]
 pdfUrl: "https://drive.google.com/file/d/1fIH3nHyL3i5vVlEX8I1aRlSWHQtL34Mi/preview"
-downloadUrl: "https://drive.google.com/uc?export=download&id=14eQr09NpVPEnuFDJ1fK3Fo7WYae2VEfD"
+downloadUrl: "https://drive.google.com/uc?export=download&id=1c5IuuGeI3qBU5YyokO2iwyi4YFQWNXyH"
 freeDownload: true
 ---
 
