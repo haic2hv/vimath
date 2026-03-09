@@ -9,4 +9,4 @@ freeDownload: true
 
 **Tổng hợp các đề thi vào lớp 10 môn Toán (chung) năm học 2025-2026**. Tài liệu tham khảo hữu ích dành cho các em học sinh và các thầy cô cho các năm học tiếp theo.
 
-Các thầy cô có thể tải về file word đề thi và đáp án của tất cả các đề theo link bên dưới đây.
+Các thầy cô có thể tải về file word đề thi và đáp án của tất cả các đề theo link bên trên.
