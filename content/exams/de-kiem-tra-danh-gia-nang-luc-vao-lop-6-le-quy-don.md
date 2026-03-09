@@ -7,8 +7,8 @@ tags: ["Thi vào 6"]
 
 # ĐỀ KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
 **TUYỂN SINH LỚP 6 TRƯỜNG LÊ QUÝ ĐÔN**  
-**MÔN: TOÁN**  
-*(Thời gian làm bài: 40 phút. Không kể thời gian giao đề)*
+**MÔN: TOÁN - TIẾNG VIỆT**  
+*(Thời gian làm bài mỗi môn: 40 phút. Không kể thời gian giao đề)*
 
 ---
 

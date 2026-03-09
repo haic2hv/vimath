@@ -1,14 +1,14 @@
 ---
-title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Lâm Thao
+title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Yên Lạc
 date: "2026-03-07"
 isFree: true
 tags: ["Thi vào 6"]
 ---
 
 # ĐỀ KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
-**TUYỂN SINH LỚP 6 TRƯỜNG THCS LÂM THAO**  
-**MÔN: TOÁN**  
-*(Thời gian làm bài: 40 phút. Không kể thời gian giao đề)*
+**TUYỂN SINH LỚP 6 TRƯỜNG THCS YÊN LẠC**  
+**MÔN: TOÁN - TIẾNG VIỆT**  
+*(Thời gian làm bài mỗi môn: 40 phút. Không kể thời gian giao đề)*
 
 ---
 
