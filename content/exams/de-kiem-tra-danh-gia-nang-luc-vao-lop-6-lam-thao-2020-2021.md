@@ -1,12 +1,11 @@
 ---
-title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Lâm Thao
-date: "2026-03-07"
+title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Lâm Thao năm 2020-2021
 isFree: true
 tags: ["Thi vào 6"]
 ---
 
 # ĐỀ KIỂM TRA ĐÁNH GIÁ NĂNG LỰC
-**TUYỂN SINH LỚP 6 TRƯỜNG THCS LÂM THAO**  
+**TUYỂN SINH LỚP 6 TRƯỜNG THCS LÂM THAO NĂM 2020-2021**  
 **MÔN: TOÁN**  
 *(Thời gian làm bài: 40 phút. Không kể thời gian giao đề)*
 
