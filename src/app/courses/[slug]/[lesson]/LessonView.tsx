@@ -93,9 +93,9 @@ export default function LessonView({
             <p className="lesson-desc">{lessonDescription}</p>
 
             {/* Download Materials */}
-            {materials.length > 0 && (
+            {materials.filter(m => m.label || m.url).length > 0 && (
                 <div className="lesson-materials">
-                    {materials.map((m, i) => (
+                    {materials.filter(m => m.label || m.url).map((m, i) => (
                         <a
                             key={i}
                             href={m.url || '#'}
