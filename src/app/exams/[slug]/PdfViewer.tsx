@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
 
 type Props = {
-    pdfUrl: string;
+    pdfUrl?: string;
     downloadUrl?: string;
     freeDownload?: boolean;
 };
@@ -17,13 +17,15 @@ export default function PdfViewer({ pdfUrl, downloadUrl, freeDownload }: Props) 
 
     return (
         <section className="pdf-viewer-section">
-            <div className="pdf-iframe-container">
-                <iframe
-                    src={pdfUrl}
-                    title="Xem đề thi PDF"
-                    allowFullScreen
-                />
-            </div>
+            {pdfUrl && (
+                <div className="pdf-iframe-container">
+                    <iframe
+                        src={pdfUrl}
+                        title="Xem đề thi PDF"
+                        allowFullScreen
+                    />
+                </div>
+            )}
 
             {downloadUrl && (
                 <div className="pdf-download-area">

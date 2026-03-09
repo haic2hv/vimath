@@ -74,7 +74,7 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                     </div>
                 </header>
 
-                {exam.frontmatter.pdfUrl && (
+                {(exam.frontmatter.pdfUrl || exam.frontmatter.downloadUrl) && (
                     <PdfViewer
                         pdfUrl={exam.frontmatter.pdfUrl}
                         downloadUrl={exam.frontmatter.downloadUrl}

@@ -2,6 +2,7 @@
 title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Lâm Thao năm 2023-2024
 isFree: true
 tags: ["Thi vào 6"]
+pdfUrl:
 downloadUrl: "https://drive.google.com/uc?export=download&id=1dmBOiWHJFcvB_WlxMYr8wkkkLdsi9TJr"
 freeDownload: false
 ---
