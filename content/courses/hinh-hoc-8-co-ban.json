@@ -1,7 +1,7 @@
 {
-    "slug": "toan-8-co-ban",
-    "title": "Đại số 8 cơ bản",
-    "description": "Khóa học Đại số lớp 8 miễn phí, giúp học sinh nắm vững kiến thức nền tảng.",
+    "slug": "hinh-hoc-8-co-ban",
+    "title": "Hình học 8 cơ bản",
+    "description": "Khóa học Hình học lớp 8 miễn phí, giúp học sinh nắm vững kiến thức hình học nền tảng.",
     "tags": [
         "Lớp 8"
     ],
@@ -9,11 +9,11 @@
     "lessons": [
         {
             "id": "bai-1",
-            "title": "Bài 1. Phép nhân đa thức",
+            "title": "Bài 1. Tứ giác",
             "duration": "45:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phép nhân đơn thức với đa thức, nhân đa thức với đa thức.",
+            "description": "Tổng các góc trong tứ giác, tứ giác lồi.",
             "materials": [
                 {
                     "label": "",
@@ -23,11 +23,11 @@
         },
         {
             "id": "bai-2",
-            "title": "Bài 2. Hằng đẳng thức đáng nhớ",
+            "title": "Bài 2. Hình bình hành và hình chữ nhật",
             "duration": "50:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Bảy hằng đẳng thức đáng nhớ và ứng dụng.",
+            "description": "Tính chất và dấu hiệu nhận biết hình bình hành, hình chữ nhật.",
             "materials": [
                 {
                     "label": "",
@@ -37,11 +37,11 @@
         },
         {
             "id": "bai-3",
-            "title": "Bài 3. Phân tích đa thức thành nhân tử",
-            "duration": "55:00",
+            "title": "Bài 3. Hình thoi và hình vuông",
+            "duration": "50:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Các phương pháp phân tích đa thức thành nhân tử.",
+            "description": "Tính chất và dấu hiệu nhận biết hình thoi, hình vuông.",
             "materials": [
                 {
                     "label": "",
@@ -51,11 +51,11 @@
         },
         {
             "id": "bai-4",
-            "title": "Bài 4. Phân thức đại số",
-            "duration": "50:00",
+            "title": "Bài 4. Hình thang và hình thang cân",
+            "duration": "45:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Khái niệm phân thức đại số, rút gọn phân thức.",
+            "description": "Tính chất hình thang, hình thang cân và đường trung bình.",
             "materials": [
                 {
                     "label": "",
@@ -65,11 +65,11 @@
         },
         {
             "id": "bai-5",
-            "title": "Bài 5. Phương trình bậc nhất một ẩn",
-            "duration": "45:00",
+            "title": "Bài 5. Diện tích đa giác",
+            "duration": "50:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Giải phương trình bậc nhất một ẩn và phương trình tích.",
+            "description": "Công thức tính diện tích các hình: tam giác, hình bình hành, hình thang.",
             "materials": [
                 {
                     "label": "",
@@ -79,11 +79,11 @@
         },
         {
             "id": "bai-6",
-            "title": "Bài 6. Giải bài toán bằng cách lập phương trình",
+            "title": "Bài 6. Tam giác đồng dạng",
             "duration": "55:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phương pháp giải bài toán thực tế bằng cách lập phương trình.",
+            "description": "Các trường hợp đồng dạng của tam giác và ứng dụng.",
             "materials": [
                 {
                     "label": "",

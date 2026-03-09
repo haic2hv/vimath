@@ -1,19 +1,19 @@
 {
-    "slug": "toan-8-co-ban",
-    "title": "Đại số 8 cơ bản",
-    "description": "Khóa học Đại số lớp 8 miễn phí, giúp học sinh nắm vững kiến thức nền tảng.",
+    "slug": "toan-8-nang-cao",
+    "title": "Toán 8 nâng cao",
+    "description": "Khóa học Toán lớp 8 nâng cao dành cho thành viên, rèn luyện tư duy và kỹ năng giải toán chuyên sâu.",
     "tags": [
         "Lớp 8"
     ],
-    "isFree": true,
+    "isFree": false,
     "lessons": [
         {
             "id": "bai-1",
-            "title": "Bài 1. Phép nhân đa thức",
-            "duration": "45:00",
+            "title": "Bài 1. Phân tích đa thức thành nhân tử nâng cao",
+            "duration": "55:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phép nhân đơn thức với đa thức, nhân đa thức với đa thức.",
+            "description": "Các phương pháp phân tích đa thức thành nhân tử nâng cao: thêm bớt, đặt ẩn phụ.",
             "materials": [
                 {
                     "label": "",
@@ -23,11 +23,11 @@
         },
         {
             "id": "bai-2",
-            "title": "Bài 2. Hằng đẳng thức đáng nhớ",
-            "duration": "50:00",
+            "title": "Bài 2. Hằng đẳng thức và bất đẳng thức",
+            "duration": "1:00:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Bảy hằng đẳng thức đáng nhớ và ứng dụng.",
+            "description": "Ứng dụng hằng đẳng thức trong chứng minh bất đẳng thức.",
             "materials": [
                 {
                     "label": "",
@@ -37,11 +37,11 @@
         },
         {
             "id": "bai-3",
-            "title": "Bài 3. Phân tích đa thức thành nhân tử",
+            "title": "Bài 3. Phương trình chứa ẩn ở mẫu và phương trình tích",
             "duration": "55:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Các phương pháp phân tích đa thức thành nhân tử.",
+            "description": "Giải phương trình chứa ẩn ở mẫu, phương trình tích nâng cao.",
             "materials": [
                 {
                     "label": "",
@@ -51,11 +51,11 @@
         },
         {
             "id": "bai-4",
-            "title": "Bài 4. Phân thức đại số",
-            "duration": "50:00",
+            "title": "Bài 4. Bài toán chứng minh hình học nâng cao",
+            "duration": "1:00:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Khái niệm phân thức đại số, rút gọn phân thức.",
+            "description": "Chứng minh các bài toán hình học sử dụng tứ giác đặc biệt.",
             "materials": [
                 {
                     "label": "",
@@ -65,11 +65,11 @@
         },
         {
             "id": "bai-5",
-            "title": "Bài 5. Phương trình bậc nhất một ẩn",
-            "duration": "45:00",
+            "title": "Bài 5. Tam giác đồng dạng nâng cao",
+            "duration": "55:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Giải phương trình bậc nhất một ẩn và phương trình tích.",
+            "description": "Ứng dụng tam giác đồng dạng trong các bài toán chứng minh và tính toán.",
             "materials": [
                 {
                     "label": "",
@@ -79,11 +79,11 @@
         },
         {
             "id": "bai-6",
-            "title": "Bài 6. Giải bài toán bằng cách lập phương trình",
-            "duration": "55:00",
+            "title": "Bài 6. Bài tập tổng hợp Toán 8 nâng cao",
+            "duration": "1:00:00",
             "videoUrl": "",
             "videoType": "youtube",
-            "description": "Phương pháp giải bài toán thực tế bằng cách lập phương trình.",
+            "description": "Luyện tập tổng hợp các dạng bài tập nâng cao lớp 8.",
             "materials": [
                 {
                     "label": "",
