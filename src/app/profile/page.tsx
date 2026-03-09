@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { Crown, Calendar, Receipt, BookOpen, ArrowRight, PlayCircle, Eye } from 'lucide-react';
+import { Crown, Calendar, Receipt, BookOpen, ArrowRight, PlayCircle, Eye, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { getViewedExams, getViewedLessons, type ViewedExam, type ViewedLesson } from '@/lib/view-history';
 
@@ -289,6 +289,15 @@ export default function ProfilePage() {
                     <ArrowRight size={16} />
                 </Link>
             </div>
+
+            {/* Admin Quick Access */}
+            {profile?.role === 'admin' && (
+                <Link href="/admin" className="profile-admin-link">
+                    <Shield size={20} />
+                    <span>Quản lý người dùng</span>
+                    <ArrowRight size={16} />
+                </Link>
+            )}
 
             {/* Sign Out */}
             <button onClick={() => { signOut(); router.push('/'); }} className="btn-logout-full">
