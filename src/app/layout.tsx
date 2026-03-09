@@ -6,8 +6,8 @@ import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
 
 export const metadata: Metadata = {
-  title: "HMath - Nền tảng chia sẻ Đề thi & Lời giải Toán học",
-  description: "Kho tàng đề thi toán các cấp THPT, chuyên Đại học với định dạng đẹp mắt bằng LaTeX.",
+  title: "HMath - Học và luyện thi toán THCS",
+  description: "HMath - Hệ thống Bài giảng và Đề thi với lời giải chi tiết, trực quan và chuyên nghiệp. Luyện thi tinh gọn, tối ưu, đạt điểm cao.",
 };
 
 export default function RootLayout({
