@@ -1997,6 +1997,75 @@ body {
   }
 }
 
+/* Profile View History */
+.profile-history-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-history-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.15s ease;
+}
+
+.profile-history-item:last-child {
+  border-bottom: none;
+}
+
+.profile-history-item:hover {
+  background: rgba(79, 70, 229, 0.03);
+}
+
+.history-icon {
+  flex-shrink: 0;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.history-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.history-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.history-time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.history-arrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.profile-history-item:hover .history-arrow {
+  opacity: 1;
+}
+
 /* ===== BACK TO TOP ===== */
 .back-to-top {
   position: fixed;

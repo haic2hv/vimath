@@ -6,6 +6,7 @@ import rehypeKatex from "rehype-katex";
 import Link from "next/link";
 import { ArrowLeft, Lock, Calendar, CheckCircle, Crown, Unlock } from "lucide-react";
 import SolutionGate from "./SolutionGate";
+import ExamViewTracker from "./ExamViewTracker";
 
 export async function generateStaticParams() {
     const exams = getAllExams();
@@ -44,6 +45,7 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
 
     return (
         <div className="exam-detail">
+            <ExamViewTracker slug={slug} title={exam.frontmatter.title} />
             <Link href="/" className="exam-back-link">
                 <ArrowLeft size={16} />
                 Quay lại danh sách

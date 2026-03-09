@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { Crown, Calendar, Receipt, BookOpen, ArrowRight } from 'lucide-react';
+import { Crown, Calendar, Receipt, BookOpen, ArrowRight, PlayCircle, Eye } from 'lucide-react';
 import Link from 'next/link';
+import { getViewedExams, getViewedLessons, type ViewedExam, type ViewedLesson } from '@/lib/view-history';
 
 type ProfileData = {
     email: string;
@@ -21,13 +22,19 @@ export default function ProfilePage() {
     const router = useRouter();
     const [profile, setProfile] = useState<ProfileData | null>(null);
     const [loadingProfile, setLoadingProfile] = useState(true);
+    const [viewedExams, setViewedExams] = useState<ViewedExam[]>([]);
+    const [viewedLessons, setViewedLessons] = useState<ViewedLesson[]>([]);
 
     useEffect(() => {
         if (!loading && !user) {
             router.push('/login');
             return;
         }
-        if (user) fetchProfile();
+        if (user) {
+            fetchProfile();
+            setViewedExams(getViewedExams());
+            setViewedLessons(getViewedLessons());
+        }
     }, [user, loading]);
 
     async function fetchProfile() {
@@ -64,6 +71,18 @@ export default function ProfilePage() {
 
     const formatCurrency = (amount: number) => {
         return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
+    };
+
+    const timeAgo = (dateStr: string) => {
+        const diff = Date.now() - new Date(dateStr).getTime();
+        const mins = Math.floor(diff / 60000);
+        if (mins < 1) return 'Vừa xong';
+        if (mins < 60) return `${mins} phút trước`;
+        const hours = Math.floor(mins / 60);
+        if (hours < 24) return `${hours} giờ trước`;
+        const days = Math.floor(hours / 24);
+        if (days < 30) return `${days} ngày trước`;
+        return formatDate(dateStr);
     };
 
     const paidOrders = profile?.orders?.filter((o: any) => o.status === 'paid') || [];
@@ -154,6 +173,71 @@ export default function ProfilePage() {
                     </div>
                 </div>
             )}
+
+            {/* Viewed Exams */}
+            <div className="data-table-wrap">
+                <div className="data-table-header">
+                    <div className="data-table-title">
+                        <Eye size={16} style={{ display: 'inline', marginRight: 6 }} />
+                        Đề thi đã xem
+                    </div>
+                </div>
+                {viewedExams.length > 0 ? (
+                    <div className="profile-history-grid">
+                        {viewedExams.slice(0, 10).map((exam) => (
+                            <Link
+                                key={exam.slug}
+                                href={`/exams/${exam.slug}`}
+                                className="profile-history-item"
+                            >
+                                <BookOpen size={16} className="history-icon" />
+                                <div className="history-info">
+                                    <span className="history-title">{exam.title}</span>
+                                    <span className="history-time">{timeAgo(exam.viewedAt)}</span>
+                                </div>
+                                <ArrowRight size={14} className="history-arrow" />
+                            </Link>
+                        ))}
+                    </div>
+                ) : (
+                    <div style={{ padding: '2rem', textAlign: 'center', color: '#94a3b8' }}>
+                        Chưa xem đề thi nào
+                    </div>
+                )}
+            </div>
+
+            {/* Viewed Lessons */}
+            <div className="data-table-wrap">
+                <div className="data-table-header">
+                    <div className="data-table-title">
+                        <PlayCircle size={16} style={{ display: 'inline', marginRight: 6 }} />
+                        Bài giảng đã xem
+                    </div>
+                </div>
+                {viewedLessons.length > 0 ? (
+                    <div className="profile-history-grid">
+                        {viewedLessons.slice(0, 10).map((lesson) => (
+                            <Link
+                                key={`${lesson.courseSlug}/${lesson.lessonId}`}
+                                href={`/courses/${lesson.courseSlug}/${lesson.lessonId}`}
+                                className="profile-history-item"
+                            >
+                                <PlayCircle size={16} className="history-icon" />
+                                <div className="history-info">
+                                    <span className="history-title">{lesson.lessonTitle}</span>
+                                    <span className="history-subtitle">{lesson.courseTitle}</span>
+                                    <span className="history-time">{timeAgo(lesson.viewedAt)}</span>
+                                </div>
+                                <ArrowRight size={14} className="history-arrow" />
+                            </Link>
+                        ))}
+                    </div>
+                ) : (
+                    <div style={{ padding: '2rem', textAlign: 'center', color: '#94a3b8' }}>
+                        Chưa xem bài giảng nào
+                    </div>
+                )}
+            </div>
 
             {/* Order History */}
             <div className="data-table-wrap">

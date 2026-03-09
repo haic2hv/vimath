@@ -1,8 +1,10 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import Link from 'next/link';
 import { ArrowLeft, Lock, Crown, Download } from 'lucide-react';
+import { addViewedLesson } from '@/lib/view-history';
 
 type Material = {
     label: string;
@@ -13,6 +15,7 @@ type LessonViewProps = {
     courseTitle: string;
     courseSlug: string;
     isFree: boolean;
+    lessonId: string;
     lessonTitle: string;
     lessonDescription: string;
     videoUrl: string;
@@ -23,17 +26,22 @@ type LessonViewProps = {
 };
 
 export default function LessonView({
-    courseTitle, courseSlug, isFree, lessonTitle, lessonDescription,
+    courseTitle, courseSlug, isFree, lessonId, lessonTitle, lessonDescription,
     videoUrl, videoType, materials, prevLesson, nextLesson
 }: LessonViewProps) {
     const { user, isPremium, loading, signInWithGoogle } = useAuth();
 
+    const canView = isFree || isPremium;
+
+    useEffect(() => {
+        if (!loading && canView) {
+            addViewedLesson(courseSlug, courseTitle, lessonId, lessonTitle);
+        }
+    }, [loading, canView, courseSlug, courseTitle, lessonId, lessonTitle]);
+
     if (loading) {
         return <div className="lesson-page"><p style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>Đang tải...</p></div>;
     }
-
-    // Free courses: everyone can view. Paid courses: members only.
-    const canView = isFree || isPremium;
 
     if (!canView) {
         return (

@@ -14,18 +14,32 @@ tags: ["Thi vào 6"]
 
 ## ĐỀ THI MÔN TOÁN 
 
-![](https://i.postimg.cc/HnqV87j0/LT-1.jpg)
+![](https://i.postimg.cc/SNTJ9stn/YL-1.jpg)
+
+![](https://i.postimg.cc/7Y6Lq4Ps/YL-2.jpg)
 
 
-![](https://i.postimg.cc/RFqFPTH1/LT-2.jpg)
+## ĐÁP ÁN ĐỀ THI MÔN TOÁN 
+
+![](https://i.postimg.cc/0jHPz625/YL-3.jpg)
 
 
-## ĐÁP ÁN ĐỀ THI MÔN TOÁN
+![](https://i.postimg.cc/y8RsN8q1/YL-4.jpg)
 
-![](https://i.postimg.cc/g2qKV3R7/LT-3.jpg)
+---
+
+## ĐỀ THI MÔN TIẾNG VIỆT
+
+![](https://i.postimg.cc/gc7C6bHj/YLV-1.jpg)
 
 
-![](https://i.postimg.cc/T3GV3hSg/LT-4.jpg)
+![](https://i.postimg.cc/TYgTdPMs/YLV-2.jpg)
 
 
-![](https://i.postimg.cc/nz67bLB4/LT-5.jpg)
+## ĐÁP ÁN ĐỀ THI MÔN TIẾNG VIỆT
+
+![](https://i.postimg.cc/XJt0WR2G/YLV-3.jpg)
+
+
+![](https://i.postimg.cc/pXY3c5tt/YLV-4.jpg)
+

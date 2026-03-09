@@ -31,6 +31,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             courseTitle={course.title}
             courseSlug={course.slug}
             isFree={course.isFree ?? false}
+            lessonId={lesson.id}
             lessonTitle={lesson.title}
             lessonDescription={lesson.description}
             videoUrl={lesson.videoUrl}
