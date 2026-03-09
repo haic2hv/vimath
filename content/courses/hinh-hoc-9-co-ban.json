@@ -1,0 +1,137 @@
+{
+    "slug": "hinh-hoc-9-co-ban",
+    "title": "Hình học 9 cơ bản",
+    "description": "Khóa học Hình học lớp 9 miễn phí, giúp học sinh nắm vững kiến thức nền tảng.",
+    "tags": [
+        "Lớp 9"
+    ],
+    "isFree": true,
+    "lessons": [
+        {
+            "id": "bai-1",
+            "title": "Bài 1. Tỉ số lượng giác của góc nhọn",
+            "duration": "1:00:00",
+            "videoUrl": "https://www.youtube.com/embed/Zq7X0Jsbid4",
+            "videoType": "youtube",
+            "description": "Tỉ số lượng giác của góc nhọn",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-2",
+            "title": "Bài 2. Đường kính và dây của đường tròn",
+            "duration": "2:00:00",
+            "videoUrl": "https://www.youtube.com/embed/52mDjOjtInw",
+            "videoType": "youtube",
+            "description": "Đường kính và dây của đường tròn",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-3",
+            "title": "Bài 3. Tiếp tuyến của đường tròn",
+            "duration": "24:00",
+            "videoUrl": "https://www.youtube.com/embed/XlrGI8ox63I",
+            "videoType": "youtube",
+            "description": "Tiếp tuyến của đường tròn",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-4",
+            "title": "Bài 4. Tính chất hai tiếp tuyến cắt nhau",
+            "duration": "2:00:00",
+            "videoUrl": "https://www.youtube.com/embed/3Nqsaq0qryc",
+            "videoType": "youtube",
+            "description": "Tính chất hai tiếp tuyến cắt nhau",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-5",
+            "title": "Bài 5. Vị trí tương đối của hai đường tròn",
+            "duration": "2:00:00",
+            "videoUrl": "https://www.youtube.com/embed/Q93o15iu2EI",
+            "videoType": "youtube",
+            "description": "Vị trí tương đối của hai đường tròn",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-6",
+            "title": "Bài 6. Góc nội tiếp",
+            "duration": "1:30:00",
+            "videoUrl": "https://www.youtube.com/embed/moI3yGtIISo",
+            "videoType": "youtube",
+            "description": "Góc nội tiếp",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-7",
+            "title": "Bài 7. Luyện tập về góc nội tiếp",
+            "duration": "1:31:00",
+            "videoUrl": "https://www.youtube.com/embed/MaTlv86DZHI",
+            "videoType": "youtube",
+            "description": "Luyện tập về góc nội tiếp",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-8",
+            "title": "Bài 8. Độ dài cung tròn. Diện tích hình quạt tròn, hình vành khuyên",
+            "duration": "1:56:00",
+            "videoUrl": "https://www.youtube.com/embed/jTbj-j_5fB8",
+            "videoType": "youtube",
+            "description": "Độ dài cung tròn. Diện tích hình quạt tròn, hình vành khuyên",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+        {
+            "id": "bai-9",
+            "title": "Bài 9. Chữa đề bài tập hình học khảo sát trường Lương Thế Vinh",
+            "duration": "24:00",
+            "videoUrl": "https://www.youtube.com/embed/1nf9pAqefAU",
+            "videoType": "youtube",
+            "description": "Chữa đề bài tập hình học khảo sát trường Lương Thế Vinh",
+            "materials": [
+                {
+                    "label": "",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}
