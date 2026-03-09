@@ -41,7 +41,7 @@ export default function PdfViewer({ pdfUrl, downloadUrl, freeDownload }: Props) 
                         <div className="pdf-download-locked">
                             <div className="pdf-locked-info">
                                 <Lock size={16} />
-                                <span>Tải file dành cho Thành viên Premium</span>
+                                <span>Tải file word tài liệu này dành cho Thành viên Premium</span>
                             </div>
                             <div className="pdf-locked-actions">
                                 <Link href="/pricing" className="pdf-locked-btn-primary">
