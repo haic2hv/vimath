@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, Lock, Calendar, CheckCircle, Crown, Unlock } from "lucide-react";
 import SolutionGate from "./SolutionGate";
 import ExamViewTracker from "./ExamViewTracker";
+import PdfViewer from "./PdfViewer";
 
 export async function generateStaticParams() {
     const exams = getAllExams();
@@ -72,6 +73,14 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                         )}
                     </div>
                 </header>
+
+                {exam.frontmatter.pdfUrl && (
+                    <PdfViewer
+                        pdfUrl={exam.frontmatter.pdfUrl}
+                        downloadUrl={exam.frontmatter.downloadUrl}
+                        freeDownload={exam.frontmatter.freeDownload}
+                    />
+                )}
 
                 {exam.frontmatter.isFree ? (
                     <>

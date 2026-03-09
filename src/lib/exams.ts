@@ -9,6 +9,9 @@ export type ExamFrontmatter = {
   date: string;
   isFree: boolean;
   tags: string[];
+  pdfUrl?: string;
+  downloadUrl?: string;
+  freeDownload?: boolean;
 };
 
 export type Exam = {
@@ -36,7 +39,7 @@ export function getAllExams(): Exam[] {
   if (!fs.existsSync(examsDirectory)) {
     return [];
   }
-  
+
   const fileNames = fs.readdirSync(examsDirectory);
   const allExamsData = fileNames
     .filter((fileName) => fileName.endsWith('.md'))
