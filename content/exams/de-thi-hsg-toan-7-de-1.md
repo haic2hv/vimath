@@ -45,12 +45,12 @@ $ab+bc+ca \le a^2+b^2+c^2 \le 2(ab+bc+ca)$.
 
 ## Lời giải
 
-### Lời giải Câu 1
-Tiệm cận đứng là nghiệm của mẫu số $x - 1 = 0 \Rightarrow x = 1$.  
-**Đáp án: B**
+![](https://i.postimg.cc/B65Z6wHh/De-1-2.jpg)
 
-### Lời giải Câu 2
-Vì tích phân của đạo hàm bậc hai $\int_{0}^{2} f''(x) dx = f'(x) \Big|_{0}^{2} = f'(2) - f'(0)$.  
-Do đồ thị tiếp xúc với trục hoành tại gốc tọa độ nên $f(0) = 0$ và tiếp tuyến tại $O$ nằm ngang $\Rightarrow f'(0) = 0$.  
-Vậy $f'(2) - 0 = 4 \Rightarrow f'(2) = 4$.  
-**Đáp án: B**
+
+![](https://i.postimg.cc/26yTjgsY/De-1-3.jpg)
+
+
+![](https://i.postimg.cc/y6g4vGkG/De-1-4.jpg)
+
+![](https://i.postimg.cc/x1QwjTt2/De-1-5.jpg)
