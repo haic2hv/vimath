@@ -21,24 +21,48 @@ type Props = {
 
 export default function ExamListClient({ exams, limit, showViewAll }: Props) {
     const [search, setSearch] = useState('');
+    const [selectedTag, setSelectedTag] = useState('');
 
-    const filtered = search
-        ? exams.filter((exam) => {
-            const q = search.toLowerCase();
-            return (
-                exam.title.toLowerCase().includes(q) ||
-                exam.tags.some((t) => t.toLowerCase().includes(q)) ||
-                exam.slug.toLowerCase().includes(q)
-            );
-        })
-        : exams;
+    const filtered = selectedTag
+        ? exams.filter((exam) =>
+            exam.tags.some((t) => t.toLowerCase() === selectedTag.toLowerCase())
+        )
+        : search
+            ? exams.filter((exam) => {
+                const q = search.toLowerCase();
+                return (
+                    exam.title.toLowerCase().includes(q) ||
+                    exam.tags.some((t) => t.toLowerCase().includes(q)) ||
+                    exam.slug.toLowerCase().includes(q)
+                );
+            })
+            : exams;
 
-    const displayed = limit && !search ? filtered.slice(0, limit) : filtered;
-    const hasMore = limit && !search && filtered.length > limit;
+    const displayed = limit && !search && !selectedTag ? filtered.slice(0, limit) : filtered;
+    const hasMore = limit && !search && !selectedTag && filtered.length > limit;
+
+    function handleSearch(query: string) {
+        setSearch(query);
+        if (query) setSelectedTag('');
+    }
+
+    function handleTagSelect(tag: string) {
+        if (selectedTag === tag) {
+            setSelectedTag('');
+        } else {
+            setSelectedTag(tag);
+            setSearch('');
+        }
+    }
 
     return (
         <>
-            <ExamSearch onSearch={setSearch} value={search} />
+            <ExamSearch
+                onSearch={handleSearch}
+                value={search}
+                selectedTag={selectedTag}
+                onTagSelect={handleTagSelect}
+            />
 
             <div className="exams-grid">
                 {displayed.map((exam) => (
@@ -75,7 +99,7 @@ export default function ExamListClient({ exams, limit, showViewAll }: Props) {
                 ))}
                 {displayed.length === 0 && (
                     <div className="empty-state">
-                        <p>{search ? 'Không tìm thấy đề thi phù hợp.' : 'Chưa có đề thi nào trong hệ thống.'}</p>
+                        <p>{search || selectedTag ? 'Không tìm thấy đề thi phù hợp.' : 'Chưa có đề thi nào trong hệ thống.'}</p>
                     </div>
                 )}
             </div>
@@ -89,7 +113,7 @@ export default function ExamListClient({ exams, limit, showViewAll }: Props) {
                 </div>
             )}
 
-            {!showViewAll && filtered.length > 0 && !search && (
+            {!showViewAll && filtered.length > 0 && !search && !selectedTag && (
                 <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.85rem', color: '#94a3b8' }}>
                     Hiển thị {filtered.length} đề thi
                 </div>
