@@ -35,7 +35,7 @@ export default function PdfViewer({ pdfUrl, downloadUrl, freeDownload }: Props) 
                             className="pdf-download-btn"
                         >
                             <Download size={18} />
-                            Tải về file
+                            Tải về file word
                         </a>
                     ) : (
                         <div className="pdf-download-locked">
