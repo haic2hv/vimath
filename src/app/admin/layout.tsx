@@ -1,15 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
-import { LayoutDashboard, Users, Receipt, ShieldAlert } from 'lucide-react';
+import { LayoutDashboard, Users, Receipt, ShieldAlert, Menu, X } from 'lucide-react';
 
 const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     const { user, loading } = useAuth();
     const pathname = usePathname();
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     if (loading) {
         return <div className="admin-no-auth"><p>Đang tải...</p></div>;
@@ -38,13 +40,31 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
     return (
         <div className="admin-layout">
-            <aside className="admin-sidebar">
+            {/* Mobile menu button */}
+            <button
+                className="admin-mobile-toggle"
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                aria-label="Toggle menu"
+            >
+                {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+
+            {/* Overlay for mobile */}
+            {sidebarOpen && (
+                <div
+                    className="admin-sidebar-overlay"
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
+
+            <aside className={`admin-sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <div className="admin-sidebar-title">Quản trị</div>
                 {links.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
                         className={`admin-nav-link ${pathname === link.href ? 'active' : ''}`}
+                        onClick={() => setSidebarOpen(false)}
                     >
                         <link.icon size={18} />
                         {link.label}
