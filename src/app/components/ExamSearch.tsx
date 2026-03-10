@@ -11,7 +11,6 @@ const SUGGESTIONS = [
     { label: 'Lớp 9', tag: 'Lớp 9' },
     { label: 'Thi vào 10', tag: 'Thi vào 10' },
     { label: 'Chuyên', tag: 'Chuyên' },
-    { label: 'HSG', tag: 'HSG' },
 ];
 
 type Props = {
