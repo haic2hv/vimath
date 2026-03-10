@@ -1138,7 +1138,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
 }
 
@@ -1179,6 +1179,17 @@ body {
 
 .footer-column a:hover {
   color: #c7d2fe;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .footer-bottom {

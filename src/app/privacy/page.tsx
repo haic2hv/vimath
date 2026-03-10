@@ -101,7 +101,7 @@ export default function PrivacyPage() {
                     <h2>9. Liên hệ</h2>
                     <p>
                         Nếu có thắc mắc về chính sách bảo mật, vui lòng liên hệ:
-                        <strong> pdanghai@gmail.com</strong>
+                        <strong> contact.hmath@gmail.com</strong>
                     </p>
                 </section>
 

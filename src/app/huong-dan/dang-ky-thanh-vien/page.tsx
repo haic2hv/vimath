@@ -82,7 +82,7 @@ export default function GuideMembershipPage() {
                         trong quá trình thanh toán, vui lòng liên hệ:
                     </p>
                     <ul>
-                        <li>📧 Email: <strong>pdanghai@gmail.com</strong></li>
+                        <li>📧 Email: <strong>contact.hmath@gmail.com</strong></li>
                     </ul>
                 </section>
 

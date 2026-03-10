@@ -22,6 +22,15 @@ export default function Footer() {
                     <Link href="/huong-dan/tao-tai-khoan">Hướng dẫn tạo tài khoản</Link>
                     <Link href="/huong-dan/dang-ky-thanh-vien">Hướng dẫn đăng ký thành viên và thanh toán</Link>
                 </div>
+                <div className="footer-column">
+                    <h4>Liên hệ</h4>
+                    <a href="mailto:contact.hmath@gmail.com" className="footer-contact-item">
+                        <span className="footer-contact-icon">📧</span> contact.hmath@gmail.com
+                    </a>
+                    <a href="https://zalo.me/84385048315" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
+                        <span className="footer-contact-icon">💬</span> Zalo
+                    </a>
+                </div>
             </div>
             <div className="footer-bottom">
                 © {new Date().getFullYear()} HMath. All rights reserved.
