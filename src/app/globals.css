@@ -1192,6 +1192,13 @@ body {
   flex-shrink: 0;
 }
 
+.footer-zalo-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 .footer-bottom {
   max-width: 1200px;
   margin: 2rem auto 0;
