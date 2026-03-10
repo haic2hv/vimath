@@ -1187,16 +1187,12 @@ body {
   gap: 0.5rem;
 }
 
-.footer-contact-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.footer-zalo-icon {
-  width: 18px;
-  height: 18px;
+.footer-contact-img {
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   object-fit: contain;
+  border-radius: 3px;
 }
 
 .footer-bottom {

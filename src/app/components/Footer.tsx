@@ -25,11 +25,12 @@ export default function Footer() {
                 <div className="footer-column">
                     <h4>Liên hệ</h4>
                     <a href="mailto:contact.hmath@gmail.com" className="footer-contact-item">
-                        <span className="footer-contact-icon">📧</span> Email: contact.hmath@gmail.com
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/gmail-icon.svg" alt="Gmail" className="footer-contact-img" /> Email: contact.hmath@gmail.com
                     </a>
                     <a href="http://zalo.me/84385048315" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/zalo-icon.svg" alt="Zalo" className="footer-zalo-icon" /> Zalo: +84385048315
+                        <img src="/zalo-icon.svg.webp" alt="Zalo" className="footer-contact-img" /> Zalo: +84385048315
                     </a>
                 </div>
             </div>
