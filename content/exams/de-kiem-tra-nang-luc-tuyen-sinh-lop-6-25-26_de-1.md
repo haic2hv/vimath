@@ -1,6 +1,6 @@
 ---
-title: Đề kiểm tra đánh giá năng lực tuyển sinh lớp 6 năm 2025-2026 (Đề số 3)
-date: "2026-03-01"
+title: Đề kiểm tra đánh giá năng lực tuyển sinh lớp 6 năm 2025-2026 (Đề số 1)
+date: "2026-02-28"
 isFree: false
 tags: ["Thi vào 6"]
 ---
