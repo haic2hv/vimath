@@ -1,7 +1,7 @@
 ---
 title: Bài tập hình học ôn thi vào lớp 10 tỉnh Phú Thọ năm 2026-2027
 isFree: false
-tags: ["Thi vào 10"]
+tags: ["Thi vào 10", "Lớp 9"]
 pdfUrl: "https://drive.google.com/file/d/1MNfCPvo4sIzq5hv5L_s8czvyGzOTIj-r/preview"
 downloadUrl: "https://drive.google.com/uc?export=download&id=1MNfCPvo4sIzq5hv5L_s8czvyGzOTIj-r"
 freeDownload: false
