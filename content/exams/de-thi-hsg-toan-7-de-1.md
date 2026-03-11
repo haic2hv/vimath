@@ -1,5 +1,6 @@
 ---
 title: Đề thi học sinh giỏi Toán 7 - Đề số 1
+date: "2026-03-01"
 isFree: true
 tags: ["Lớp 7"]
 ---

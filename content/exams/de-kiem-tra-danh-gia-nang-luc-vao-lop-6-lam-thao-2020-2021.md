@@ -1,5 +1,6 @@
 ---
 title: Đề kiểm tra đánh giá năng lực vào lớp 6 THCS Lâm Thao năm 2020-2021
+date: "2026-03-01"
 isFree: true
 tags: ["Thi vào 6"]
 ---

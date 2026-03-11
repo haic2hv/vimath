@@ -9,9 +9,6 @@ export type ExamFrontmatter = {
   date: string;
   isFree: boolean;
   tags: string[];
-  pdfUrl?: string;
-  downloadUrl?: string;
-  freeDownload?: boolean;
 };
 
 export type Exam = {
@@ -20,6 +17,27 @@ export type Exam = {
   questionContent: string;
   solutionContent: string;
 };
+
+/**
+ * Convert shortcode syntax to JSX component tags for MDXRemote.
+ * - [pdf-embed](url) → <PdfEmbed url="url" />
+ * - [pdf-download url="..." free=true|false] → <PdfDownload url="..." free="true|false" />
+ */
+function processShortcodes(content: string): string {
+  // [pdf-embed](url)
+  content = content.replace(
+    /\[pdf-embed\]\(([^)]+)\)/g,
+    (_match, url) => `<PdfEmbed url="${url.trim()}" />`
+  );
+
+  // [pdf-download url="..." free=true|false]
+  content = content.replace(
+    /\[pdf-download\s+url="([^"]+)"(?:\s+free=(true|false))?\]/g,
+    (_match, url, free) => `<PdfDownload url="${url.trim()}" free="${free || 'false'}" />`
+  );
+
+  return content;
+}
 
 function splitContent(content: string): { questionContent: string; solutionContent: string } {
   const parts = content.split('## Lời giải');
@@ -54,8 +72,8 @@ export function getAllExams(): Exam[] {
       return {
         slug,
         frontmatter: matterResult.data as ExamFrontmatter,
-        questionContent,
-        solutionContent,
+        questionContent: processShortcodes(questionContent),
+        solutionContent: processShortcodes(solutionContent),
       };
     });
 
@@ -78,8 +96,8 @@ export function getExamBySlug(slug: string): Exam | null {
     return {
       slug,
       frontmatter: matterResult.data as ExamFrontmatter,
-      questionContent,
-      solutionContent,
+      questionContent: processShortcodes(questionContent),
+      solutionContent: processShortcodes(solutionContent),
     };
   } catch (error) {
     return null;

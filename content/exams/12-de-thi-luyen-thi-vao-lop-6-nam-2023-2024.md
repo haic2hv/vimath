@@ -1,5 +1,6 @@
 ---
 title: 12 Đề luyện thi vào lớp 6 năm 2024 - 2025
+date: "2026-03-01"
 isFree: true
 tags: ["Thi vào 6"]
 ---

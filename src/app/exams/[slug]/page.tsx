@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, Lock, Calendar, CheckCircle, Crown, Unlock } from "lucide-react";
 import SolutionGate from "./SolutionGate";
 import ExamViewTracker from "./ExamViewTracker";
-import PdfViewer from "./PdfViewer";
+import { PdfEmbed, PdfDownload } from "./InlinePdfEmbed";
 
 export async function generateStaticParams() {
     const exams = getAllExams();
@@ -44,6 +44,11 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
         rehypePlugins: [rehypeKatex],
     };
 
+    const mdxComponents = {
+        PdfEmbed,
+        PdfDownload,
+    };
+
     return (
         <div className="exam-detail">
             <ExamViewTracker slug={slug} title={exam.frontmatter.title} />
@@ -74,19 +79,11 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                     </div>
                 </header>
 
-                {(exam.frontmatter.pdfUrl || exam.frontmatter.downloadUrl) && (
-                    <PdfViewer
-                        pdfUrl={exam.frontmatter.pdfUrl}
-                        downloadUrl={exam.frontmatter.downloadUrl}
-                        freeDownload={exam.frontmatter.freeDownload}
-                    />
-                )}
-
                 {exam.frontmatter.isFree ? (
                     <>
                         <section className="markdown-body prose prose-indigo prose-lg max-w-none">
                             {/* @ts-ignore: Next.js RSC type incompatibility with next-mdx-remote */}
-                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} />
+                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} components={mdxComponents} />
                         </section>
 
                         {exam.solutionContent && (
@@ -97,7 +94,7 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                                 </div>
                                 <div className="markdown-body prose prose-indigo prose-lg max-w-none">
                                     {/* @ts-ignore */}
-                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} />
+                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} components={mdxComponents} />
                                 </div>
                             </section>
                         )}
@@ -106,7 +103,7 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                     <SolutionGate isFree={false}>
                         <section className="markdown-body prose prose-indigo prose-lg max-w-none">
                             {/* @ts-ignore */}
-                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} />
+                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} components={mdxComponents} />
                         </section>
 
                         {exam.solutionContent && (
@@ -117,7 +114,7 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                                 </div>
                                 <div className="markdown-body prose prose-indigo prose-lg max-w-none">
                                     {/* @ts-ignore */}
-                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} />
+                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} components={mdxComponents} />
                                 </div>
                             </section>
                         )}
