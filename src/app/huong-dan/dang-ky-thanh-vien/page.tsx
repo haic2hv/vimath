@@ -26,7 +26,7 @@ export default function GuideMembershipPage() {
                         HMath cung cấp gói:
                     </p>
                     <ul>
-                        <li><strong>Gói Thành viên 1 năm</strong> — 199.000đ</li>
+                        <li><strong>Gói Thành viên 1 năm</strong> — 59.000đ</li>
                     </ul>
                     <p>Nhấn vào nút <strong>&quot;Đăng ký ngay&quot;</strong> tại gói bạn muốn chọn.</p>
                 </section>

@@ -63,7 +63,7 @@ export default function LessonView({
                         </p>
                         <div className="premium-lock-price">
                             <Crown size={16} color="#f59e0b" />
-                            Chỉ 199.000đ / năm
+                            Chỉ 59.000đ / năm
                         </div>
                         <div className="premium-lock-actions">
                             <Link href="/pricing" className="lock-btn-primary">
