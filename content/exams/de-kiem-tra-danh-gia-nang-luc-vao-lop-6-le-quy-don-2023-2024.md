@@ -1,5 +1,5 @@
 ---
-title: Đề kiểm tra đánh giá năng lực vào lớp 6 Lê Quý Đôn
+title: Đề kiểm tra đánh giá năng lực vào lớp 6 Lê Quý Đôn năm 2023-2024
 date: "2026-03-07"
 isFree: true
 tags: ["Thi vào 6"]
