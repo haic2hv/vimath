@@ -1,6 +1,6 @@
 ---
 title: 12 đề ôn thi vào lớp 6 trường Lương Thế Vinh Hà Nội
-date: "2026-03-01"
+date: "2026-03-12"
 isFree: true
 tags: ["Thi vào 6"]
 ---
