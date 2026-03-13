@@ -1,6 +1,6 @@
 ---
 title: 6 Đề ôn luyện theo cấu trúc kiểm tra ĐGNL tuyển sinh lớp 6 năm 2025-2026
-date: "2026-03-13"
+date: "2026-02-28"
 isFree: false
 tags: ["Thi vào 6"]
 ---
