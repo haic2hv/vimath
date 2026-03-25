@@ -23,15 +23,15 @@
         },
         {
             "id": "bai-2",
-            "title": "Bài 2. Hằng đẳng thức và bất đẳng thức",
+            "title": "Bài 2. Hằng đẳng thức đáng nhớ (2)",
             "duration": "1:00:00",
-            "videoUrl": "",
+            "videoUrl": "https://www.youtube.com/embed/5o44ardzq9w",
             "videoType": "youtube",
-            "description": "Ứng dụng hằng đẳng thức trong chứng minh bất đẳng thức.",
+            "description": "Luyện tập về 3 hằng đẳng thức đầu tiên",
             "materials": [
                 {
-                    "label": "",
-                    "url": ""
+                    "label": "Tài liệu chữa bài",
+                    "url": "https://drive.google.com/file/d/1eMUeLS6141FB2kopmRdHeltmRgMFLT3C/"
                 }
             ]
         },
