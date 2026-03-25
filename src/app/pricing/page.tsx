@@ -51,7 +51,7 @@ export default function PricingPage() {
                     <div className="pricing-card-top">
                         <Crown size={24} color="#f59e0b" />
                         <h2>Thành viên</h2>
-                        <div className="pricing-price">59.000đ<span>/năm</span></div>
+                        <div className="pricing-price">99.000đ<span>/năm</span></div>
                         <p className="pricing-desc">Mở khóa toàn bộ nội dung, đồng hành suốt năm học.</p>
                     </div>
                     <ul className="pricing-features">

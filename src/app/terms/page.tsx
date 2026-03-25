@@ -59,7 +59,7 @@ export default function TermsPage() {
                 <section>
                     <h2>5. Gói Thành viên và thanh toán</h2>
                     <ul>
-                        <li>HMath cung cấp gói Thành viên với giá <strong>59.000đ / năm</strong>, mở khóa toàn bộ nội dung Premium.</li>
+                        <li>HMath cung cấp gói Thành viên với giá <strong>99.000đ / năm</strong>, mở khóa toàn bộ nội dung Premium.</li>
                         <li>Thanh toán được thực hiện qua chuyển khoản ngân hàng, xử lý bởi hệ thống <strong>SePay</strong>.</li>
                         <li>Gói Thành viên được kích hoạt tự động sau khi hệ thống xác nhận thanh toán thành công (thường trong vòng 1–5 phút).</li>
                         <li>Thời hạn sử dụng tính từ ngày kích hoạt, kéo dài 12 tháng.</li>

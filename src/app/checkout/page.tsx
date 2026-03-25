@@ -82,11 +82,11 @@ export default function CheckoutPage() {
                 <div className="checkout-summary">
                     <div className="checkout-row">
                         <span>Gói Thành viên (12 tháng)</span>
-                        <span className="checkout-price">59.000đ</span>
+                        <span className="checkout-price">99.000đ</span>
                     </div>
                     <div className="checkout-row checkout-total">
                         <span>Tổng thanh toán</span>
-                        <span className="checkout-price">59.000đ</span>
+                        <span className="checkout-price">99.000đ</span>
                     </div>
                 </div>
 
