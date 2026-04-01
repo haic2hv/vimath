@@ -13,5 +13,5 @@ Kỳ thi Khảo sát Toán 9 tỉnh Phú Thọ năm 2026 được diễn ra vào
 
 Hướng dẫn giải Câu 3 hình học và Câu 6 bất đẳng thức được HMath chia sẻ, bạn đọc có thể xem bên dưới đây.
 
-[pdf-embed](https://drive.google.com/file/d/19T36bZQ5sFugSIaNoATj8czGV0Xj0yxc/preview)
+[pdf-embed](https://drive.google.com/file/d/1Z6dqavVXknCPWVTdzfObnVmdy6cbSntl/preview)
 
