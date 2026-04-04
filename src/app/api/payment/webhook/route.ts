@@ -10,6 +10,17 @@ function getSupabaseAdmin() {
 
 // SePay Webhook / IPN endpoint
 export async function POST(request: NextRequest) {
+    // Validate webhook authorization from SePay
+    const authHeader = request.headers.get('Authorization');
+    const webhookSecret = process.env.SEPAY_WEBHOOK_SECRET;
+
+    if (webhookSecret) {
+        if (!authHeader || authHeader !== `Apikey ${webhookSecret}`) {
+            console.log('❌ Unauthorized webhook request');
+            return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+        }
+    }
+
     const supabase = getSupabaseAdmin();
 
     try {

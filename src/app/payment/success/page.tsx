@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Coins } from 'lucide-react';
 
 export default function PaymentSuccessPage() {
     return (
@@ -8,14 +8,20 @@ export default function PaymentSuccessPage() {
                 <div className="payment-icon success">
                     <CheckCircle size={36} />
                 </div>
-                <h1>Thanh toán thành công!</h1>
+                <h1>Nạp Token thành công!</h1>
                 <p>
-                    Cảm ơn bạn đã nâng cấp Premium. Tài khoản của bạn đã được kích hoạt.
-                    Bây giờ bạn có thể truy cập toàn bộ đề thi và lời giải chi tiết.
+                    <Coins size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} />
+                    Token đã được nạp vào tài khoản của bạn.
+                    Bạn có thể sử dụng token để mở khóa đề thi và khóa học ngay bây giờ.
                 </p>
-                <Link href="/" className="btn-primary" style={{ display: 'inline-flex' }}>
-                    Khám phá đề thi ngay
-                </Link>
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1rem' }}>
+                    <Link href="/" className="btn-primary" style={{ display: 'inline-flex' }}>
+                        Khám phá đề thi
+                    </Link>
+                    <Link href="/profile" className="btn-secondary" style={{ display: 'inline-flex' }}>
+                        Xem tài khoản
+                    </Link>
+                </div>
             </div>
         </div>
     );
