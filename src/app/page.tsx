@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getAllExams } from "@/lib/exams";
 import { getAllCourses } from "@/lib/courses";
-import { ArrowRight, BookOpen, Award, GraduationCap, PlayCircle } from "lucide-react";
+import { ArrowRight, BookOpen, Award, GraduationCap, PlayCircle, Coins } from "lucide-react";
 import ExamListClient from "@/app/components/ExamListClient";
 import CoursesList from "@/app/components/CoursesList";
 
@@ -14,7 +14,7 @@ export default function HomePage() {
     slug: e.slug,
     title: e.frontmatter.title,
     date: e.frontmatter.date,
-    isFree: e.frontmatter.isFree,
+    tokenPrice: e.frontmatter.tokenPrice,
     tags: e.frontmatter.tags,
   }));
 
@@ -45,7 +45,8 @@ export default function HomePage() {
               Xem khóa học
             </Link>
             <Link href="/pricing" className="btn-secondary">
-              Nâng cấp Premium
+              <Coins size={16} />
+              Nạp Token
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -94,10 +95,11 @@ export default function HomePage() {
         <div className="cta-content">
           <h2>Sẵn sàng chinh phục điểm cao?</h2>
           <p>
-            Nâng cấp tài khoản Premium để truy cập toàn bộ đề thi và lời giải chi tiết.
+            Nạp token để truy cập đề thi và khóa học chất lượng cao với lời giải chi tiết.
           </p>
           <Link href="/pricing" className="btn-primary">
-            Xem bảng giá Premium
+            <Coins size={16} />
+            Nạp Token ngay
             <ArrowRight size={16} />
           </Link>
         </div>

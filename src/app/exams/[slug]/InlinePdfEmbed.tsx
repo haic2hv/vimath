@@ -1,6 +1,6 @@
 'use client';
 
-import { Download, Lock, Crown } from 'lucide-react';
+import { Download, Lock, Coins } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
 
@@ -17,10 +17,12 @@ export function PdfEmbed({ url }: { url: string }) {
 }
 
 export function PdfDownload({ url, free }: { url: string; free?: string }) {
-    const { isPremium, user, signInWithGoogle } = useAuth();
+    const { user, signInWithGoogle } = useAuth();
 
     const isFree = free === 'true';
-    const canDownload = isFree || isPremium;
+    // For free PDFs, anyone logged in can download
+    // For non-free PDFs, they are gated by ContentGate already
+    const canDownload = isFree || !!user;
 
     return (
         <div className="pdf-download-area">
@@ -38,21 +40,16 @@ export function PdfDownload({ url, free }: { url: string; free?: string }) {
                 <div className="pdf-download-locked">
                     <div className="pdf-locked-info">
                         <Lock size={16} />
-                        <span>Tải file word tài liệu này dành cho Thành viên Premium</span>
+                        <span>Đăng nhập để tải file tài liệu này</span>
                     </div>
                     <div className="pdf-locked-actions">
-                        <Link href="/pricing" className="pdf-locked-btn-primary">
-                            <Crown size={14} />
-                            Đăng ký Premium
-                        </Link>
-                        {!user && (
-                            <button
-                                onClick={() => signInWithGoogle()}
-                                className="pdf-locked-btn-secondary"
-                            >
-                                Đăng nhập
-                            </button>
-                        )}
+                        <button
+                            onClick={() => signInWithGoogle()}
+                            className="pdf-locked-btn-primary"
+                        >
+                            <Coins size={14} />
+                            Đăng nhập
+                        </button>
                     </div>
                 </div>
             )}

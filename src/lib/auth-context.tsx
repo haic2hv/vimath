@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react';
 import { supabase } from '@/lib/supabase';
 import type { User, Session } from '@supabase/supabase-js';
 
@@ -8,7 +8,8 @@ type AuthContextType = {
     user: User | null;
     session: Session | null;
     loading: boolean;
-    isPremium: boolean;
+    tokenBalance: number;
+    refreshTokenBalance: () => Promise<void>;
     signInWithGoogle: () => Promise<void>;
     signOut: () => Promise<void>;
 };
@@ -19,7 +20,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
     const [session, setSession] = useState<Session | null>(null);
     const [loading, setLoading] = useState(true);
-    const [isPremium, setIsPremium] = useState(false);
+    const [tokenBalance, setTokenBalance] = useState(0);
+
+    const fetchTokenBalance = useCallback(async (userId: string) => {
+        try {
+            const { data, error } = await supabase
+                .from('Profile')
+                .select('tokenBalance')
+                .eq('userId', userId)
+                .single();
+
+            if (data && !error) {
+                setTokenBalance(data.tokenBalance || 0);
+            }
+        } catch {
+            setTokenBalance(0);
+        }
+    }, []);
+
+    const refreshTokenBalance = useCallback(async () => {
+        if (user) {
+            await fetchTokenBalance(user.id);
+        }
+    }, [user, fetchTokenBalance]);
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -27,7 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUser(session?.user ?? null);
             if (session?.user) {
                 ensureProfile(session.user);
-                checkPremiumStatus(session.user.id);
+                fetchTokenBalance(session.user.id);
             }
             setLoading(false);
         });
@@ -37,14 +60,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUser(session?.user ?? null);
             if (session?.user) {
                 ensureProfile(session.user);
-                checkPremiumStatus(session.user.id);
+                fetchTokenBalance(session.user.id);
             } else {
-                setIsPremium(false);
+                setTokenBalance(0);
             }
         });
 
         return () => subscription.unsubscribe();
-    }, []);
+    }, [fetchTokenBalance]);
 
     async function ensureProfile(authUser: User) {
         try {
@@ -58,30 +81,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 await supabase.from('Profile').insert({
                     userId: authUser.id,
                     email: authUser.email || '',
-                    isPremium: false,
+                    tokenBalance: 0,
                     role: 'user',
                 });
             }
         } catch {
             // Profile might already exist
-        }
-    }
-
-    async function checkPremiumStatus(userId: string) {
-        try {
-            const { data, error } = await supabase
-                .from('Profile')
-                .select('isPremium, premiumUntil')
-                .eq('userId', userId)
-                .single();
-
-            if (data && !error) {
-                const isActive = data.isPremium &&
-                    (!data.premiumUntil || new Date(data.premiumUntil) > new Date());
-                setIsPremium(isActive);
-            }
-        } catch {
-            setIsPremium(false);
         }
     }
 
@@ -98,11 +103,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     async function signOut() {
         await supabase.auth.signOut();
-        setIsPremium(false);
+        setTokenBalance(0);
     }
 
     return (
-        <AuthContext.Provider value={{ user, session, loading, isPremium, signInWithGoogle, signOut }}>
+        <AuthContext.Provider value={{ user, session, loading, tokenBalance, refreshTokenBalance, signInWithGoogle, signOut }}>
             {children}
         </AuthContext.Provider>
     );

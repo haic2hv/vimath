@@ -12,7 +12,7 @@ export default function CoursesList() {
         title: c.title,
         description: c.description,
         tags: c.tags,
-        isFree: c.isFree,
+        tokenPrice: c.tokenPrice,
         lessonsCount: c.lessons.length,
     }));
 

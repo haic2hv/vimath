@@ -23,19 +23,19 @@ export async function GET(request: NextRequest) {
         .from('Profile')
         .select('id', { count: 'exact', head: true });
 
-    // Premium users
-    const { count: premiumUsers } = await supabase
+    // Users with tokens
+    const { count: usersWithTokens } = await supabase
         .from('Profile')
         .select('id', { count: 'exact', head: true })
-        .eq('isPremium', true);
+        .gt('tokenBalance', 0);
 
     // Total orders
     const { data: paidOrders } = await supabase
         .from('Order')
-        .select('amount')
+        .select('amount, type')
         .eq('status', 'paid');
 
-    const totalRevenue = paidOrders?.reduce((sum, o) => sum + o.amount, 0) || 0;
+    const totalRevenue = paidOrders?.filter(o => o.type === 'topup').reduce((sum, o) => sum + o.amount, 0) || 0;
     const totalOrders = paidOrders?.length || 0;
 
     // Recent orders
@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
         totalUsers: totalUsers || 0,
-        premiumUsers: premiumUsers || 0,
+        usersWithTokens: usersWithTokens || 0,
         totalRevenue,
         totalOrders,
         recentOrders: recentOrders || [],

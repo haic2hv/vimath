@@ -49,23 +49,48 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ users, total: count, page, limit });
 }
 
-// Toggle premium for a user manually
+// Update user tokens (gift/adjust tokens)
 export async function PATCH(request: NextRequest) {
     const isAdmin = await verifyAdmin(request);
     if (!isAdmin) {
         return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    const { profileId, isPremium, premiumUntil } = await request.json();
+    const { profileId, tokenAmount, action } = await request.json();
+
+    if (!profileId || tokenAmount === undefined) {
+        return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    // Get current balance
+    const { data: profile } = await supabase
+        .from('Profile')
+        .select('tokenBalance')
+        .eq('id', profileId)
+        .single();
+
+    if (!profile) {
+        return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
+    }
+
+    let newBalance: number;
+    if (action === 'set') {
+        newBalance = Number(tokenAmount);
+    } else {
+        // Default: add tokens
+        newBalance = profile.tokenBalance + Number(tokenAmount);
+    }
+
+    if (newBalance < 0) newBalance = 0;
 
     const { error } = await supabase
         .from('Profile')
-        .update({ isPremium, premiumUntil })
+        .update({ tokenBalance: newBalance })
         .eq('id', profileId);
 
     if (error) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, newBalance });
 }

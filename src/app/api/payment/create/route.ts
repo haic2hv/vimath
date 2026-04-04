@@ -7,17 +7,28 @@ function getSupabaseAdmin() {
     return createClient(url, serviceKey);
 }
 
+const TOKEN_PACKAGES: Record<number, number> = {
+    20: 20000,
+    50: 50000,
+    100: 100000,
+    200: 200000,
+    500: 500000,
+};
+
 export async function POST(request: NextRequest) {
     const supabase = getSupabaseAdmin();
     try {
-        const { plan, userId, email } = await request.json();
+        const { tokenPackage, userId, email } = await request.json();
 
-        if (!plan || !userId || !email) {
+        if (!tokenPackage || !userId || !email) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        const amount = 99000;
-        const planLabel = 'Gói Thành viên (12 Tháng)';
+        const tokens = Number(tokenPackage);
+        const amount = TOKEN_PACKAGES[tokens];
+        if (!amount) {
+            return NextResponse.json({ error: 'Invalid token package' }, { status: 400 });
+        }
 
         // Get or create profile
         let { data: profile } = await supabase
@@ -29,7 +40,7 @@ export async function POST(request: NextRequest) {
         if (!profile) {
             const { data: newProfile } = await supabase
                 .from('Profile')
-                .insert({ userId, email, isPremium: false, role: 'user' })
+                .insert({ userId, email, tokenBalance: 0, role: 'user' })
                 .select('id')
                 .single();
             profile = newProfile;
@@ -39,13 +50,14 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Could not create profile' }, { status: 500 });
         }
 
-        // Create order
+        // Create topup order
         const { data: order, error: orderError } = await supabase
             .from('Order')
             .insert({
                 profileId: profile.id,
-                plan,
+                type: 'topup',
                 amount,
+                tokenAmount: tokens,
                 status: 'pending',
             })
             .select('id')
@@ -55,15 +67,8 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Could not create order' }, { status: 500 });
         }
 
-        // Build SePay payment URL
-        // SePay Payment Gateway redirect URL format
-        const merchantId = process.env.SEPAY_MERCHANT_ID || '';
+        // Build SePay payment info
         const orderCode = order.id.slice(0, 8).toUpperCase();
-        const returnUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/payment/success?order=${order.id}`;
-        const cancelUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/payment/cancel`;
-
-        // SePay QR Payment URL (simple bank transfer with content matching)
-        // The content format allows SePay webhook to identify the transaction
         const paymentContent = `SEVQR HMATH ${orderCode}`;
 
         // Update order with reference code
@@ -79,11 +84,14 @@ export async function POST(request: NextRequest) {
             ? `https://qr.sepay.vn/img?bank=${bankCode}&acc=${bankAccount}&template=compact&amount=${amount}&des=${encodeURIComponent(paymentContent)}`
             : '';
 
+        const formatAmount = new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
+
         return NextResponse.json({
             orderId: order.id,
             orderCode,
             amount,
-            planLabel,
+            formatAmount,
+            tokenAmount: tokens,
             paymentContent,
             qrUrl,
         });

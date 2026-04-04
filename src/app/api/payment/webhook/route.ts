@@ -16,10 +16,6 @@ export async function POST(request: NextRequest) {
         const body = await request.json();
         console.log('🔔 SePay webhook received:', JSON.stringify(body));
 
-        // SePay sends these fields:
-        // gateway, transactionDate, accountNumber, subAccount,
-        // transferType, transferAmount, accumulated, code,
-        // content, referenceCode, description
         const content = body.content || body.description || '';
         const transferAmount = body.transferAmount || body.amount || 0;
         const referenceCode = body.referenceCode || body.code || '';
@@ -54,7 +50,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ success: false, message: 'Order not found' });
         }
 
-        console.log(`✅ Found order: ${order.id}, plan: ${order.plan}, amount: ${order.amount}`);
+        console.log(`✅ Found order: ${order.id}, type: ${order.type}, tokenAmount: ${order.tokenAmount}`);
 
         // Update order status to paid
         const { error: updateOrderErr } = await supabase
@@ -66,34 +62,22 @@ export async function POST(request: NextRequest) {
             console.log(`❌ Failed to update order: ${updateOrderErr.message}`);
         }
 
-        // Calculate premium expiry
-        const now = new Date();
-        const months = order.plan === '6months' ? 6 : 12;
+        // Add tokens to user balance
+        const currentBalance = order.profile?.tokenBalance || 0;
+        const newBalance = currentBalance + order.tokenAmount;
 
-        let premiumUntil: Date;
-        if (order.profile?.premiumUntil && new Date(order.profile.premiumUntil) > now) {
-            premiumUntil = new Date(order.profile.premiumUntil);
-        } else {
-            premiumUntil = new Date(now);
-        }
-        premiumUntil.setMonth(premiumUntil.getMonth() + months);
-
-        // Activate premium for user
         const { error: updateProfileErr } = await supabase
             .from('Profile')
-            .update({
-                isPremium: true,
-                premiumUntil: premiumUntil.toISOString(),
-            })
+            .update({ tokenBalance: newBalance })
             .eq('id', order.profileId);
 
         if (updateProfileErr) {
             console.log(`❌ Failed to update profile: ${updateProfileErr.message}`);
-            return NextResponse.json({ success: false, message: 'Failed to activate premium' });
+            return NextResponse.json({ success: false, message: 'Failed to add tokens' });
         }
 
-        console.log(`🎉 Premium activated until ${premiumUntil.toISOString()}`);
-        return NextResponse.json({ success: true, message: 'Payment confirmed' });
+        console.log(`🎉 Added ${order.tokenAmount} tokens. New balance: ${newBalance}`);
+        return NextResponse.json({ success: true, message: 'Payment confirmed, tokens added' });
     } catch (error) {
         console.error('❌ Webhook error:', error);
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

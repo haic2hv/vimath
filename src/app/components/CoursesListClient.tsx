@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { PlayCircle, Lock, Unlock, Search } from 'lucide-react';
+import { PlayCircle, Unlock, Coins, Search } from 'lucide-react';
 
 type CourseData = {
     slug: string;
     title: string;
     description: string;
     tags: string[];
-    isFree: boolean;
+    tokenPrice: number;
     lessonsCount: number;
 };
 
@@ -49,15 +49,15 @@ export default function CoursesListClient({ courses }: { courses: CourseData[] }
                     >
                         <div className="exam-card-header">
                             <div className="exam-card-badges">
-                                {course.isFree ? (
+                                {course.tokenPrice === 0 ? (
                                     <span className="badge badge-free">
                                         <Unlock size={11} />
                                         Miễn phí
                                     </span>
                                 ) : (
-                                    <span className="badge badge-premium">
-                                        <Lock size={11} />
-                                        Thành viên
+                                    <span className="badge badge-token">
+                                        <Coins size={11} />
+                                        {course.tokenPrice} token
                                     </span>
                                 )}
                                 <span className="badge badge-date">

@@ -7,8 +7,10 @@ const examsDirectory = path.join(process.cwd(), 'content/exams');
 export type ExamFrontmatter = {
   title: string;
   date: string;
-  isFree: boolean;
+  tokenPrice: number;
   tags: string[];
+  // Backward compat: isFree is derived from tokenPrice
+  isFree?: boolean;
 };
 
 export type Exam = {
@@ -53,6 +55,23 @@ function splitContent(content: string): { questionContent: string; solutionConte
   };
 }
 
+function parseFrontmatter(data: Record<string, any>): ExamFrontmatter {
+  // Support both old isFree and new tokenPrice format
+  let tokenPrice = 0;
+  if (data.tokenPrice !== undefined) {
+    tokenPrice = Number(data.tokenPrice) || 0;
+  } else if (data.isFree === false) {
+    tokenPrice = 5; // Default price for old premium exams
+  }
+
+  return {
+    title: data.title || '',
+    date: data.date || '',
+    tokenPrice,
+    tags: data.tags || [],
+  };
+}
+
 export function getAllExams(): Exam[] {
   if (!fs.existsSync(examsDirectory)) {
     return [];
@@ -71,7 +90,7 @@ export function getAllExams(): Exam[] {
 
       return {
         slug,
-        frontmatter: matterResult.data as ExamFrontmatter,
+        frontmatter: parseFrontmatter(matterResult.data),
         questionContent: processShortcodes(questionContent),
         solutionContent: processShortcodes(solutionContent),
       };
@@ -95,7 +114,7 @@ export function getExamBySlug(slug: string): Exam | null {
 
     return {
       slug,
-      frontmatter: matterResult.data as ExamFrontmatter,
+      frontmatter: parseFrontmatter(matterResult.data),
       questionContent: processShortcodes(questionContent),
       solutionContent: processShortcodes(solutionContent),
     };

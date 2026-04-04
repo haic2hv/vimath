@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { Crown, Calendar, Receipt, BookOpen, ArrowRight, PlayCircle, Eye, Shield } from 'lucide-react';
+import { Coins, Calendar, Receipt, BookOpen, ArrowRight, PlayCircle, Eye, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { getViewedExams, getViewedLessons, type ViewedExam, type ViewedLesson } from '@/lib/view-history';
 
 type ProfileData = {
     email: string;
     role: string;
-    isPremium: boolean;
-    premiumUntil: string | null;
+    tokenBalance: number;
     createdAt: string;
     orders: any[];
+    purchases: any[];
 };
 
 export default function ProfilePage() {
-    const { user, loading, isPremium, signOut } = useAuth();
+    const { user, loading, tokenBalance, signOut } = useAuth();
     const router = useRouter();
     const [profile, setProfile] = useState<ProfileData | null>(null);
     const [loadingProfile, setLoadingProfile] = useState(true);
@@ -41,7 +41,7 @@ export default function ProfilePage() {
         try {
             const { data } = await supabase
                 .from('Profile')
-                .select('*, orders:Order(*)')
+                .select('*, orders:Order(*), purchases:Purchase(*)')
                 .eq('userId', user!.id)
                 .single();
 
@@ -85,10 +85,8 @@ export default function ProfilePage() {
         return formatDate(dateStr);
     };
 
-    const paidOrders = profile?.orders?.filter((o: any) => o.status === 'paid') || [];
-    const daysRemaining = profile?.premiumUntil
-        ? Math.max(0, Math.ceil((new Date(profile.premiumUntil).getTime() - Date.now()) / (1000 * 60 * 60 * 24)))
-        : 0;
+    const topupOrders = profile?.orders?.filter((o: any) => o.type === 'topup' && o.status === 'paid') || [];
+    const purchaseOrders = profile?.purchases || [];
 
     return (
         <div className="profile-page">
@@ -105,13 +103,9 @@ export default function ProfilePage() {
                     <h1>{user.user_metadata?.full_name || user.email}</h1>
                     <p className="profile-email">{user.email}</p>
                     <div className="profile-badges">
-                        {isPremium ? (
-                            <span className="status-badge status-active">
-                                <Crown size={12} /> Premium
-                            </span>
-                        ) : (
-                            <span className="status-badge status-inactive">Free</span>
-                        )}
+                        <span className="status-badge status-token">
+                            <Coins size={12} /> {tokenBalance} token
+                        </span>
                         {profile?.role === 'admin' && (
                             <span className="status-badge status-admin">Admin</span>
                         )}
@@ -122,55 +116,85 @@ export default function ProfilePage() {
             {/* Stats Cards */}
             <div className="profile-stats">
                 <div className="stat-card">
-                    <div className="stat-card-label">Trạng thái</div>
-                    <div className="stat-card-value" style={{ fontSize: '1.25rem' }}>
-                        {isPremium ? '🌟 Premium' : 'Miễn phí'}
-                    </div>
-                </div>
-                <div className="stat-card">
                     <div className="stat-card-label">
-                        <Calendar size={14} style={{ display: 'inline', marginRight: 4 }} />
-                        Còn lại
+                        <Coins size={14} style={{ display: 'inline', marginRight: 4 }} />
+                        Số dư Token
                     </div>
-                    <div className="stat-card-value" style={{ fontSize: '1.25rem' }}>
-                        {isPremium ? `${daysRemaining} ngày` : '—'}
+                    <div className="stat-card-value" style={{ fontSize: '1.25rem', color: '#f59e0b' }}>
+                        {tokenBalance}
                     </div>
                 </div>
                 <div className="stat-card">
                     <div className="stat-card-label">
                         <Receipt size={14} style={{ display: 'inline', marginRight: 4 }} />
-                        Đơn hàng
+                        Nạp token
                     </div>
                     <div className="stat-card-value" style={{ fontSize: '1.25rem' }}>
-                        {paidOrders.length}
+                        {topupOrders.length} lần
+                    </div>
+                </div>
+                <div className="stat-card">
+                    <div className="stat-card-label">
+                        <BookOpen size={14} style={{ display: 'inline', marginRight: 4 }} />
+                        Đã mua
+                    </div>
+                    <div className="stat-card-value" style={{ fontSize: '1.25rem' }}>
+                        {purchaseOrders.length} nội dung
                     </div>
                 </div>
             </div>
 
-            {/* Premium CTA */}
-            {!isPremium && (
-                <div className="profile-cta">
-                    <div className="profile-cta-content">
-                        <Crown size={24} color="#f59e0b" />
-                        <div>
-                            <h3>Nâng cấp Premium</h3>
-                            <p>Mở khóa tất cả đề thi và lời giải chi tiết</p>
+            {/* Token CTA */}
+            <div className="profile-cta">
+                <div className="profile-cta-content">
+                    <Coins size={24} color="#f59e0b" />
+                    <div>
+                        <h3>Nạp thêm Token</h3>
+                        <p>Nạp token để truy cập thêm đề thi và khóa học</p>
+                    </div>
+                </div>
+                <Link href="/pricing" className="btn-primary">
+                    Nạp Token <ArrowRight size={16} />
+                </Link>
+            </div>
+
+            {/* Purchased Content */}
+            {purchaseOrders.length > 0 && (
+                <div className="data-table-wrap">
+                    <div className="data-table-header">
+                        <div className="data-table-title">
+                            <Coins size={16} style={{ display: 'inline', marginRight: 6 }} />
+                            Nội dung đã mua
                         </div>
                     </div>
-                    <Link href="/pricing" className="btn-primary">
-                        Xem bảng giá <ArrowRight size={16} />
-                    </Link>
-                </div>
-            )}
-
-            {/* Premium Info */}
-            {isPremium && profile?.premiumUntil && (
-                <div className="profile-premium-info">
-                    <Crown size={20} color="#059669" />
-                    <div>
-                        <strong>Premium đang hoạt động</strong>
-                        <p>Hết hạn: {formatDate(profile.premiumUntil)}</p>
-                    </div>
+                    <table className="data-table">
+                        <thead>
+                            <tr>
+                                <th>Loại</th>
+                                <th>Slug</th>
+                                <th>Token</th>
+                                <th>Ngày mua</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {purchaseOrders.map((p: any) => (
+                                <tr key={p.id}>
+                                    <td>
+                                        <span className={`status-badge ${p.itemType === 'course' ? 'status-admin' : 'status-active'}`}>
+                                            {p.itemType === 'course' ? 'Khóa học' : 'Đề thi'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <Link href={p.itemType === 'course' ? `/courses/${p.itemSlug}` : `/exams/${p.itemSlug}`} style={{ color: '#818cf8' }}>
+                                            {p.itemSlug}
+                                        </Link>
+                                    </td>
+                                    <td style={{ fontWeight: 600 }}>{p.tokenAmount}</td>
+                                    <td>{formatDate(p.createdAt)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             )}
 
@@ -242,23 +266,23 @@ export default function ProfilePage() {
             {/* Order History */}
             <div className="data-table-wrap">
                 <div className="data-table-header">
-                    <div className="data-table-title">Lịch sử giao dịch</div>
+                    <div className="data-table-title">Lịch sử nạp token</div>
                 </div>
-                {profile?.orders && profile.orders.length > 0 ? (
+                {profile?.orders && profile.orders.filter((o: any) => o.type === 'topup').length > 0 ? (
                     <table className="data-table">
                         <thead>
                             <tr>
-                                <th>Gói</th>
+                                <th>Token</th>
                                 <th>Số tiền</th>
                                 <th>Trạng thái</th>
                                 <th>Ngày</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {profile.orders.map((order: any) => (
+                            {profile.orders.filter((o: any) => o.type === 'topup').map((order: any) => (
                                 <tr key={order.id}>
-                                    <td>{order.plan === '6months' ? 'Học kỳ (6 Tháng)' : 'Năm học (12 Tháng)'}</td>
-                                    <td style={{ fontWeight: 600 }}>{formatCurrency(order.amount)}</td>
+                                    <td style={{ fontWeight: 600 }}>{order.tokenAmount} token</td>
+                                    <td>{formatCurrency(order.amount)}</td>
                                     <td>
                                         <span className={`status-badge status-${order.status}`}>
                                             {order.status === 'paid' ? 'Đã TT' : order.status === 'pending' ? 'Chờ TT' : 'Thất bại'}
@@ -284,8 +308,8 @@ export default function ProfilePage() {
                     <ArrowRight size={16} />
                 </Link>
                 <Link href="/pricing" className="profile-link-card">
-                    <Crown size={20} />
-                    <span>Bảng giá</span>
+                    <Coins size={20} />
+                    <span>Nạp Token</span>
                     <ArrowRight size={16} />
                 </Link>
             </div>

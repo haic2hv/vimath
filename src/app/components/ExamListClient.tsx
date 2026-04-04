@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Lock, Unlock, ArrowRight } from 'lucide-react';
+import { Lock, Unlock, ArrowRight, Coins } from 'lucide-react';
 import ExamSearch from '@/app/components/ExamSearch';
 
 type ExamData = {
     slug: string;
     title: string;
     date: string;
-    isFree: boolean;
+    tokenPrice: number;
     tags: string[];
 };
 
@@ -73,15 +73,15 @@ export default function ExamListClient({ exams, limit, showViewAll }: Props) {
                     >
                         <div className="exam-card-header">
                             <div className="exam-card-badges">
-                                {exam.isFree ? (
+                                {exam.tokenPrice === 0 ? (
                                     <span className="badge badge-free">
                                         <Unlock size={11} />
                                         Miễn phí
                                     </span>
                                 ) : (
-                                    <span className="badge badge-premium">
-                                        <Lock size={11} />
-                                        Thành viên
+                                    <span className="badge badge-token">
+                                        <Coins size={11} />
+                                        {exam.tokenPrice} token
                                     </span>
                                 )}
 

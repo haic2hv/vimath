@@ -15,5 +15,7 @@ Hướng dẫn giải Câu 3 hình học và Câu 6 bất đẳng thức đượ
 
 [pdf-embed](https://drive.google.com/file/d/1j_kE-mgMNo44UczVZfNoBuiG3qEa0vcG/preview)
 
+Bạn đọc có thể tải về file pdf theo link bên dưới để tiện cho việc in ấn.
+
 [pdf-download url="https://drive.google.com/uc?export=download&id=1j_kE-mgMNo44UczVZfNoBuiG3qEa0vcG" free=true]
 

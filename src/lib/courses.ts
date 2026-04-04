@@ -18,9 +18,31 @@ export type Course = {
     title: string;
     description: string;
     tags: string[];
-    isFree: boolean;
+    tokenPrice: number;
     lessons: Lesson[];
+    // Backward compat
+    isFree?: boolean;
 };
+
+function parseCourse(raw: string): Course {
+    const data = JSON.parse(raw);
+    // Support both old isFree and new tokenPrice format
+    let tokenPrice = 0;
+    if (data.tokenPrice !== undefined) {
+        tokenPrice = Number(data.tokenPrice) || 0;
+    } else if (data.isFree === false) {
+        tokenPrice = 50; // Default price for old premium courses
+    }
+
+    return {
+        slug: data.slug,
+        title: data.title,
+        description: data.description,
+        tags: data.tags || [],
+        tokenPrice,
+        lessons: data.lessons || [],
+    };
+}
 
 export function getAllCourses(): Course[] {
     if (!fs.existsSync(coursesDir)) return [];
@@ -28,7 +50,7 @@ export function getAllCourses(): Course[] {
     const files = fs.readdirSync(coursesDir).filter(f => f.endsWith('.json'));
     return files.map(file => {
         const raw = fs.readFileSync(path.join(coursesDir, file), 'utf8');
-        return JSON.parse(raw) as Course;
+        return parseCourse(raw);
     });
 }
 
@@ -36,5 +58,5 @@ export function getCourseBySlug(slug: string): Course | null {
     const filePath = path.join(coursesDir, `${slug}.json`);
     if (!fs.existsSync(filePath)) return null;
     const raw = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(raw) as Course;
+    return parseCourse(raw);
 }

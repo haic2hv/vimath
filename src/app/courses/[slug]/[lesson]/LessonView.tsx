@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import Link from 'next/link';
-import { ArrowLeft, Lock, Crown, Download } from 'lucide-react';
+import { ArrowLeft, Lock, Coins, Download, LogIn, Loader2 } from 'lucide-react';
 import { addViewedLesson } from '@/lib/view-history';
 
 type Material = {
@@ -14,7 +14,7 @@ type Material = {
 type LessonViewProps = {
     courseTitle: string;
     courseSlug: string;
-    isFree: boolean;
+    tokenPrice: number;
     lessonId: string;
     lessonTitle: string;
     lessonDescription: string;
@@ -26,12 +26,37 @@ type LessonViewProps = {
 };
 
 export default function LessonView({
-    courseTitle, courseSlug, isFree, lessonId, lessonTitle, lessonDescription,
+    courseTitle, courseSlug, tokenPrice, lessonId, lessonTitle, lessonDescription,
     videoUrl, videoType, materials, prevLesson, nextLesson
 }: LessonViewProps) {
-    const { user, isPremium, loading, signInWithGoogle } = useAuth();
+    const { user, tokenBalance, loading, signInWithGoogle, refreshTokenBalance } = useAuth();
+    const [hasAccess, setHasAccess] = useState<boolean | null>(null);
+    const [checking, setChecking] = useState(false);
+    const [purchasing, setPurchasing] = useState(false);
+    const [purchaseError, setPurchaseError] = useState('');
 
-    const canView = isFree || isPremium;
+    const isFree = tokenPrice === 0;
+
+    useEffect(() => {
+        if (!loading && user && !isFree && hasAccess === null && !checking) {
+            checkAccess();
+        }
+    }, [loading, user, isFree]);
+
+    async function checkAccess() {
+        if (!user) return;
+        setChecking(true);
+        try {
+            const res = await fetch(`/api/check-access?userId=${user.id}&itemType=course&itemSlug=${courseSlug}`);
+            const data = await res.json();
+            setHasAccess(data.hasAccess);
+        } catch {
+            setHasAccess(false);
+        }
+        setChecking(false);
+    }
+
+    const canView = isFree || hasAccess === true;
 
     useEffect(() => {
         if (!loading && canView) {
@@ -43,36 +68,120 @@ export default function LessonView({
         return <div className="lesson-page"><p style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>Đang tải...</p></div>;
     }
 
-    if (!canView) {
+    // Not logged in
+    if (!user) {
         return (
             <div className="lesson-page">
                 <Link href={`/courses/${courseSlug}`} className="exam-back-link">
                     <ArrowLeft size={16} />
                     {courseTitle}
                 </Link>
+                <div className="lesson-locked">
+                    <div className="premium-lock-content">
+                        <div className="premium-lock-icon">
+                            <LogIn size={28} color="white" />
+                        </div>
+                        <h2>{lessonTitle}</h2>
+                        <p>Đăng nhập tài khoản HMath để xem bài giảng này.</p>
+                        <div className="premium-lock-actions">
+                            <button onClick={() => signInWithGoogle()} className="lock-btn-primary">
+                                <LogIn size={16} /> Đăng nhập / Đăng ký
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
+    // Checking access
+    if (!isFree && (hasAccess === null || checking)) {
+        return (
+            <div className="lesson-page">
+                <Link href={`/courses/${courseSlug}`} className="exam-back-link">
+                    <ArrowLeft size={16} />
+                    {courseTitle}
+                </Link>
+                <div className="lesson-locked">
+                    <div className="premium-lock-content">
+                        <Loader2 size={24} className="spin" />
+                        <p>Đang kiểm tra quyền truy cập...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    // Need to buy course
+    if (!canView) {
+        const handlePurchase = async () => {
+            setPurchasing(true);
+            setPurchaseError('');
+            try {
+                const res = await fetch('/api/purchase', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        userId: user.id,
+                        itemType: 'course',
+                        itemSlug: courseSlug,
+                        tokenPrice,
+                    }),
+                });
+                const data = await res.json();
+                if (data.success) {
+                    setHasAccess(true);
+                    await refreshTokenBalance();
+                } else if (res.status === 402) {
+                    setPurchaseError(`Không đủ token. Cần ${tokenPrice} token, hiện có ${tokenBalance} token.`);
+                } else if (res.status === 409) {
+                    setHasAccess(true);
+                } else {
+                    setPurchaseError(data.error || 'Có lỗi xảy ra');
+                }
+            } catch {
+                setPurchaseError('Có lỗi xảy ra. Vui lòng thử lại.');
+            }
+            setPurchasing(false);
+        };
+
+        const formattedPrice = new Intl.NumberFormat('vi-VN').format(tokenPrice * 1000) + 'đ';
+
+        return (
+            <div className="lesson-page">
+                <Link href={`/courses/${courseSlug}`} className="exam-back-link">
+                    <ArrowLeft size={16} />
+                    {courseTitle}
+                </Link>
                 <div className="lesson-locked">
                     <div className="premium-lock-content">
                         <div className="premium-lock-icon">
                             <Lock size={28} color="white" />
                         </div>
                         <h2>{lessonTitle}</h2>
-                        <p>
-                            Nội dung video bài giảng này dành riêng cho Thành viên HMath.
-                            Đăng ký gói Thành viên để xem toàn bộ khóa học.
-                        </p>
-                        <div className="premium-lock-price">
-                            <Crown size={16} color="#f59e0b" />
-                            Chỉ 99.000đ / năm
+                        <p>Khóa học này yêu cầu trả token để truy cập toàn bộ bài giảng.</p>
+                        <div className="token-price-display">
+                            <Coins size={20} />
+                            <span className="token-price-amount">{tokenPrice} token</span>
+                            <span className="token-price-vnd">({formattedPrice})</span>
                         </div>
+                        <div className="token-balance-info">
+                            Số dư hiện tại: <strong>{tokenBalance} token</strong>
+                        </div>
+                        {purchaseError && <div className="purchase-error">{purchaseError}</div>}
                         <div className="premium-lock-actions">
-                            <Link href="/pricing" className="lock-btn-primary">
-                                Đăng ký Thành viên
-                            </Link>
-                            {!user && (
-                                <button onClick={() => signInWithGoogle()} className="lock-btn-secondary">
-                                    Đăng nhập →
+                            {tokenBalance >= tokenPrice ? (
+                                <button onClick={handlePurchase} className="lock-btn-primary" disabled={purchasing}>
+                                    {purchasing ? (
+                                        <><Loader2 size={16} className="spin" /> Đang xử lý...</>
+                                    ) : (
+                                        <><Coins size={16} /> Mua khóa học ({tokenPrice} token)</>
+                                    )}
                                 </button>
+                            ) : (
+                                <Link href="/pricing" className="lock-btn-primary">
+                                    <Coins size={16} /> Nạp thêm token
+                                </Link>
                             )}
                         </div>
                     </div>

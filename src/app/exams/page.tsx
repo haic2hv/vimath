@@ -15,7 +15,7 @@ export default function ExamsPage() {
         slug: e.slug,
         title: e.frontmatter.title,
         date: e.frontmatter.date,
-        isFree: e.frontmatter.isFree,
+        tokenPrice: e.frontmatter.tokenPrice,
         tags: e.frontmatter.tags,
     }));
 

@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Coins } from 'lucide-react';
 
 const ADMIN_EMAILS = ['pdanghai@gmail.com', 'pdanghai.mmo@gmail.com'];
 
 export default function Header() {
-    const { user, loading, signInWithGoogle } = useAuth();
+    const { user, loading, tokenBalance, signInWithGoogle } = useAuth();
     const isAdmin = user?.email && ADMIN_EMAILS.includes(user.email);
 
     return (
@@ -23,7 +23,7 @@ export default function Header() {
                 <nav>
                     <Link href="/" className="nav-link">Trang chủ</Link>
                     {!isAdmin && (
-                        <Link href="/pricing" className="nav-link">Bảng giá</Link>
+                        <Link href="/pricing" className="nav-link">Nạp Token</Link>
                     )}
                     {isAdmin && (
                         <Link href="/admin" className="nav-link">Admin</Link>
@@ -32,17 +32,23 @@ export default function Header() {
 
                 <div className="user-menu">
                     {loading ? null : user ? (
-                        <Link href="/profile" className="user-avatar">
-                            {user.user_metadata?.avatar_url ? (
-                                <img
-                                    src={user.user_metadata.avatar_url}
-                                    alt=""
-                                    style={{ width: 32, height: 32, borderRadius: '50%' }}
-                                />
-                            ) : (
-                                user.email?.charAt(0).toUpperCase()
-                            )}
-                        </Link>
+                        <div className="user-menu-inner">
+                            <Link href="/pricing" className="token-badge" title="Số dư token">
+                                <Coins size={14} />
+                                <span>{tokenBalance}</span>
+                            </Link>
+                            <Link href="/profile" className="user-avatar">
+                                {user.user_metadata?.avatar_url ? (
+                                    <img
+                                        src={user.user_metadata.avatar_url}
+                                        alt=""
+                                        style={{ width: 32, height: 32, borderRadius: '50%' }}
+                                    />
+                                ) : (
+                                    user.email?.charAt(0).toUpperCase()
+                                )}
+                            </Link>
+                        </div>
                     ) : (
                         <button onClick={() => signInWithGoogle()} className="btn-signup">
                             Đăng nhập

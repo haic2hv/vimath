@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { supabase } from '@/lib/supabase';
-import { Users, Crown, DollarSign, ShoppingCart } from 'lucide-react';
+import { Users, Coins, DollarSign, ShoppingCart } from 'lucide-react';
 
 type Stats = {
     totalUsers: number;
-    premiumUsers: number;
+    usersWithTokens: number;
     totalRevenue: number;
     totalOrders: number;
     recentOrders: any[];
@@ -72,10 +72,10 @@ export default function AdminDashboard() {
                 </div>
                 <div className="stat-card">
                     <div className="stat-card-label">
-                        <Crown size={14} style={{ display: 'inline', marginRight: 6 }} />
-                        Users Premium
+                        <Coins size={14} style={{ display: 'inline', marginRight: 6 }} />
+                        Có Token
                     </div>
-                    <div className="stat-card-value">{stats?.premiumUsers || 0}</div>
+                    <div className="stat-card-value">{stats?.usersWithTokens || 0}</div>
                 </div>
                 <div className="stat-card">
                     <div className="stat-card-label">
@@ -102,7 +102,8 @@ export default function AdminDashboard() {
                     <thead>
                         <tr>
                             <th>Email</th>
-                            <th>Gói</th>
+                            <th>Loại</th>
+                            <th>Token</th>
                             <th>Số tiền</th>
                             <th>Trạng thái</th>
                             <th>Ngày</th>
@@ -113,11 +114,16 @@ export default function AdminDashboard() {
                             stats.recentOrders.map((order: any) => (
                                 <tr key={order.id}>
                                     <td>{order.profile?.email || '—'}</td>
-                                    <td>{order.plan === '6months' ? '6 Tháng' : '12 Tháng'}</td>
-                                    <td>{formatCurrency(order.amount)}</td>
+                                    <td>
+                                        <span className={`status-badge ${order.type === 'topup' ? 'status-active' : 'status-admin'}`}>
+                                            {order.type === 'topup' ? 'Nạp' : 'Mua'}
+                                        </span>
+                                    </td>
+                                    <td style={{ fontWeight: 600 }}>{order.tokenAmount}</td>
+                                    <td>{order.amount > 0 ? formatCurrency(order.amount) : '—'}</td>
                                     <td>
                                         <span className={`status-badge status-${order.status}`}>
-                                            {order.status === 'paid' ? 'Đã thanh toán' : order.status === 'pending' ? 'Chờ TT' : 'Thất bại'}
+                                            {order.status === 'paid' ? 'Đã TT' : order.status === 'pending' ? 'Chờ TT' : 'Thất bại'}
                                         </span>
                                     </td>
                                     <td>{formatDate(order.createdAt)}</td>
@@ -125,7 +131,7 @@ export default function AdminDashboard() {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan={5} style={{ textAlign: 'center', color: '#94a3b8', padding: '2rem' }}>
+                                <td colSpan={6} style={{ textAlign: 'center', color: '#94a3b8', padding: '2rem' }}>
                                     Chưa có giao dịch nào
                                 </td>
                             </tr>
@@ -144,7 +150,7 @@ export default function AdminDashboard() {
                         <tr>
                             <th>Email</th>
                             <th>Vai trò</th>
-                            <th>Premium</th>
+                            <th>Token</th>
                             <th>Ngày đăng ký</th>
                         </tr>
                     </thead>
@@ -158,11 +164,7 @@ export default function AdminDashboard() {
                                             {u.role === 'admin' ? 'Admin' : 'User'}
                                         </span>
                                     </td>
-                                    <td>
-                                        <span className={`status-badge ${u.isPremium ? 'status-active' : 'status-inactive'}`}>
-                                            {u.isPremium ? 'Premium' : 'Free'}
-                                        </span>
-                                    </td>
+                                    <td style={{ fontWeight: 600, color: '#f59e0b' }}>{u.tokenBalance || 0}</td>
                                     <td>{formatDate(u.createdAt)}</td>
                                 </tr>
                             ))

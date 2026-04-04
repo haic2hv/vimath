@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
+import { Coins } from 'lucide-react';
 
 type User = {
     id: string;
     email: string;
     role: string;
-    isPremium: boolean;
-    premiumUntil: string | null;
+    tokenBalance: number;
     createdAt: string;
     orders: any[];
 };
@@ -19,6 +19,8 @@ export default function AdminUsersPage() {
     const [search, setSearch] = useState('');
     const [loading, setLoading] = useState(true);
     const [total, setTotal] = useState(0);
+    const [giftAmount, setGiftAmount] = useState<Record<string, string>>({});
+    const [giftingId, setGiftingId] = useState<string | null>(null);
 
     useEffect(() => {
         if (!user) return;
@@ -43,26 +45,54 @@ export default function AdminUsersPage() {
         }
     }
 
-    async function togglePremium(profile: User) {
-        const newPremium = !profile.isPremium;
-        const premiumUntil = newPremium
-            ? new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString()
-            : null;
+    async function giftTokens(profile: User) {
+        const amount = parseInt(giftAmount[profile.id] || '0');
+        if (!amount || amount === 0) return;
 
-        await fetch('/api/admin/users', {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-user-id': user!.id,
-            },
-            body: JSON.stringify({
-                profileId: profile.id,
-                isPremium: newPremium,
-                premiumUntil,
-            }),
-        });
+        setGiftingId(profile.id);
+        try {
+            await fetch('/api/admin/users', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-user-id': user!.id,
+                },
+                body: JSON.stringify({
+                    profileId: profile.id,
+                    tokenAmount: amount,
+                    action: 'add',
+                }),
+            });
 
-        fetchUsers();
+            // Clear input and refresh
+            setGiftAmount(prev => ({ ...prev, [profile.id]: '' }));
+            fetchUsers();
+        } catch (error) {
+            console.error('Failed to gift tokens:', error);
+        }
+        setGiftingId(null);
+    }
+
+    async function setTokenBalance(profile: User, amount: number) {
+        setGiftingId(profile.id);
+        try {
+            await fetch('/api/admin/users', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-user-id': user!.id,
+                },
+                body: JSON.stringify({
+                    profileId: profile.id,
+                    tokenAmount: amount,
+                    action: 'set',
+                }),
+            });
+            fetchUsers();
+        } catch (error) {
+            console.error('Failed to set tokens:', error);
+        }
+        setGiftingId(null);
     }
 
     const formatDate = (dateStr: string) => {
@@ -95,11 +125,10 @@ export default function AdminUsersPage() {
                             <tr>
                                 <th>Email</th>
                                 <th>Vai trò</th>
-                                <th>Trạng thái</th>
-                                <th>Hết hạn</th>
+                                <th>Token</th>
                                 <th>Đơn hàng</th>
                                 <th>Ngày ĐK</th>
-                                <th>Hành động</th>
+                                <th>Tặng Token</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,26 +142,40 @@ export default function AdminUsersPage() {
                                             </span>
                                         </td>
                                         <td>
-                                            <span className={`status-badge ${u.isPremium ? 'status-active' : 'status-inactive'}`}>
-                                                {u.isPremium ? 'Premium' : 'Free'}
+                                            <span style={{ fontWeight: 700, color: '#f59e0b' }}>
+                                                {u.tokenBalance || 0}
                                             </span>
                                         </td>
-                                        <td>{u.premiumUntil ? formatDate(u.premiumUntil) : '—'}</td>
                                         <td>{u.orders?.length || 0}</td>
                                         <td>{formatDate(u.createdAt)}</td>
                                         <td>
-                                            <button
-                                                className={`toggle-btn ${u.isPremium ? 'active' : ''}`}
-                                                onClick={() => togglePremium(u)}
-                                            >
-                                                {u.isPremium ? 'Hủy Premium' : 'Cấp Premium'}
-                                            </button>
+                                            <div style={{ display: 'flex', gap: '0.25rem', alignItems: 'center' }}>
+                                                <input
+                                                    type="number"
+                                                    placeholder="Số token"
+                                                    value={giftAmount[u.id] || ''}
+                                                    onChange={(e) => setGiftAmount(prev => ({ ...prev, [u.id]: e.target.value }))}
+                                                    style={{
+                                                        width: '80px', padding: '0.25rem 0.5rem',
+                                                        borderRadius: '6px', border: '1px solid #334155',
+                                                        background: '#1e293b', color: '#e2e8f0', fontSize: '0.8rem'
+                                                    }}
+                                                />
+                                                <button
+                                                    className="toggle-btn active"
+                                                    onClick={() => giftTokens(u)}
+                                                    disabled={giftingId === u.id || !giftAmount[u.id]}
+                                                    style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem' }}
+                                                >
+                                                    <Coins size={12} /> Tặng
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan={7} style={{ textAlign: 'center', color: '#94a3b8', padding: '2rem' }}>
+                                    <td colSpan={6} style={{ textAlign: 'center', color: '#94a3b8', padding: '2rem' }}>
                                         Không tìm thấy user nào
                                     </td>
                                 </tr>

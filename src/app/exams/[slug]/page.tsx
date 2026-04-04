@@ -4,8 +4,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import Link from "next/link";
-import { ArrowLeft, Lock, Calendar, CheckCircle, Crown, Unlock } from "lucide-react";
-import SolutionGate from "./SolutionGate";
+import { ArrowLeft, Calendar, CheckCircle, Coins, Unlock } from "lucide-react";
+import ContentGate from "./SolutionGate";
 import ExamViewTracker from "./ExamViewTracker";
 import { PdfEmbed, PdfDownload } from "./InlinePdfEmbed";
 
@@ -49,6 +49,8 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
         PdfDownload,
     };
 
+    const isFree = exam.frontmatter.tokenPrice === 0;
+
     return (
         <div className="exam-detail">
             <ExamViewTracker slug={slug} title={exam.frontmatter.title} />
@@ -65,61 +67,39 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                             <Calendar size={14} />
                             {exam.frontmatter.date}
                         </span>
-                        {exam.frontmatter.isFree ? (
+                        {isFree ? (
                             <span className="meta-item meta-free">
-                                <CheckCircle size={14} />
+                                <Unlock size={14} />
                                 Miễn phí
                             </span>
                         ) : (
-                            <span className="meta-item meta-premium">
-                                <Crown size={14} />
-                                Thành viên
+                            <span className="meta-item meta-token">
+                                <Coins size={14} />
+                                {exam.frontmatter.tokenPrice} token
                             </span>
                         )}
                     </div>
                 </header>
 
-                {exam.frontmatter.isFree ? (
-                    <>
-                        <section className="markdown-body prose prose-indigo prose-lg max-w-none">
-                            {/* @ts-ignore: Next.js RSC type incompatibility with next-mdx-remote */}
-                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} components={mdxComponents} />
-                        </section>
+                <ContentGate tokenPrice={exam.frontmatter.tokenPrice} itemType="exam" itemSlug={slug}>
+                    <section className="markdown-body prose prose-indigo prose-lg max-w-none">
+                        {/* @ts-ignore: Next.js RSC type incompatibility with next-mdx-remote */}
+                        <MDXRemote source={exam.questionContent} options={{ mdxOptions }} components={mdxComponents} />
+                    </section>
 
-                        {exam.solutionContent && (
-                            <section className="solution-section">
-                                <div className="solution-header">
-                                    <CheckCircle size={20} color="#059669" />
-                                    <h3>Chi tiết lời giải</h3>
-                                </div>
-                                <div className="markdown-body prose prose-indigo prose-lg max-w-none">
-                                    {/* @ts-ignore */}
-                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} components={mdxComponents} />
-                                </div>
-                            </section>
-                        )}
-                    </>
-                ) : (
-                    <SolutionGate isFree={false}>
-                        <section className="markdown-body prose prose-indigo prose-lg max-w-none">
-                            {/* @ts-ignore */}
-                            <MDXRemote source={exam.questionContent} options={{ mdxOptions }} components={mdxComponents} />
+                    {exam.solutionContent && (
+                        <section className="solution-section">
+                            <div className="solution-header">
+                                <CheckCircle size={20} color="#059669" />
+                                <h3>Chi tiết lời giải</h3>
+                            </div>
+                            <div className="markdown-body prose prose-indigo prose-lg max-w-none">
+                                {/* @ts-ignore */}
+                                <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} components={mdxComponents} />
+                            </div>
                         </section>
-
-                        {exam.solutionContent && (
-                            <section className="solution-section">
-                                <div className="solution-header">
-                                    <CheckCircle size={20} color="#059669" />
-                                    <h3>Chi tiết lời giải</h3>
-                                </div>
-                                <div className="markdown-body prose prose-indigo prose-lg max-w-none">
-                                    {/* @ts-ignore */}
-                                    <MDXRemote source={exam.solutionContent} options={{ mdxOptions }} components={mdxComponents} />
-                                </div>
-                            </section>
-                        )}
-                    </SolutionGate>
-                )}
+                    )}
+                </ContentGate>
             </article>
 
             {/* Related Exams */}
@@ -135,15 +115,15 @@ export default async function ExamPage({ params }: { params: Promise<{ slug: str
                             >
                                 <div className="exam-card-header">
                                     <div className="exam-card-badges">
-                                        {re.frontmatter.isFree ? (
+                                        {re.frontmatter.tokenPrice === 0 ? (
                                             <span className="badge badge-free">
                                                 <Unlock size={11} />
                                                 Miễn phí
                                             </span>
                                         ) : (
-                                            <span className="badge badge-premium">
-                                                <Lock size={11} />
-                                                Thành viên
+                                            <span className="badge badge-token">
+                                                <Coins size={11} />
+                                                {re.frontmatter.tokenPrice} token
                                             </span>
                                         )}
                                     </div>
